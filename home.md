@@ -1,6 +1,7 @@
+---
 layout: page
 title: "HOME"
-permalink: /home
-
+permalink: /
+---
 
 # This is a test page.
