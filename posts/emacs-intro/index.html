@@ -23,20 +23,196 @@
     <a href="https://nebhrajani-a.github.io/">/nebhrajani</a><a href="https://nebhrajani-a.github.io/posts/">/posts/</a><a href="https://nebhrajani-a.github.io/posts/emacs-intro/">emacs-intro</a>
 
 </span>
-
-
-
+<style>
+pre {
+  width: 99%;
+  overflow: auto;
+  padding: 0.2cm;
+}
+</style>
+<!--  ──────────────────────── Use hilite.me ─────────────────────── -->
+<style>
+p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+</style>
 <section id="main">
 	<h1 id="title">Why Emacs: An Introduction</h1>
 	<div class="post-meta">Wed, Sep 23, 2020 - ? min </div>
 
 	<div>
 		<article id="content">
-
 <p></p>
 <h2>Introduction</h2>
+<p>
+<mark>One of the most important tasks people do on a computer is typing.</mark>
+Specifically, editing files. Historically, a simple program called an
+editor is used to edit text files. Starting with the minimalist <code>ed</code>,
+these editors have gotten more and more complicated, and have branched
+into various types of programs, such as IDEs, word processors,
+spreadsheet tools, and so on. People seem to have moved past ever
+wanting or needing a 'primitive' editor. However, the strange part is,
+there's one program which started as an editor, but can somehow has
+the superset of nearly all functionality offered by the various
+programs people use.
+</p>
+<p>
+GNU Emacs is probably one of the oldest software programs in
+existence, along with <code>vi</code>. It's also a fantastic piece of
+software: evidenced by how long it's survived. At its core, it's an
+editor, meant simply for the purpose of editing text files. What makes
+it so vastly different from Notepad or even Microsoft Word is the fact
+that it's, well, <em>not actually</em> an editor. Let's dive in,
+assuming anybody made it this far.
+</p>
+<h2>GNU Emacs</h2>
+<p>
+  Emacs, being such an old piece of software, has obviously had its fair
+  share of schisms and branches. The only remaining stable branch,
+  however, is GNU Emacs, whose latest version as of September 2020 is
+  GNU Emacs 27.1.
+</p>
+<p>
+  Now, part of what makes Emacs such a great piece of software is the
+  fact that it's actually a REPL (read, eval, print loop) in a
+  modified version of LISP called eLISP. This means the program
+  itself, minus a small C core, it's written in a single language.
+  How does that help? It means Emacs is infinitely malleable: the user
+  can change everything, or nothing, depending on what they want to
+  do. This also means there's rarely a feature Emacs doesn't have or
+  can't have by writing some quick code, since eLISP is pretty
+  intuitive and an easy language to write in. The favorite features of
+  other editors: from Sublime's multiple cursors, Atom's themes, vi's
+  editing modes, to even having an interface for Git, Email, IRC, and
+  Twitter, Emacs can be moulded to do, well, anything. This is
+  primarily because of eLISP itself and a large community of people
+  who write packages to keep Emacs at the bleeding edge.
+</p>
+<h4>Jack of All, Master of None</h4>
+<p>
+  Many arguments against Emacs involve this very versatility, people
+  claim it is an operating system rather than an editor. With this, I
+  agree, however, it isn't necessarily a bad thing. We'll talk about
+  what makes Emacs' interface so unique in a minute, but before that,
+  let's admit that Emacs isn't a great OS, because it doesn't have
+  threading. (People are working to fix this too, but it might be a
+  while. Meanwhile, I'd recommend sticking to your favourite distro.)
+  Emacs being an OS is one of the things is what keeps people
+  tinkering with 1000-line configuration files. It provides a uniform
+  interface for a variety of tools, and overall means less context
+  switching for the end user. In addition, it means that nearly
+  everything one wants to do can be changed in a couple of lines of
+  eLISP since Emacs is <em>self-documenting</em>, something we'll talk
+  about later. Emacs being a jack of all trades is its biggest
+  advantage. Hopefully you'll see by the end of this article that
+  it's a master of all too.
+</p>
 
-
+<h2>How Things Are Done</h2>
+<p>
+  Most people today, to their everlasting loss, use apps designed in
+  frameworks like Electron, complete with a laggy GUI and paying
+  tremendous overhead for simple tasks. This change is hardly users'
+  fault: it's a generation of programmers who never learn to write low
+  level code, everyone would rather learn Python than C. Anyway, the
+  availability of these tremendous frameworks and libraries has meant
+  a lot of <em>huge</em> programs. Even people's editors are written
+  this way (looking at you, Atom and VSCode). This is something
+  strange that's come about recently. Developers and users
+  traditionally haven't needed more than a glass teletype to do nearly
+  everything. The love for pretty interfaces seems to be something
+  that came from smartphones to desktops rather than vice versa, and,
+  indeed, many desktop versions of apps resemble mobile versions.
+  While this eye-candy <em>is</em> undeniably fun to stare at, it
+  doesn't really get the job done.
+</p>
+<p>
+Now, I'm not one of those people who want the world to stop using GUIs
+and for everybody to go back to TTYs. Having a GUI is a good thing,
+and the desktop metaphor is undeniably useful. However, programs like
+the ones people are increasingly shifting to have two major problems,
+which leads to a few strange results.
+<ol>
+  <li> <b> Less powerful tools, but more resource intensive. </b> The
+  apps created have the usual painful limitations of a GUI
+  application: the end user can only modify what the
+  programmer <em>thinks</em> the user should modify, nothing more.
+  This means these programs are <em>de facto</em> less flexible.
+  Furthermore, they take way more resources to do simple tasks
+  because of being written in such high level languages. It can be
+  argued that this is a privilege that comes with Moore's law and
+  ever-increasing computer horsepower. However, in my humble opinion,
+  we aim to use increased computing resources for doing more
+  complicated tasks, not the same tasks in a more complicated way.
+  For instance, a simple sort in a CSV file using 'modern' tools
+  requires me to launch Excel or Numbers or LibreOffice, locate the
+  column, then locate the sort function in an obscure menu that varies
+  from program to program. How would this be done in the traditional
+  way? <code>sort</code> with some offset argument. It's important to
+  understand that the basic tasks one needs to do with a computer
+  haven't really changed: data processing, text editing, navigating
+  the file system, and so on. It's just how we do it that's so
+  different. Now, the cost of having <code>sort</code> hidden behind
+  some strange interface is still acceptable if this somehow makes it
+  easier for the end user or uses less resources. Maybe. But, of
+  course, it doesn't. Instead, it only complicates the
+  workflow, <b>and</b> uses more system resources. It's a lose-lose.
+  </li>
+  <li> <b> Mouse based interfaces. </b> This is highly subjective,
+  but it's something that people realise with time. Unless one is
+  using a touchscreen, the right way to interact with a computer is a
+  keyboard. However, in recent times, application developers want to
+  have a similar interface for both mobile and desktop applications.
+  This naturally means using a mouse pointer for the desktop version,
+  and this is, in my opinion, a <em>terrible</em> idea. Mice are
+  slow, require one to be following the pointer around with the eyes,
+  and generally require screen real estate to be sacrificed to menus
+  and big buttons. Increase the font size by 4pt and you've created
+  your own personal hell. Computers are <em>meant</em> to be used
+  with a keyboard. It's the most natural way for us to communicate
+  other than speaking: typing out exactly what we want done. It's
+  infinitely better, cleaner, and more customisable than any GUI.
+  Some developers do recognize this, and add a way to navigate parts of
+  interfaces using only keyboards (Discord and its C-k). These are,
+  however, a minority. Most remain bound to clicky interfaces which
+  slow people down. Keyboards are faster, more intuitive, and easier
+  to use. </li>
+  <li> <b> Lazier development. </b> The people writing these
+  gargantuan programs use huge JS-based web-like frameworks to write
+  these programs, which themselves are pretty annoying to write in,
+  but equally annoying not to write in. It's the best way to satisfy
+  the end-user's GUI fetish. However, it creates a class of
+  programmer who is incapable of writing truly good code, and merely
+  calls library functions to do the hard work. This isn't me
+  imagining things, but neither can I cite studies about this. It's
+  happening out there in the real world. Hopefully such systems will
+  collapse onto themselves: the people who use high level languages
+  and frameworks as crutches will eventually have nobody to maintain
+  the low level code of the frameworks, and the system will implode.
+  Hopefully.</li>
+</ol>
+</p>
+<p>
+Okay, so maybe you're convinced. GUI heavy programs are terrible. Why then
+have such programs flourished, while their CLI counterparts have been
+left to die in dark corners along with bearded Linux and BSD users
+making a big fuss about the old days.
+</p>
+<p>
+Two words: <b>learning curve</b>. People are lazy. This is a
+fundamental principle in computer design. The less time people spend
+learning to use your tool, the more time people will spend using your
+tool...or so the common wisdom goes. Such a conclusion is perfectly
+valid from a short term standpoint: however, in the long term, it
+means your user will shift away as soon as a sexier, slightly faster,
+more ubiquitous, or
+with-the-one-feature-you-thought-you-could-put-it-the-next-release
+program comes along. By not having an interface to <em>every single
+    thing</em> the computer is capable of doing, you compete with
+other developers on who can port these features into a GUI most
+effectively.
+</p>
 		</article>
 	</div>
 </section>
