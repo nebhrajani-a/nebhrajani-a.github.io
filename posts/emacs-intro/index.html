@@ -207,12 +207,86 @@ tool...or so the common wisdom goes. Such a conclusion is perfectly
 valid from a short term standpoint: however, in the long term, it
 means your user will shift away as soon as a sexier, slightly faster,
 more ubiquitous, or
-with-the-one-feature-you-thought-you-could-put-it-the-next-release
+with-the-one-feature-you-thought-you-could-put-in-the-next-release
 program comes along. By not having an interface to <em>every single
     thing</em> the computer is capable of doing, you compete with
 other developers on who can port these features into a GUI most
 effectively.
 </p>
+<p>
+If you're a developer who's worth your salt, please, don't be lazy.
+This is why I think so many people are going into CS and yet, the
+number of new ideas we have is going down. Programmers are getting
+sucked, voluntarily, into this kind of a 'lazy' development paradigm.
+Competition should be about who writes the best code, not who packages
+it best...ideally.
+</p>
+<p>
+A quick note about effectiveness of languages: a C++ program to find
+the number of distinct elements in an array looks like the following
+(I had to write one recently):
+<!-- HTML generated using hilite.me --><div style="overflow:auto;width:auto"><pre style="margin: 0; line-height: 125%"><span style="color: #008800">#include &lt;bits/stdc++.h&gt;</span>
+<span style="color: #AA22FF; font-weight: bold">using</span> <span style="color: #AA22FF; font-weight: bold">namespace</span> std;
+
+<span style="color: #00BB00; font-weight: bold">int</span> <span style="color: #00A000">distinct_elements</span>(<span style="color: #00BB00; font-weight: bold">int</span> arr[], <span style="color: #00BB00; font-weight: bold">int</span> n)
+{
+  <span style="color: #008800; font-style: italic">// Creates an empty hashset</span>
+  unordered_set<span style="color: #8686cb">&lt;</span><span style="color: #00BB00; font-weight: bold">int</span><span style="color: #8686cb">&gt;</span> s;
+
+  <span style="color: #008800; font-style: italic">// Traverse the input array</span>
+  <span style="color: #00BB00; font-weight: bold">int</span> res <span style="color: #8686cb">=</span> <span style="color: #8686cb">0</span>;
+  <span style="color: #AA22FF; font-weight: bold">for</span> (<span style="color: #00BB00; font-weight: bold">int</span> i <span style="color: #8686cb">=</span> <span style="color: #8686cb">0</span>; i <span style="color: #8686cb">&lt;</span> n; i<span style="color: #8686cb">++</span>) {
+
+    <span style="color: #008800; font-style: italic">// If not present, then put it in</span>
+    <span style="color: #008800; font-style: italic">// hashtable and increment result if it isn&#39;t zero.</span>
+    <span style="color: #AA22FF; font-weight: bold">if</span> (s.find(arr[i]) <span style="color: #8686cb">==</span> s.end() <span style="color: #8686cb">&amp;&amp;</span> arr[i] <span style="color: #8686cb">!=</span> <span style="color: #8686cb">0</span>) {
+      s.insert(arr[i]);
+      res<span style="color: #8686cb">++</span>;
+    }
+  }
+
+  <span style="color: #AA22FF; font-weight: bold">return</span> res;
+}
+
+
+<span style="color: #00BB00; font-weight: bold">int</span> <span style="color: #00A000">main</span>(<span style="color: #00BB00; font-weight: bold">void</span>) {
+  std<span style="color: #8686cb">::</span>ios<span style="color: #8686cb">::</span>sync_with_stdio(<span style="color: #AA22FF">false</span>);
+  <span style="color: #00BB00; font-weight: bold">int</span> T;
+  cin <span style="color: #8686cb">&gt;&gt;</span> T;
+  <span style="color: #00BB00; font-weight: bold">int</span> j;
+  <span style="color: #AA22FF; font-weight: bold">for</span> (j <span style="color: #8686cb">=</span> <span style="color: #8686cb">0</span>; j <span style="color: #8686cb">&lt;</span> T; j<span style="color: #8686cb">++</span>) {
+    <span style="color: #00BB00; font-weight: bold">int</span> n;
+    <span style="color: #00BB00; font-weight: bold">int</span> i;
+    cin <span style="color: #8686cb">&gt;&gt;</span> n;
+    <span style="color: #00BB00; font-weight: bold">int</span> arr[n];
+    <span style="color: #AA22FF; font-weight: bold">for</span> (i <span style="color: #8686cb">=</span> <span style="color: #8686cb">0</span>; i <span style="color: #8686cb">&lt;</span> n; <span style="color: #8686cb">++</span>i) {
+      cin <span style="color: #8686cb">&gt;&gt;</span> arr[i];
+    }
+    cout <span style="color: #8686cb">&lt;&lt;</span> distinct_elements(arr, n) <span style="color: #8686cb">&lt;&lt;</span> <span style="color: #BB4444">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BB4444">&quot;</span>;
+  }
+  <span style="color: #AA22FF; font-weight: bold">return</span> <span style="color: #8686cb">0</span>;
+}
+</pre></div>
+</p>
+<p>
+The Python equivalent for the same code looks like this:
+<!-- HTML generated using hilite.me --><div style="overflow:auto;width:auto"><pre style="margin: 0; line-height: 125%">T <span style="color: #8686cb">=</span> <span style="color: #AA22FF">int</span>(<span style="color: #AA22FF">input</span>())
+i <span style="color: #8686cb">=</span> <span style="color: #8686cb">0</span>
+<span style="color: #AA22FF; font-weight: bold">while</span> i <span style="color: #8686cb">&lt;</span> T:
+    n <span style="color: #8686cb">=</span> <span style="color: #AA22FF">int</span>(<span style="color: #AA22FF">input</span>())
+    arr <span style="color: #8686cb">=</span> <span style="color: #AA22FF">list</span>(<span style="color: #AA22FF">map</span>(<span style="color: #AA22FF">int</span>,<span style="color: #AA22FF">input</span>()<span style="color: #8686cb">.</span>strip()<span style="color: #8686cb">.</span>split()))[:n]
+    <span style="color: #AA22FF">print</span>(<span style="color: #AA22FF">len</span>(<span style="color: #AA22FF">set</span>(arr)))
+    i<span style="color: #8686cb">+=1</span>
+</pre></div>
+</p>
+<p>
+  So yes, the motivation to write in Python is very much there. It's
+  also easier to understand and maintain...until you realise the
+  Python code is an order of magnitude slower (on my system).
+</p>
+
+
+
 		</article>
 	</div>
 </section>
