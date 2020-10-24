@@ -34,6 +34,7 @@
       }
     </style>
     <!--  ──────────────────────── Use hilite.me ─────────────────────── -->
+    <!--  ──────────── This doesn't seem to work anymore. ──────────── -->
     <style>
       p {
       text-align: justify;
@@ -144,11 +145,135 @@
             similar. Predictably, this led to me exploring
             \(\mathrm{\LaTeX}\), Linux, GNU, Emacs, vi...and,
             realising that there's a world of computer science that
-            wasn't all about IDEs and fancy GUI tools.
+            wasn't all about IDEs and fancy GUI tools. Although seen
+            as boring and old school, there's a certain charm to old
+            software and tools that new ones seem to have completely
+            lost.
           </p>
-
-
-
+          <h2>The Charm of Eight Megabytes</h2>
+          <p>
+            Now, I'm probably the least qualified person to talk about
+            old-age software: I'm a young(ish) kid, but seeing the
+            efficiency and elegance of old software is, well,
+            life-altering. Till the late 90's, programming a computer
+            was an exercise in mathematics: in the sense that every
+            program was written with mathematical elegance. This is
+            not to say that there aren't any programs today that are
+            written this way, or that there weren't any then that were
+            written poorly, but simply that because of a lack of
+            resources, computer scientists had to be frugal and write
+            light programs. Compilers can only optimize so much:
+            writing light and powerful code was the gold standard.
+            This also meant that most work wasn't done using a GUI,
+            but via text streams. This led to the creation of a
+            brilliant system of its own right: UNIX, with a clever but
+            simple core philosophy:
+            <cite>
+              each program should do one thing, and do it well.
+            </cite> Doug McIlroy, the creator of the pipe (|) also
+            added his own, about usefully using STDIN and STDOUT, and
+            handling text streams. Such a philosophy may seem
+            simplistic and obvious, but it is the holy grail of
+            writing good software.
+          </p>
+          <h3>UNIX Tools</h3>
+          <p>
+            Donald Knuth, demonstrating literate programming, once
+            wrote a ten-page program to count the \(k\) most
+            frequently used words, and print out a sorted list of the
+            words with their frequencies. Knuth's paper was reviewed
+            by McIlroy, who added at the end of his review a six
+            command pipeline (using UNIX tools), that also solves the
+            problem.
+          </p>
+            <blockquote style="font-size:14px">
+              tr -cs A-Za-z '\n' |
+              tr A-Z a-z |
+              sort |
+              uniq -c |
+              sort -rn |
+              sed ${1}q
+            </blockquote>
+          <p>
+            For those unfamiliar with the UNIX command line, this
+            pipeline takes the input text stream,
+            transliterates the complement (-c) of the alphabet set to newlines,
+            and squeezes (-s) multiple newlines. It then 'pipes' this
+            stream into the next command, which transliterates all
+            capital letters to lowercase ones. These are then sorted
+            to bring identical words together, and duplicates removed
+            using <code>uniq</code>, with a count added (-c). Again
+            sorted in reverse numeric order, since the first 'column'
+            of the stream is the frequency. The top \(k\) lines are
+            then printed using the stream editor (taken as the first
+            argument, ${1}). This could've been done
+            using <code>head</code> as well, but perhaps it wasn't
+            around at the time.
+          </p>
+          <p>
+            This example perfectly illustrates the power of the UNIX
+            command line and philosophy. Although Knuth's solution was
+            more efficient (\(O(n\log{n})\) vs \(O(\log{n})\) IIRC),
+            the beauty lies in the way UNIX works: it's a set of tiny
+            programs that don't do much alone, but together are able
+            to perform complex tasks one would have to write a
+            monolithic program to solve. This is the right way to
+            write software: since it does not leave the end user
+            trapped in the mind and imagination of the developer: the
+            user can do whatever he wants with a box of tools. This
+            has an analogue in mechanical work: would you choose one
+            tool that does a few tasks in a mediocre way, or carry a
+            toolbox that can do any number of tasks by using the tools
+            in combination? Yes: modular is better.
+          </p>
+          <h3>Monolithic Software</h3>
+          <p>
+            The software people use today is nothing like the UNIX
+            shell
+            (usually <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">bash</a>).
+            It's usually a gigantic program that does the functions of
+            many smaller programs. A popular example (from a brilliant
+            essay
+            called <cite><a href="http://cristal.inria.fr/~weis/info/commandline.html">In
+            The Beginning Was The Command Line</a></cite>, is that of
+            the program <code>wc</code> being replaced by a feature
+            in, say, MS Word that counts all the words. In essence,
+            modern programs accumulate features, combining the
+            features of more and more smaller programs and integrating
+            them. This probably started with the Kitchen Sink, Emacs,
+            but was quickly adopted by many others. Let me be clear.
+            This approach isn't necessarily wrong or less good: but it
+            does mean one thing: you'll reach a point where
+            two <b>huge</b> programs just can't be combined into each
+            other. Maybe it's because they were built by different
+            people, or to solve different problems, but they can't
+            communicate with each other using pipes and text streams
+            anymore, for instance, Word and Excel, or Word and
+            LibreOffice. This is where two problems begin:
+            <ol>
+              <li>Big programs can't work together neatly. They use
+              different file formats by this point, they're doing
+              different tasks, and a huge amount of code has to be
+              written to make these programs talk to each other.</li>
+              <li>Alternatives come up often. It isn't hard to combine
+              simple small programs into a larger one, and pretty soon
+              a competitor in the same space comes up with a product
+              that has the <i>one</i> missing feature (small program)
+              the other didn't. Now you're back to problem (1), since
+              some users will use someone else's program, or will
+              want to use both, or steal the feature.</li>
+            </ol>
+          </p>
+          <p>
+            This feature race is meaningless, since it means every
+            program
+            will <a href="https://en.wikipedia.org/wiki/Feature_creep">creep
+            features</a> until it's the kitchen sink. This also makes
+            programs harder to use, but most importantly, harder to
+            break out of. On the other hand, because everything is
+            integrated, these programs can look pretty and appear
+            simple to use
+          </p>
 
 	</article>
       </div>
