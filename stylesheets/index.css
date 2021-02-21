@@ -440,6 +440,13 @@ body {
   margin: 0 auto;
 }
 
+@media (max-width: 800px) {
+    body {
+         max-width: 90vw;
+    }
+}
+
+
 pre {
   border: unset;
   overflow: hidden;
