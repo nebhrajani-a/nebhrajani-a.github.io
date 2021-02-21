@@ -463,6 +463,8 @@ table tr th {
 
 p {
   margin: 20px 0px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 #tags {
