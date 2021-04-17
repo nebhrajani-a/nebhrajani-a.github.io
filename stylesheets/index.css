@@ -1,3 +1,14 @@
+pre {
+
+    width: 99%;
+    overflow: auto;
+    padding: 0.2cm;
+    border:1px solid;
+}
+
+
+
+
 .space-theme body {
     background: #24242e;
 }
@@ -498,6 +509,7 @@ div.chroma {
     background-color: initial;
 }
 pre {
+
     width: 99%;
     overflow: auto;
     padding: 0.2cm;
