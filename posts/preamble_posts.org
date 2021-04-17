@@ -1,0 +1,17 @@
+#+OPTIONS: html-style:nil toc:nil
+#+HTML_HEAD: <html class="sea-theme">
+#+HTML_HEAD: <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+#+HTML_HEAD: <meta charset="utf-8">
+#+HTML_HEAD: <meta name="viewport" content="width=device-width, initial-scale=1">
+#+HTML_HEAD: <link rel="stylesheet" href="../stylesheets/hack.css" />
+#+HTML_HEAD: <link rel="stylesheet" href="../stylesheets/css.css" />
+#+HTML_HEAD: <link rel="stylesheet" href="../stylesheets/standard.css" />
+#+HTML_HEAD: <link rel="stylesheet" href="../stylesheets/index.css" />
+#+HTML_HEAD: <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+#+HTML_HEAD: <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+#+HTML: <nav class="sidebar-nav">
+#+HTML:  <a class="nav-item" title="" href="https://nebhrajani-a.github.io/">home</a>
+#+HTML:  <a class="nav-item" title="" href="https://nebhrajani-a.github.io/posts/">posts</a>
+#+HTML:  <a class="nav-item" title="" href="https://nebhrajani-a.github.io/files/">files</a>
+#+HTML:	</nav>

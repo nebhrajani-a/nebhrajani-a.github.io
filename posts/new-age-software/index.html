@@ -1,329 +1,252 @@
-<!DOCTYPE html>
-<html class="sea-theme"><head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-04-17 Sat 22:15 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>/nebhrajani/posts/new-age-software/</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Nebhrajani A.V." />
+<html class="sea-theme">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../stylesheets/hack.css" />
+<link rel="stylesheet" href="../../stylesheets/css.css" />
+<link rel="stylesheet" href="../../stylesheets/standard.css" />
+<link rel="stylesheet" href="../../stylesheets/index.css" />
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
 
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
 
-    <title>/nebhrajani/posts/new-age-software</title>
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<nav class="sidebar-nav">
+<a class="nav-item" title="" href="https://nebhrajani-a.github.io/">home</a>
+<a class="nav-item" title="" href="https://nebhrajani-a.github.io/posts/">posts</a>
+<a class="nav-item" title="" href="https://nebhrajani-a.github.io/files/">files</a>
+</nav>
 
-    <link rel="stylesheet" href="../../stylesheets/hack.css">
-    <link rel="stylesheet" href="../../stylesheets/standard.css">
-    <link href="../../stylesheets/css.css" rel="stylesheet">
+<h1 id="title">New Age Software Development</h1>
+<div class="post-meta"> <2020-10-22 Thu> - 4 min read
+</div>
 
-    <link rel="stylesheet" href="../../stylesheets/index.css">
+<div id="outline-container-org4c88f8a" class="outline-2">
+<h2 id="org4c88f8a"><span class="section-number-2">1</span> UNIX Tools</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Donald Knuth, demonstrating literate programming, once
+wrote a ten-page program to count the \(k\) most
+frequently used words in an input file, and print out a sorted list of the
+words with their frequencies. Knuth's paper was reviewed
+by McIlroy, who added at the end of his review a six
+command pipeline (using UNIX tools), that also solves the
+problem.
+</p>
 
-    <link rel="canonical" href="https://nebhrajani-a.github.io/posts/">
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-
-  <body>
-    <span class="header-path">
-
-      <a href="https://nebhrajani-a.github.io/">/nebhrajani</a><a href="https://nebhrajani-a.github.io/posts/">/posts/</a><a href="https://nebhrajani-a.github.io/posts/new-age-software/">new-age-software</a>
-
-    </span>
-    <style>
-      pre {
-      width: 99%;
-      overflow: auto;
-      padding: 0.2cm;
-      border:1px solid;
-      }
-    </style>
-    <!--  ──────────────────────── Use hilite.me ─────────────────────── -->
-    <!--  ──────────── This doesn't seem to work anymore. ──────────── -->
-    <style>
-      p {
-      text-align: justify;
-      text-justify: inter-word;
-      }
-      blockquote{
-      font-size: 150%;
-      }
-    </style>
-    <section id="main">
-      <h1 id="title">New Age Software Development</h1>
-      <div class="post-meta">Thu, Oct 22, 2020 - ? min </div>
-
-      <div>
-	<article id="content">
-          <!-- <p> -->
-          <!--   In recent years, people have grown into the technology they see -->
-          <!--   around them. This isn't to say that this wasn't the case before, but -->
-          <!--   simply that a far greater number of people are familiar and -->
-          <!--   comfortable with technology than ever before. A large part of this -->
-          <!--   credit goes to mobile device makers: in particular, Apple Inc. and -->
-          <!--   Google's Android. Nearly 60% of the world's population has an -->
-          <!--   Internet connection, with the rest quickly catching up. This has -->
-          <!--   meant a nearly insatiable market for flashy new software and -->
-          <!--   hardware. Such a market seems to only have grown with the COVID-19 -->
-          <!--   worldwide quarantine. This is in stark contrast to, say, the 70s, -->
-          <!--   when UNIX was primarily distributed to universities and used for -->
-          <!--   research. This article is in part a trip down the memory lane, but -->
-          <!--   it is also a lament for days when software was light and powerful. -->
-          <!-- </p> -->
-          <!-- <h2>Down The Memory Lane</h2> -->
-          <!-- <p> -->
-          <!--   Now, I'm an early 2000s kid. I saw Club Penguin come and go, and -->
-          <!--   pretty much saw a lot of technology grow up with myself. However, I -->
-          <!--   never saw things like a computer without a GUI, classical -->
-          <!--   telephones, and so on. My childhood was an interesting one, -->
-          <!--   especially with watching the advent of the Internet: but -->
-          <!--   never really being warned about how risky it could be. I -->
-          <!--   also watched the pre-iPhone state of the handheld computer -->
-          <!--   market: including Palm's and Nokia's well-intending, but -->
-          <!--   ultimately doomed concepts. I digress, but the point here -->
-          <!--   is that a majority of the people my age came into a -->
-          <!--   magical world of technology, seemingly detached from the -->
-          <!--   black-colored terminal window I'd see my parents typing -->
-          <!--   into for a majority of their workday. -->
-          <!-- </p> -->
-          <!-- <h3>Tools, Drag-N-Drop, and Hating It All</h3> -->
-          <!-- <p> -->
-          <!--   Growing up around GUIs meant that nearly every tool beginners around -->
-          <!--   me operated had their own pretty mouse-based interface. These tools -->
-          <!--   came and went nearly as fast as the days: from PowerPoint to Prezi -->
-          <!--   to Canva, all these tools had one thing in common: they were -->
-          <!--   beginner friendly. This isn't to say they were poor tools: many of -->
-          <!--   them still exist today, and I -->
-          <!--   hear <a href="https://www.andrew.cmu.edu/user/twildenh/PowerPointTM/Paper.pdf">PowerPoint -->
-          <!--     is Turing complete.</a> A similar phenomenon was going on with text -->
-          <!--   editors and developer tools: people were (finally) shifting away -->
-          <!--   from the ancient vi(m) and Emacs to Eclipse, TextMate, then Sublime, -->
-          <!--   and all sorts of other IDEs. The golden age of computing had -->
-          <!--   arrived: everybody was a computing genius with a mouse, a pretty -->
-          <!--   interface, and a snappy wrist to drag-and-drop. -->
-          <!-- </p> -->
-          <!-- <p> -->
-          <!--   Can you blame me for getting swept away? For years, from when I -->
-          <!--   first got my hands on my first computer (2006, I think), to 2019, I -->
-          <!--   participated in the tools race as much as any young person could do. -->
-          <!--   I jumped from BASIC to LOGO to Scratch, from MS Word to Prezi to -->
-          <!--   Canva, from SuperTux (Super Mario clone) to Asphalt 8. At some -->
-          <!--   point, however, this began to feel...forced. More inefficient than -->
-          <!--   forced, of course, but I got disillusioned with the software I saw -->
-          <!--   around me. Was this really how life in computing was? Bending over -->
-          <!--   backwards to shift to the latest tool that has X feature over the -->
-          <!--   previous one, ever in pursuit of a mythical perfect workflow? Is -->
-          <!--   this how my parents made a living? Was this how the pros do it? And -->
-          <!--   at some level, I began to resent it all. In 2017, I think, I -->
-          <!--   attended an internship over a summer at Infosys Ltd., a widely -->
-          <!--   respected IT services firm. Everybody wanted (wants?) a job there, -->
-          <!--   or so I was told. Going there for a few weeks and seeing the -->
-          <!--   exhausted faces of the employees, while a bearded, middle aged man -->
-          <!--   tried to teach me how to link an SQL database to a Java program -->
-          <!--   using Eclipse killed my interest in software for a long -->
-          <!--   while, and my interests went elsewhere. -->
-          <!-- </p> -->
-          <!-- <h3>StackExchange and \(\mathrm{\TeX}\)</h3> -->
-          <!-- <p> -->
-          <!--   My interests having shifted to physics and mathematics, I -->
-          <!--   went out to the Internet in my free time to indulge in -->
-          <!--   them. I reached where everybody reaches when they need -->
-          <!--   answers: <a href="https://www.stackexchange.com">StackExchange.</a> -->
-          <!--   While writing answers and asking questions for the -->
-          <!--   community, I fell in love with what everybody called -->
-          <!--   MathJax: a JavaScript library for getting beautiful math -->
-          <!--   on the site. Its system for typesetting equations was the -->
-          <!--   prettiest I'd ever seen: they looked just like textbooks -->
-          <!--   and were vector images. They looked something like this: -->
-          <!--   \[W=\int_{r_1}^{r_2} \frac{q_1 q_2}{4\pi \varepsilon_0 -->
-          <!--   r^2} dr\] The language for formatting these was infinitely -->
-          <!--   nicer to work with than Microsoft's toolbox for writing -->
-          <!--   equations, which is what I'd used my whole life. It looked -->
-          <!--   like this: -->
-          <!--   <cite> -->
-          <!--     $W=\int_{r_1}^{r_2} \frac{q_1 q_2}{4\pi \varepsilon_0 -->
-          <!--     r^2} dr$. -->
-          <!--   </cite> -->
-          <!--   Reading more about MathJax, I realised the syntax is -->
-          <!--   actually based on a program from 1991 called -->
-          <!--   \(\mathrm{\TeX}\), which was also used to format nearly -->
-          <!--   every journal article I'd read. No wonder they all look so -->
-          <!--   similar. Predictably, this led to me exploring -->
-          <!--   \(\mathrm{\LaTeX}\), Linux, GNU, Emacs, vi...and, -->
-          <!--   realising that there's a world of computer science that -->
-          <!--   wasn't all about IDEs and fancy GUI tools. Although seen -->
-          <!--   as boring and old school, there's a certain charm to old -->
-          <!--   software and tools that new ones seem to have completely -->
-          <!--   lost. -->
-          <!-- </p> -->
-          <!-- <h2>The Charm of Eight Megabytes</h2> -->
-          <!-- <p> -->
-          <!--   Now, I'm probably the least qualified person to talk about -->
-          <!--   old-age software: I'm a young(ish) kid, but seeing the -->
-          <!--   efficiency and elegance of old software is, well, -->
-          <!--   life-altering. Till the late 90's, programming a computer -->
-          <!--   was an exercise in mathematics: in the sense that every -->
-          <!--   program was written with mathematical elegance. This is -->
-          <!--   not to say that there aren't any programs today that are -->
-          <!--   written this way, or that there weren't any then that were -->
-          <!--   written poorly, but simply that because of a lack of -->
-          <!--   resources, computer scientists had to be frugal and write -->
-          <!--   light programs. Compilers can only optimize so much: -->
-          <!--   writing light and powerful code was the gold standard. -->
-          <!--   This also meant that most work wasn't done using a GUI, -->
-          <!--   but via text streams. This led to the creation of a -->
-          <!--   brilliant system of its own right: UNIX, with a clever but -->
-          <!--   simple core philosophy: -->
-          <!--   <cite> -->
-          <!--     each program should do one thing, and do it well. -->
-          <!--   </cite> Doug McIlroy, the creator of the pipe (|) also -->
-          <!--   added his own, about usefully using STDIN and STDOUT, and -->
-          <!--   handling text streams. Such a philosophy may seem -->
-          <!--   simplistic and obvious, but it is the holy grail of -->
-          <!--   writing good software. -->
-          <!-- </p> -->
-          <h2>UNIX Tools</h2>
-          <p>
-            Donald Knuth, demonstrating literate programming, once
-            wrote a ten-page program to count the \(k\) most
-            frequently used words in an input file, and print out a sorted list of the
-            words with their frequencies. Knuth's paper was reviewed
-            by McIlroy, who added at the end of his review a six
-            command pipeline (using UNIX tools), that also solves the
-            problem.
-          </p>
-            <blockquote style="font-size:14px">
-              tr -cs A-Za-z '\n' |
-              tr A-Z a-z |
-              sort |
-              uniq -c |
-              sort -rn |
-              sed ${1}q
-            </blockquote>
-          <p>
-            For those unfamiliar with the UNIX command line, this
-            pipeline takes the input text stream,
-            transliterates the complement (-c) of the alphabet set to newlines,
-            and squeezes (-s) multiple newlines. It then 'pipes' this
-            stream into the next command, which transliterates all
-            capital letters to lowercase ones. These are then sorted
-            to bring identical words together, and duplicates removed
-            using <code>uniq</code>, with a count added (-c). Again
-            sorted in reverse numeric order, since the first 'column'
-            of the stream is the frequency. The top \(k\) lines are
-            then printed using the stream editor (taken as the first
-            argument, ${1}). This could've been done
-            using <code>head</code> as well, but perhaps it wasn't
-            around at the time.
-          </p>
-          <p>
-            This example perfectly illustrates the power of the UNIX
-            command line and philosophy. Although Knuth's solution was
-            more efficient (\(O(n\log{n})\) vs \(O(\log{n})\) IIRC),
-            the beauty lies in the way UNIX works: it's a set of tiny
-            programs that don't do much alone, but together are able
-            to perform complex tasks one would have to write a
-            monolithic program to solve. This is the right way to
-            write software: since it does not leave the end user
-            trapped in the mind and imagination of the developer: the
-            user can do whatever he wants with a box of tools. This
-            has an analogue in mechanical work: would you choose one
-            tool that does a few tasks in a mediocre way, or carry a
-            toolbox that can do any number of tasks by using the tools
-            in combination? Yes: modular is better.
-          </p>
-          <h2>Monolithic Software</h2>
-          <p>
-            The software people use today is nothing like the UNIX
-            shell
-            (usually <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">bash</a>).
-            It's usually a gigantic program that does the functions of
-            many smaller programs. A popular example (from a brilliant
-            essay
-            called <cite><a href="http://cristal.inria.fr/~weis/info/commandline.html">In
-            The Beginning Was The Command Line</a></cite>), is that of
-            the program <code>wc</code> being replaced by a feature
-            in, say, MS Word that counts all the words. In essence,
-            modern programs accumulate features, combining the
-            features of more and more smaller programs and integrating
-            them. This probably started with the Kitchen Sink, Emacs,
-            but was quickly adopted by many others. Let me be clear.
-            This approach isn't necessarily wrong or less good: but it
-            does mean one thing: you'll reach a point where
-            two <b>huge</b> programs just can't be combined with each
-            other. Maybe it's because they were built by different
-            people, or to solve different problems: but they can't
-            communicate with each other using pipes and text streams
-            anymore, for instance, Word and \(\mathrm{\LaTeX}\). This
-            is where the problems begin:
-            <ol>
-              <li>Big programs can't work together neatly. They use
-              different file formats, they're doing different tasks,
-              and a huge amount of code has to be written to make
-              these programs talk to each other.</li>
-              <li>De-facto standards are set, giving one piece of
-              software a monopoly. By definition, such software will
-              be the easiest to use even for a beginner. However,
-              easy to use tools are seldom the best possible tools
-              for the job. Consider Microsoft Word. Easy to use,
-              requires no reading of the manual, but cannot handle
-                serious writing well at all. Or, put graphically:<p> </p>
- <center><img src="wordvslatex.gif" alt="Word vs. LaTeX"></center><p> </p>
-            Besides, such software generates monopolies: the 90's
-            Microsoft monopoly wasn't very long ago.
-              </li>
-            </ol>
-          </p>
-          <p>
-            What does this eventually mean for software as a whole?
-            It's a net loss for humanity. Instead of using tools of
-            mathematical precision, we tend to use the only tool we
-            know how. The law of the instrument plays out, eventually
-            resulting in nobody but the intellectual 'elite' using the
-            right tools for the job.
-          </p>
-          <p>
-            I'm not sure how software gets away with this. Everywhere
-            else (think back to car mechanics), eventually, people
-            learn to use the right tool and adopt it quickly. However,
-            it seems that this does not hold true for software. Is it
-            really that hard to read a manual and to spend a few days
-            learning to use, say, vim? It does pay off in the long
-            run. Maybe it's human laziness: it's much easier to click
-            around and guess at how to use software than reading its
-            manual.
-          </p>
-          <h2>Conclusion</h2>
-
-          <p>
-            Steve Jobs often touted how people completely unfamiliar
-            with computers could quickly use iOS without much help due
-            to its simple design. He was right: using iPhones is a lot
-            easier than using Linux, and requires far less training.
-            Maybe that's a good thing: but it over-panders to a class
-            of users having no prior experience with computers:
-            primarily children and grandparents. However, there is an
-            increasingly large number of people today using crappy
-            tools, despite having a fair amount of computer literacy:
-            the secretaries, the administrators, the government, the
-            police.
-            </p>
-
-	</article>
-      </div>
-    </section>
-    <!-- <aside id="meta" style="display: fixed;top:100px;right: 0"> -->
-    <!-- 	<div> -->
-
-    <!-- 		<a class="previous" href="https://ryanfaulhaber.com/posts/fp-lessons/"> Lessons Learned from Functional Programming</a> -->
+<div class="org-src-container">
+<pre class="src src-sh">tr -cs A-Za-z <span style="color: #539AFC;">'\n'</span> |
+tr A-Z a-z |
+sort |
+uniq -c |
+sort -rn |
+sed $<span style="color: #5EC4FF;">{</span><span style="color: #718CA1;">1</span><span style="color: #5EC4FF;">}</span>q
+</pre>
+</div>
+<p>
+For those unfamiliar with the UNIX command line, this
+pipeline takes the input text stream,
+transliterates the complement (-c) of the alphabet set to newlines,
+and squeezes (-s) multiple newlines. It then 'pipes' this
+stream into the next command, which transliterates all
+capital letters to lowercase ones. These are then sorted
+to bring identical words together, and duplicates removed
+using <code>uniq</code>, with a count added (-c). Again
+sorted in reverse numeric order, since the first 'column'
+of the stream is the frequency. The top \(k\) lines are
+then printed using the stream editor (taken as the first
+argument, ${1}). This could've been done
+using <code>head</code> as well, but perhaps it wasn't
+around at the time.
+</p>
 
 
-    <!-- 	</div> -->
-    <!-- </aside> -->
+<p>
+This example perfectly illustrates the power of the UNIX
+command line and philosophy. Although Knuth's solution was
+more efficient (\(O(n\log{n})\) vs \(O(\log{n})\) IIRC),
+the beauty lies in the way UNIX works: it's a set of tiny
+programs that don't do much alone, but together are able
+to perform complex tasks one would have to write a
+monolithic program to solve. This is the right way to
+write software: since it does not leave the end user
+trapped in the mind and imagination of the developer: the
+user can do whatever he wants with a box of tools. This
+has an analogue in mechanical work: would you choose one
+tool that does a few tasks in a mediocre way, or carry a
+toolbox that can do any number of tasks by using the tools
+in combination? Yes: modular is better.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0a6c63d" class="outline-2">
+<h2 id="org0a6c63d"><span class="section-number-2">2</span> Monolithic Software</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+The software people use today is nothing like the UNIX
+shell
+(usually <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">bash</a>.
+It's usually a gigantic program that does the functions of
+many smaller programs. A popular example (from a brilliant
+essay
+called <a href="http://cristal.inria.fr/~weis/info/commandline.html">In The Beginning Was The Command Line</a>, is that of
+the program <code>wc</code> being replaced by a feature
+in, say, MS Word that counts all the words. In essence,
+modern programs accumulate features, combining the
+features of more and more smaller programs and integrating
+them. This probably started with the Kitchen Sink, Emacs,
+but was quickly adopted by many others. Let me be clear.
+This approach isn't necessarily wrong or less good: but it
+does mean one thing: you'll reach a point where
+two <i>huge</i> programs just can't be combined with each
+other. Maybe it's because they were built by different
+people, or to solve different problems: but they can't
+communicate with each other using pipes and text streams
+anymore, for instance, Word and \(\mathrm{\LaTeX}\). This
+is where the problems begin:
+</p>
+<ol class="org-ol">
+<li>Big programs can't work together neatly. They use
+different file formats, they're doing different tasks,
+and a huge amount of code has to be written to make
+these programs talk to each other.</li>
+<li>De-facto standards are set, giving one piece of
+software a monopoly. By definition, such software will
+be the easiest to use even for a beginner. However,
+easy to use tools are seldom the best possible tools
+for the job. Consider Microsoft Word. Easy to use,
+requires no reading of the manual, but cannot handle
+serious writing well at all. Besides, such software
+generates monopolies: the 90's Microsoft monopoly
+wasn't very long ago.</li>
+</ol>
 
 
+<p>
+What does this eventually mean for software as a whole?
+It's a net loss for humanity. Instead of using tools of
+mathematical precision, we tend to use the only tool we
+know how. The law of the instrument plays out, eventually
+resulting in nobody but the intellectual 'elite' using the
+right tools for the job.
+</p>
 
 
-    <footer id="footer">
-      <p id="copyright">
+<p>
+I'm not sure how software gets away with this. Everywhere
+else (think back to car mechanics), eventually, people
+learn to use the right tool and adopt it quickly. However,
+it seems that this does not hold true for software. Is it
+really that hard to read a manual and to spend a few days
+learning to use, say, vim? It does pay off in the long
+run. Maybe it's human laziness: it's much easier to click
+around and guess at how to use software than reading its
+manual.
+</p>
+</div>
+</div>
 
-      </p>
-    </footer>
-
-
-</body></html>
+<div id="outline-container-org8244b57" class="outline-2">
+<h2 id="org8244b57"><span class="section-number-2">3</span> Conclusion</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Steve Jobs often touted how people completely unfamiliar
+with computers could quickly use iOS without much help due
+to its simple design. He was right: using iPhones is a lot
+easier than using Linux, and requires far less training.
+Maybe that's a good thing: but it over-panders to a class
+of users having no prior experience with computers:
+primarily children and grandparents. However, there is an
+increasingly large number of people today using crappy
+tools, despite having a fair amount of computer literacy:
+the secretaries, the administrators, the government, the
+police. That's a potential market to tap into.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr><p>Created in <a href="https://www.gnu.org/software/emacs/">Emacs</a> 25.2.2 (<a href="https://orgmode.org">Org</a> mode 9.3.6).</p>
+</div>
+</body>
+</html>

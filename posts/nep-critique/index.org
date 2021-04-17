@@ -1,0 +1,136 @@
+#+include: ../../preamble.org
+
+#+HTML: <h1 id="title">A Critique of India's NEP 2020</h1>
+#+HTML: <div class="post-meta"> <2020-08-20 Fri> - 5 min read
+#+HTML: </div>
+
+I'd written this article as an Instagram story, which I'm re-posting
+due to its popularity.
+
+* Introduction
+
+I'll say this outright: I'm not for the measures taken by the
+educational reform. Hear me out.
+
+The changes in the system are quite clearly mimicking the educational
+systems abroad, and in particular, that of the USA. The divisions
+between preschool, elementary, middle, and high, along with the
+combined entrance test for colleges is the same. Moreover, the way
+boards are being removed and syllabus cut for ECs is quite clearly
+another copied system.
+
+However, when we mimic a system, we inherit not only its virtues but
+its flaws as well. It's necessary that we analyse these impartially
+before jumping to conclusions.
+
+
+* Easier Isn't Necessarily Better
+
+I've heard a lot of complaints against the Indian education system.
+How it's too science focused, has streams, does not cultivate a
+creative environment, and puts pressure. However, what the Indian
+system does do well, better than any other education system in the
+world, is have rigorous education. We do each thing ten times till we
+learn it. We dive deep into the subject matter. Our rigour and depth
+in subjects is precisely what sets Indians apart: there is good reason
+Indian-educated Indians are leading Silicon Valley, and it's this very
+rigour and way of doing things. To anybody who disagrees, compare the
+difficulty of the APs of the USA and the JEE. While we're not perfect,
+we are doing pure education better than the West, and that makes us a
+formidable country. What the USA does do better than us is college
+education, from undergraduates through post grads. If anything, we
+should aim to mimic those.
+
+
+* Streams Are A Good Thing
+It is common knowledge that it's good to specialise early. More and
+more colleges offer increasing levels of specialisation even at
+undergrad levels, because the less time you spend studying irrelevant
+stuff, the better. The harsh truth is, one simply cannot
+simultaneously be an engineer and a psychologist: you have to
+specialise, and become an expert in the field.
+
+The concept of streams allows exactly this, in fact, it enforces a
+specialisation early, making young adults explore career paths early
+on, giving us an edge.
+
+By being lax about streams, we drag the paradoxes of consumerism to
+education: too many choices.
+
+
+* The Cold Never Bothered Me Anyway
+
+  People who go deep into fields understand the value of being able to
+  deal with pressure (an experience boards gives us), the need for
+  rigour (what our current system is based upon), and the need for
+  specialisation.
+
+  Sure, these things seem annoyances in the short term, but the true
+  value is recognised when professional work is being done in the field
+  and an Indian comes up with an elegant solution as a result of years
+  of practice. The cold we felt doesn't bother us any more: we embrace
+  it.
+
+  Until you embrace this harsh reality, you will forever wish that
+  things be easier for us, when we should be begging, for our sake and
+  that of this nation, for more complex syllabus.
+
+  The system we're shifting to, meanwhile, is geared towards making
+  education ‘fun' and ‘exciting', which are both, brutally honestly,
+  shallow short term dreams. Any subject becomes fun when you dive deep
+  into it, is learning the alphabet expected to be fun, or is reading
+  Harry Potter? The shift to an education system like that of the West
+  will mean we surrender our single biggest advantage as a developing
+  nation: knowing subjects more deeply than our Western counterparts
+  studying less rigorous curriculums. For all the jokes about Indians
+  aping the British by wearing suits, we still are mimicking the West,
+  despite our own model already being successful.
+
+
+* Difficulty, Time, And Coding
+
+  The reform is obviously making the system less difficult and spending
+  more time on things like ‘coding'. I laughed when I saw coding up
+  there. If anybody has tried to study programming, they know that the
+  basis is pure mathematics of the highest level. How can you teach 12
+  year olds concepts that they don't have the tools to? In fact, the IP
+  syllabus we have for 11-12th is pathetically basic (~algos, recursion)
+  what are we going to teach 6th graders? (In fact, the software we use
+  to teach in all but one state is proprietary Microsoft, rather than
+  our native Indian CDAC's BOSS Linux distro.) This is a clear case of
+  building castles in the air: saying that we teach AI sounds
+  better than saying we teach math for 10 years: but, it's the latter
+  that brings true understanding.
+
+
+* Nationalism
+
+  If you're truly patriotic and an Indian, will you stand by a reform
+  that cripples the children going through it? That will never teach
+  them to deal with pressure, that will trick them into thinking they
+  are competent when they are not, a system, in essence, that encourages
+  mediocrity and takes away from India's youth the one thing we have:
+  excellence and common sense in a fine blend, even though we may not
+  have the resources of the West.
+
+
+  Take away the rigour, take away our essence, make us clones of what
+  the West produces, and what are we left with? A youth that is
+  unemployable, because they've never been tested, never faced pressure,
+  and never found the beauty that lies in the thin margin note of an old
+  textbook from 1892.
+
+
+* Conclusion
+
+  I won't comment on the political angle, that of making a big move
+  right before elections that the public will like. It isn't my place to
+  do so, I am neither an expert nor an active follower of politics. What
+  I will say, however, is that you can read this. You know, inside you,
+  that making education easier isn't how we're going to succeed as a
+  nation. Doing things the long hard way sucks, but ultimately, someone
+  has to do it. And if we don't, the only two countries left doing
+  anything rigorous will be Russia and China; and that's one road I
+  really don't want to go down. If you feel pride in a fellow Indian's
+  achievement, seeing Pichai on stage and Mangalyaan on the Moon, you
+  should already know by now: making things easier isn't the way to go.

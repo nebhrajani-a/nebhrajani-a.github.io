@@ -1,0 +1,179 @@
+#+include: ../../preamble.org
+
+#+HTML: <h1 id="title">Christmas Project: Installing Linux On A 2006 MacBook (2,1)</h1>
+#+HTML: <div class="post-meta"> <2021-01-01 Fri> - 6 min read
+#+HTML: </div>
+
+* Motivation
+It's generally a good idea to leave Apple products alone. The hardware
+and software are tightly integrated enough that third-party software
+/feels/ third party. However, Apple has the irritating tendency
+of dropping support within five years, leaving your otherwise good
+hardware abandoned, forcing you to buy their new, latest gimmick. Not
+that I mind such a business model: it's made them a status symbol.
+This is tolerable for phones (mostly since nobody really makes a good
+phone), but it's not ideal for a computer. Which brings me to the
+object in question, an old 2006 MacBook my grandfather used to use,
+dual booted with Windows XP. It slowed down to a point where it was
+impossible for him to run it anymore -- although this was more because
+of malware and bloat than hardware issues -- and came to rest in an
+abandoned drawer.
+
+
+Recently, I had the need to take a computer somewhere, and lugging a
+24 inch desktop around wasn't an option, so I turned to this MacBook.
+When I got it, it was running OS X 10.6 Snow Leopard -- and wouldn't
+update beyond that. The dual boot XP was long gone. Snow Leopard is a
+great OS, but it's now too old to run anything but outdated browsers
+(the Web standard moves fast) and Aquamacs. Besides, it's irritating
+to use FreeBSD's command line tools rather than GNU's [[https://unix.stackexchange.com/questions/352977/why-does-this-bsd-grep-result-differ-from-gnu-grep][(known issues)]],
+and Homebrew isn't as nice to use as APT. I did try, and succeeded in
+installing Emacs 25.2 and MacTeX. Still, the compatible GCC was too
+old to support modern C++ standards -- unacceptable. The only option
+remaining was to install Linux, but for reasons outlined later, it
+wasn't an easy job. I'm writing this guide both for future reference
+(there's an old Mac Mini from 2006 also), and in case it might help
+somebody with some old hardware.
+
+* Scope
+In the beginning, I thought the MacBook I had was a 4,1,
+meaning that the Linux install is the standard steps, plus
+some proprietary driver installs for the Broadcom WiFi
+card and trackpad. Now, the internal Matshita DVD drive is
+broken. Tried loading the install ISO using an external
+drive and a USB, but the Apple bootloader detected none of
+these. After reading up a bit on the Internet, and
+rechecking the MacBook's specification (2,1): I came
+across [[https://mattgadient.com/linux-dvd-images-and-how-to-for-32-bit-efi-macs-late-2006-models/][Matt Gradient's website]] which explains that the EFI
+bootloader for the laptop is 32-bit, but it does support a
+64-bit OS. That's odd in itself, but what's weirder is the
+fact that it doesn't actually boot from a 32-bit version
+of Linux either. From [[https://bugs.launchpad.net/ubuntu-cdimage/+bug/1298894][an Ubuntu bug report]], it turns out
+that this is because, by default, Ubuntu and Debian ISOs
+offer a choice to the computer for which El-Torito boot
+image to use, and this doesn't sit well with the Mac. The
+same thread has a C program that zeroes out some bytes and
+takes away extra boot image options, leaving only the HFS+
+boot image the Mac supports. Now the last remaining issue
+is that of making a bootable USB, since the internal DVD
+drive is broken. Turns out, there's a way to do this too.
+
+* Procedure
+ These are simplified steps that don't include a lot of
+ head-banging and kernel panic issues I faced. Be warned,
+ you might face this too.
+** Modding the ISO
+
+Compile the C program ([[https://bugs.launchpad.net/ubuntu-cdimage/+bug/1298894/comments/16][comment #16 at the bug report]]), and pass it the ISO. It'll
+modify it. Keep the modified file safe.
+** Making a Bootable USB
+
+The first thing to understand about classical EFI is that
+it sucks. The modern UEFI is a sensible standard that
+supports nearly everything you throw at it, but EFI 1.0
+(2005) is almost made to make it difficult to use. Sure,
+I've heard people take issue with UEFI, but that's for
+another post. So, for EFI booting, "EFI interprets the
+boot image as FAT filesystem and looks up a standardized
+file path for further processing. The file name depends on
+the processor type. E.g. /EFI/BOOT/BOOTIA32.EFI for 32 bit
+x86 and /EFI/BOOT/BOOTX64.EFI for 64 bit x86." However,
+here's where it gets weird. Legacy UEFI looks for this on
+a /separate partition/ (type FAT32) at the lowest
+block address. However, the ISO must offer a second set of
+volume descriptors and file tree at a higher block
+address. The FAT32 EFI partition should be in an MBR-type
+table.
+
+
+Now that we know what we have to do, let's figure out how.
+Stefan's guide]] is spot on, and involves writing zeros to
+the USB, then creating a MBR/DOS partition table. Then,
+make partition 1 the EFI partition, and write BOOTIA32.EFI
+to it, along with a simple GRUB2 configuration. We then
+mark *this partition* as bootable, since we want the
+MacBook to boot via legacy EFI that doesn't support
+reading boot files from ISOs. In a second partition, =dd=
+the modified ISO to the second partition. Pro tip: use
+=pv= to check what the pipe's up to (=sudo dd
+if=/path/to/iso | pv | sudo dd of=/mount/path/ bs=4M=). Do
+not mark it as bootable, or you'll be in trouble.
+
+** Plug In the USB, Boot, and Watch Install Fail
+Now, holding the Option key while booting the Mac should
+show an option for 'EFI boot'. Select it, and boot into
+the standard install system. I used Linux Mint 19.3 XFCE.
+Open GParted. Wipe the disk (you really don't want OS X,
+do you?) and write a new partition table of type GPT. Now,
+I know that we talked about using MBR to support EFI boot,
+but somehow, MBR/DOS just doesn't work -- I think this is
+because GPT has some support for legacy EFI booting using
+a protective MBR partition -- but I'm not sure. Run
+through the install, and select the "Erase entire disk"
+option and let Mint do what it wants to.
+
+The install fails at installing GRUB2. Don't worry, this
+is because grub-config couldn't automatically figure out
+where the disks are, so we'll tell it from the GRUB2
+shell. Hold the power key till the machine boots down,
+plug out the USB, and reboot. After some time, you should
+see:
+
+#+BEGIN_SRC sh
+grub>
+#+END_SRC
+
+Point it to the root, load the kernel, point it to the
+INITRD.IMG, and boot.
+
+#+BEGIN_SRC sh
+grub> set root =(hd0,gpt2) #this was where / was located. Might vary depending on install, search around using TAB to find it
+grub> linux /vmlinux root=/dev/sda2
+grub> initrd /initrd.img
+grub> boot
+#+END_SRC
+
+It then boots correctly. Login, then
+
+#+BEGIN_SRC
+$ sudo update-grub
+#+END_SRC
+Which is a neat script that configures GRUB according to
+the current boot and /etc/default/grub.
+
+** Welcome to Linux.
+
+That completes the install. It's a bit tricky getting
+everything to work the first time, so don't give up. You can
+now configure Linux, install WiFi drivers (mine worked
+OOTB), and generally play around.
+
+* Conclusion
+
+
+The old MacBook's hardware still works well. XFCE is exceptionally
+light, so I tried Compiz with its cube animations, and it works
+smoothly. The trackpad is slightly jittery near buttons, leading me to
+believe it's some XFCE issue, but it's not enough to bother. What's
+cool is that this old hardware is able to run a modern Linux system
+with ease. The nVidia graphics card works too: I played SuperTuxKart
+and Neverball without any significant issues. Emacs runs well (that's
+pretty much all I need on a machine anyway), the daemon swallows the
+'standard' 150 MiB of RAM in the background. \(\mathrm{\TeX}\) and GCC
+work as expected. It's pretty much a less powerful clone of my i7
+desktop. I'm probably the only person who'll use such an old machine
+for active development work, so I'll keep this page updated with
+unexpected issues if I run into any.
+
+There are a couple of annoyances: the Bluetooth doesn't work
+sometimes, and didn't work well with the audio devices I tried. That
+was also the case with OS X though, and I'm not energetic enough to
+try and fix that. The machine has 4 GB of RAM, but the processor
+only supports 3 GB (insane, I know), but 3 GB is surprisingly
+enough. If Mint XFCE gets too heavy, I may shift to something like
+antiX or Bodhi, but that seems far away.
+
+
+Anyway, it's always a fun challenge bringing old hardware
+back to life: especially one with a 32-bit legacy EFI and
+broken DVD drive. Merry Christmas.
