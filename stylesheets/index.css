@@ -7,6 +7,11 @@ pre {
 }
 
 
+hr {
+    border: 0;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    height: 1px;
+}
 
 
 .space-theme body {
@@ -281,6 +286,7 @@ pre {
 .sea-theme h6 {
     color: #d6e9ff;
 }
+
 .sea-theme pre {
     border-top: 1px solid #88b4e7;
     border-bottom: 1px solid #88b4e7;
