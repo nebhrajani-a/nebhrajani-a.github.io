@@ -40,7 +40,7 @@ around at the time.
 
 This example perfectly illustrates the power of the UNIX
 command line and philosophy. Although Knuth's solution was
-more efficient (\(O(n\log{n})\) vs \(O(\log{n})\) IIRC),
+more efficient ($O(n\log{n})$ vs $O(\log{n})$ IIRC),
 the beauty lies in the way UNIX works: it's a set of tiny
 programs that don't do much alone, but together are able
 to perform complex tasks one would have to write a
