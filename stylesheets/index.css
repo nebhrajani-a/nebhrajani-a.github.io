@@ -276,7 +276,8 @@ hr {
 }
 
 .sea-theme body {
-    background: #1d262f;
+    /* background: #1d262f; */
+    background: #000000;
 }
 .sea-theme h1,
 .sea-theme h2,
@@ -284,14 +285,16 @@ hr {
 .sea-theme h4,
 .sea-theme h5,
 .sea-theme h6 {
-    color: #d6e9ff;
+    color: #FFFFFF;
+    font-weight: "bold";
 }
 
 .sea-theme pre {
-    border-top: 1px solid #88b4e7;
-    border-bottom: 1px solid #88b4e7;
-    background: #1d262f;
-    color: #88b4e7;
+    border: 1px solid #808080;
+    /* border-bottom: 1px solid ##4AF626; */
+    /* background: #1d262f; */
+    background: #000000;
+    color: #8F8F8F;
 }
 .sea-theme pre code {
     color: #5d8cc0;
@@ -316,38 +319,39 @@ hr {
     color: #88b4e7;
 }
 .sea-theme a {
-    color: #34febb;
-    border-bottom: 1px solid #32ae85;
+    color: #586f89;
+    border-bottom: 1px solid #586f89;
 }
 .sea-theme a,
 .sea-theme a:hover {
     text-decoration: none;
 }
 .sea-theme a:hover {
-    background-color: #32ae85;
+    background-color: #181818;
 }
 .sea-theme p,
 .sea-theme strong,
 .sea-theme em,
 .sea-theme ul,
 .sea-theme ol {
-    color: #88b4e7;
+    /* color: #88b4e7; */
+    color: #FFFFFF;
 }
 .sea-theme blockquote,
 .sea-theme cite {
     color: #32ae85;
 }
 .sea-theme header {
-    color: #88b4e7;
+    color: #FFFFFF;
 }
 .sea-theme mark {
     background: #34febb;
 }
 .sea-theme code {
-    color: #88b4e7;
-    background: #444c55;
-    padding: 1px;
-    border-radius: 5px;
+    color: #808080;
+    /* background: #444c55; */
+    /* padding: 1px; */
+    /* border-radius: 5px; */
 }
 .sea-theme code::before, .sea-theme code::after {
     content: "`";
@@ -356,11 +360,11 @@ hr {
     color: #586f89;
 }
 .sea-theme div.highlight pre {
-    background-color: initial;
-    background: initial;
+    /* background-color: initial; */
+    /* background: initial; */
 }
 .sea-theme .tags-label {
-    color: #586f89;
+    /* color: #586f89; */
 }
 
 .forest-theme body {
@@ -451,7 +455,7 @@ hr {
 }
 
 body {
-    font-family: "Fira Mono", monospace;
+    font-family: "Courier New";
     text-rendering: geometricPrecision;
     max-width: 60vw;
     margin: 0 auto;
@@ -526,4 +530,35 @@ sup {
     font-size: 75%;
 }
 
+
+@media (prefers-color-scheme: light) {
+.sea-theme h1,
+.sea-theme h2,
+.sea-theme h3,
+.sea-theme h4,
+.sea-theme h5,
+.sea-theme h6 {
+    color: #000000;
+    font-weight: "bold";
+}
+.sea-theme p,
+.sea-theme strong,
+.sea-theme em,
+.sea-theme ul,
+.sea-theme ol {
+    /* color: #88b4e7; */
+    color: #000000;
+}
+
+.sea-theme body {
+    /* background: #1d262f; */
+    background: #FFFFFF;
+}
+
+.sea-theme ol {
+    /* color: #88b4e7; */
+    color: #000000;
+}
+
+}
 /*# sourceMappingURL=index.css.map */

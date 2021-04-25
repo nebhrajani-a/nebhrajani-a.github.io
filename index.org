@@ -4,7 +4,8 @@
 #+HTML: <!-- <div class="post-meta - 1 min read
 #+HTML: -->
 
-* $ whoami
+
+* About
   I’m a high school student living in Pune, MH, India. My interests
   include computer programming, electronics, mathematics, badminton,
   guitar, and pedagogy.
@@ -13,16 +14,18 @@
   encryption, Lisp, GNU Emacs, C, C++, \(\mathrm{\LaTeX}\), Python,
   Linux.
 
-* $ ping
+  - =lastname: Nebhrajani=
+  - =firstname: Aditya=
 
-  - [[mailto:nebhrajani@protonmail.com][Email]]
+* Contact
+  - =lastname @ protonmail.com=
   - [[./gpg.txt][GPG]]
   - [[https://github.com/nebhrajani-a][GitHub]]
   - [[https://www.linkedin.com/in/nebhrajani][LinkedIn]]
 
-* $ man site
-  This site’s theme is [[https://github.com/rfaulhaber/duotone-theme-hugo][duotone-theme-hugo]]. The source is on a [[https://github.com/nebhrajani-a/nebhrajani-a.github.io][GitHub
-  repo]]. This site does not use trackers or any JavaScript other than
-  [[https://www.mathjax.org][MathJax]], a program used to convert LaTeX code to MathML for HTML
-  rendering. MathJax passes most JavaScript security extensions,
-  including all of Tor's settings other than 'Safest'.
+* Site
+  This site’s source is on a [[https://github.com/nebhrajani-a/nebhrajani-a.github.io][GitHub repo]]. This site does not use
+  trackers or any JavaScript other than [[https://www.mathjax.org][MathJax]], a program used to
+  convert LaTeX code to MathML for HTML rendering. MathJax passes most
+  JavaScript security extensions, including all of Tor's settings
+  other than 'Safest'.
