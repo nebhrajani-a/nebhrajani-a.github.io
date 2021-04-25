@@ -559,6 +559,9 @@ sup {
     /* color: #88b4e7; */
     color: #000000;
 }
+.sea-theme a:hover {
+    background-color: #CDCDCD;
+}
 
 }
 /*# sourceMappingURL=index.css.map */
