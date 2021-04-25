@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-04-20 Tue 13:46 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>/nebhrajani/../tmp/</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Nebhrajani A.V." />
+<html class="sea-theme">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./stylesheets/hack.css" />
+<link rel="stylesheet" href="./stylesheets/css.css" />
+<link rel="stylesheet" href="./stylesheets/standard.css" />
+<link rel="stylesheet" href="./stylesheets/index.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<nav class="sidebar-nav">
+<a class="nav-item" title="" href="https://nebhrajani-a.github.io/">home</a>
+<a class="nav-item" title="" href="https://nebhrajani-a.github.io/posts/">posts</a>
+<a class="nav-item" title="" href="https://nebhrajani-a.github.io/files/">files</a>
+</nav>
+<h1 id="title">Christmas Project: Installing Linux On A 2006 MacBook (2,1)</h1>
+
+<div class="post-meta"> <2021-04-17 Sat> - 3 min read
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #5EC4FF;">import</span> readtime <span style="color: #5EC4FF;">as</span> rt
+<span style="color: #5EC4FF;">import</span> re
+<span style="color: #5EC4FF;">from</span> datetime <span style="color: #5EC4FF;">import</span> datetime
+
+<span style="color: #5EC4FF;">with</span> <span style="color: #5EC4FF;">open</span><span style="color: #5EC4FF;">(</span><span style="color: #539AFC;">'tmp.org'</span>, <span style="color: #539AFC;">'r'</span><span style="color: #5EC4FF;">)</span> <span style="color: #5EC4FF;">as</span> <span style="color: #5EC4FF;">file</span>:
+<span style="background-color: #181E24;"> </span>   <span style="color: #718CA1;">data</span> = <span style="color: #5EC4FF;">file</span>.read<span style="color: #5EC4FF;">()</span>
+
+<span style="color: #718CA1;">tmp</span> = <span style="color: #5EC4FF;">str</span><span style="color: #5EC4FF;">(</span>rt.of_markdown<span style="color: #E27E8D;">(</span>data<span style="color: #E27E8D;">)</span><span style="color: #5EC4FF;">)</span>
+
+<span style="color: #5EC4FF;">with</span> <span style="color: #5EC4FF;">open</span><span style="color: #5EC4FF;">(</span><span style="color: #539AFC;">'tmp.org'</span>, <span style="color: #539AFC;">'r'</span><span style="color: #5EC4FF;">)</span> <span style="color: #5EC4FF;">as</span> <span style="color: #5EC4FF;">file</span>:
+<span style="background-color: #181E24;"> </span>   <span style="color: #718CA1;">lines</span> = <span style="color: #5EC4FF;">file</span>.readlines<span style="color: #5EC4FF;">()</span>
+
+<span style="color: #718CA1;">count</span> = 0
+<span style="color: #5EC4FF;">for</span> line <span style="color: #5EC4FF;">in</span> lines:
+<span style="background-color: #181E24;"> </span>   <span style="color: #5EC4FF;">if</span> re.search<span style="color: #5EC4FF;">(</span><span style="color: #539AFC;">"post-meta"</span>, line<span style="color: #5EC4FF;">)</span>:
+<span style="background-color: #181E24;"> </span>   <span style="background-color: #181E24;"> </span>   <span style="color: #5EC4FF;">break</span>
+<span style="background-color: #181E24;"> </span>   <span style="color: #718CA1;">count</span> += 1
+
+<span style="color: #718CA1;">newline</span> = lines<span style="color: #5EC4FF;">[</span>count<span style="color: #5EC4FF;">][</span>-1<span style="color: #5EC4FF;">]</span>
+<span style="color: #718CA1;">lines</span><span style="color: #5EC4FF;">[</span>count<span style="color: #5EC4FF;">]</span> = lines<span style="color: #5EC4FF;">[</span>count<span style="color: #5EC4FF;">][</span>:-1<span style="color: #5EC4FF;">]</span>
+
+<span style="color: #5EC4FF;">if</span> re.search<span style="color: #5EC4FF;">(</span><span style="color: #539AFC;">"min read"</span>, lines<span style="color: #E27E8D;">[</span>count<span style="color: #E27E8D;">]</span><span style="color: #5EC4FF;">)</span>:
+<span style="background-color: #181E24;"> </span>   <span style="color: #718CA1;">lines</span><span style="color: #5EC4FF;">[</span>count<span style="color: #5EC4FF;">]</span> = lines<span style="color: #5EC4FF;">[</span>count<span style="color: #5EC4FF;">][</span>:-13<span style="color: #5EC4FF;">]</span>
+
+
+<span style="color: #718CA1;">lines</span><span style="color: #5EC4FF;">[</span>count<span style="color: #5EC4FF;">]</span> += <span style="color: #539AFC;">" - "</span> + tmp + newline
+
+
+<span style="color: #5EC4FF;">with</span> <span style="color: #5EC4FF;">open</span><span style="color: #5EC4FF;">(</span><span style="color: #539AFC;">'tmp.org'</span>, <span style="color: #539AFC;">'w'</span><span style="color: #5EC4FF;">)</span> <span style="color: #5EC4FF;">as</span> <span style="color: #5EC4FF;">file</span>:
+<span style="background-color: #181E24;"> </span>   <span style="color: #5EC4FF;">file</span>.writelines<span style="color: #5EC4FF;">(</span>lines<span style="color: #5EC4FF;">)</span>
+</pre>
+</div>
+
+
+<p>
+\begin{equation}\label{eqa}
+\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\end{equation}
+</p>
+
+
+
+<div id="outline-container-orgd004faa" class="outline-2">
+<h2 id="orgd004faa"><span class="section-number-2">1</span> Minor Grammatical</h2>
+<div class="outline-text-2" id="text-1">
+<ol class="org-ol">
+<li><i>just like a mother does to her new born</i>: Consider replacing
+the simile. Not all mothers take to their new borns, plus political
+correctness, sexist undertone.</li>
+<li><i>that <b>this</b> box of crayons would</i>: Which box? Consider using <i>a</i>.</li>
+<li><i><b>this</b> ongoing beef</i>: Which ongoing beef? Consider using <i>an</i>.</li>
+<li><i>and I texted her</i>: Word repetition, consider using <i>and texted her</i>.</li>
+<li><i>extreme  postmodern  and  pretentious  way</i>: Consider using <i>extremely</i>.</li>
+<li><i>Now with that in perspective</i>: Consider using <i>from that
+perspective</i> or <i>in that light</i>.</li>
+<li><i>people  in  this  community  form  a  nostalgic  or  sentimental
+connection  with  it</i>: With what? The community or the collection?</li>
+<li><i>seems too pretentious  or  silly</i>. Too pretentious or silly
+<b>to</b>&#x2026;? If not a comparison, consider replacing <i>too</i> with
+<i>incredibly</i> or some adjective.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org5101684" class="outline-2">
+<h2 id="org5101684"><span class="section-number-2">2</span> Other</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org4d2ff94" class="outline-3">
+<h3 id="org4d2ff94"><span class="section-number-3">2.1</span> Test subsecton</h3>
+<div class="outline-text-3" id="text-2-1">
+<ol class="org-ol">
+<li><b>Reason 1 &#x2014; Personal</b>: Consider either removing this or moving it
+to the end of the reasons: it's more personal and not relevant to
+the precise reason why you have beef. That it's not a stable career
+path doesn't have much to do with whether it's stupid or not.</li>
+<li><b>Main Question</b>: If you're convinced art is stupid in the present
+tense, why does your opinion change by the end of the speech?
+Consider saying: <i>The more I <b>was</b> convinced! Art is stupid!</i>.</li>
+<li><b>YouTube Video</b>:
+<ol class="org-ol">
+<li>Why was it hard to believe for you? Didn't you
+already have an idea that the judgement of art wasn't very
+scientific/logical?</li>
+<li>There seems to be a simultaneously running thread of you
+questioning your own ability along with the validity of art. I
+think the correlation deserves its own section: the cross
+connection between <b>Reason 1 &#x2014; Personal</b> and the statement
+here isn't clear or obvious.</li>
+</ol></li>
+<li><b>Gerhard Richter</b>: Isn't any painting paint on a canvas sheet?
+Maybe find a better way to insult it.</li>
+<li><b>Why People Buy Dumb Art</b>: Seems to be very heavily focused on the
+psychology of collecting rather than the philosophical implications
+of art, something more central to your talk. Maybe spend less
+time/space on this?</li>
+<li><b>Street Art</b>: Why do you say: <i>Simple answer, whatever the hell one
+wants.</i>: Doesn't that defeat the purpose of your talk: giving art
+meaning, then asking people to decide it for themselves? Even if
+you do so, maybe talk about the value of personal perspective on an
+art piece. Maybe I'm missing something.</li>
+<li><b>Finale</b>: <i>Art makes survival itself tolerable and worthwhile</i>:
+Quote should be on the presentation.</li>
+<li><p>
+Side note: I think you could talk a bit more about powerful art in
+history, how it caused revolutions and change and how it tells us
+about the past. Also how art is fundamentally an expression of
+human creativity and ingenuity the same way putting man on the Moon
+is.
+</p>
+
+<p>
+Hopefully I haven't misinterpreted anything. Cool speech.
+</p></li>
+</ol>
+
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #5EC4FF; font-weight: bold;">#include</span> <span style="color: #5EC4FF;">&lt;</span><span style="color: #539AFC;">bits/stdc++.h</span><span style="color: #5EC4FF;">&gt;</span>
+
+<span style="color: #5EC4FF;">struct</span> <span style="color: #EBBF83;">node</span>
+<span style="color: #5EC4FF;">{</span>
+  <span style="color: #EBBF83;">int</span> <span style="color: #718CA1;">dest</span>;
+  <span style="color: #EBBF83;">int</span> <span style="color: #718CA1;">weight</span>;
+<span style="color: #5EC4FF;">}</span>;
+
+<span style="color: #EBBF83;">void</span> <span style="color: #33CED8;">add_edge</span><span style="color: #5EC4FF;">(</span><span style="color: #E27E8D;">std</span>::<span style="color: #EBBF83;">vector</span><span style="color: #E27E8D;">&lt;</span><span style="color: #E27E8D;">std</span>::<span style="color: #EBBF83;">vector</span><span style="color: #8BD49C;">&lt;</span><span style="color: #EBBF83;">node</span><span style="color: #8BD49C;">&gt;</span><span style="color: #E27E8D;">&gt;</span>&amp; <span style="color: #718CA1;">g</span>, <span style="color: #EBBF83;">int</span> <span style="color: #718CA1;">src</span>, <span style="color: #EBBF83;">int</span> <span style="color: #718CA1;">dest</span>, <span style="color: #EBBF83;">int</span> <span style="color: #718CA1;">weight</span><span style="color: #5EC4FF;">)</span>
+<span style="color: #5EC4FF;">{</span>
+  g<span style="color: #E27E8D;">[</span>src<span style="color: #E27E8D;">]</span>.push_back<span style="color: #E27E8D;">(</span><span style="color: #8BD49C;">{</span>dest, weight<span style="color: #8BD49C;">}</span><span style="color: #E27E8D;">)</span>;
+<span style="color: #5EC4FF;">}</span>
+
+<span style="color: #EBBF83;">void</span> <span style="color: #33CED8;">bellman</span><span style="color: #5EC4FF;">(</span><span style="color: #E27E8D;">std</span>::<span style="color: #EBBF83;">vector</span><span style="color: #E27E8D;">&lt;</span><span style="color: #E27E8D;">std</span>::<span style="color: #EBBF83;">vector</span><span style="color: #8BD49C;">&lt;</span><span style="color: #EBBF83;">node</span><span style="color: #8BD49C;">&gt;</span><span style="color: #E27E8D;">&gt;</span>&amp; <span style="color: #718CA1;">g</span>, <span style="color: #E27E8D;">std</span>::<span style="color: #EBBF83;">vector</span><span style="color: #E27E8D;">&lt;</span><span style="color: #EBBF83;">int</span><span style="color: #E27E8D;">&gt;</span>&amp; <span style="color: #718CA1;">distance</span>, <span style="color: #EBBF83;">int</span> <span style="color: #718CA1;">src</span><span style="color: #5EC4FF;">)</span>
+<span style="color: #5EC4FF;">{</span>
+  distance<span style="color: #E27E8D;">[</span>src<span style="color: #E27E8D;">]</span> = 0;
+
+  <span style="color: #5EC4FF;">for</span> <span style="color: #E27E8D;">(</span><span style="color: #EBBF83;">int</span> <span style="color: #718CA1;">k</span> = 0; k &lt; g.size<span style="color: #8BD49C;">()</span> - 1; ++k<span style="color: #E27E8D;">)</span> <span style="color: #E27E8D;">{</span>
+    <span style="color: #5EC4FF;">for</span> <span style="color: #8BD49C;">(</span><span style="color: #EBBF83;">int</span> <span style="color: #718CA1;">i</span> = 0; i &lt; g.size<span style="color: #D98E48;">()</span>; ++i<span style="color: #8BD49C;">)</span> <span style="color: #8BD49C;">{</span>
+      <span style="color: #5EC4FF;">for</span> <span style="color: #D98E48;">(</span><span style="color: #EBBF83;">int</span> <span style="color: #718CA1;">j</span> = 0; j &lt; g<span style="color: #B62D65;">[</span>i<span style="color: #B62D65;">]</span>.size<span style="color: #B62D65;">()</span>; ++j<span style="color: #D98E48;">)</span> <span style="color: #D98E48;">{</span>
+        <span style="color: #5EC4FF;">if</span> <span style="color: #B62D65;">(</span>distance<span style="color: #EBBF83;">[</span>i<span style="color: #EBBF83;">]</span> != <span style="color: #E27E8D;">std</span>::<span style="color: #E27E8D;">numeric_limits</span><span style="color: #EBBF83;">&lt;</span><span style="color: #EBBF83;">int</span><span style="color: #EBBF83;">&gt;</span>::max<span style="color: #EBBF83;">()</span><span style="color: #B62D65;">)</span> <span style="color: #B62D65;">{</span>
+          distance<span style="color: #EBBF83;">[</span>g<span style="color: #33CED8;">[</span>i<span style="color: #33CED8;">][</span>j<span style="color: #33CED8;">]</span>.dest<span style="color: #EBBF83;">]</span> = <span style="color: #E27E8D;">std</span>::min<span style="color: #EBBF83;">(</span>distance<span style="color: #33CED8;">[</span>g<span style="color: #a2b6da;">[</span>i<span style="color: #a2b6da;">][</span>j<span style="color: #a2b6da;">]</span>.dest<span style="color: #33CED8;">]</span>, distance<span style="color: #33CED8;">[</span>i<span style="color: #33CED8;">]</span> + g<span style="color: #33CED8;">[</span>i<span style="color: #33CED8;">][</span>j<span style="color: #33CED8;">]</span>.weight<span style="color: #EBBF83;">)</span>;
+        <span style="color: #B62D65;">}</span>
+      <span style="color: #D98E48;">}</span>
+    <span style="color: #8BD49C;">}</span>
+  <span style="color: #E27E8D;">}</span>
+<span style="color: #5EC4FF;">}</span>
+
+<span style="color: #EBBF83;">int</span> <span style="color: #33CED8;">main</span><span style="color: #5EC4FF;">(</span><span style="color: #EBBF83;">void</span><span style="color: #5EC4FF;">)</span>
+<span style="color: #5EC4FF;">{</span>
+  <span style="color: #EBBF83;">int</span> <span style="color: #718CA1;">V</span> = 8;
+  <span style="color: #E27E8D;">std</span>::<span style="color: #EBBF83;">vector</span><span style="color: #E27E8D;">&lt;</span><span style="color: #E27E8D;">std</span>::<span style="color: #EBBF83;">vector</span><span style="color: #8BD49C;">&lt;</span><span style="color: #EBBF83;">node</span><span style="color: #8BD49C;">&gt;</span><span style="color: #E27E8D;">&gt;</span> <span style="color: #33CED8;">g</span> <span style="color: #E27E8D;">(</span>V<span style="color: #E27E8D;">)</span>;
+  add_edge<span style="color: #E27E8D;">(</span>g,0,7,8<span style="color: #E27E8D;">)</span>;
+  add_edge<span style="color: #E27E8D;">(</span>g,0,1,10<span style="color: #E27E8D;">)</span>;
+  add_edge<span style="color: #E27E8D;">(</span>g,7,6,1<span style="color: #E27E8D;">)</span>;
+  add_edge<span style="color: #E27E8D;">(</span>g,6,5,-1<span style="color: #E27E8D;">)</span>;
+  add_edge<span style="color: #E27E8D;">(</span>g,6,1,-4<span style="color: #E27E8D;">)</span>;
+  add_edge<span style="color: #E27E8D;">(</span>g,1,5,2<span style="color: #E27E8D;">)</span>;
+  add_edge<span style="color: #E27E8D;">(</span>g,5,2,-2<span style="color: #E27E8D;">)</span>;
+  add_edge<span style="color: #E27E8D;">(</span>g,4,5,-1<span style="color: #E27E8D;">)</span>;
+  add_edge<span style="color: #E27E8D;">(</span>g,3,4,3<span style="color: #E27E8D;">)</span>;
+  add_edge<span style="color: #E27E8D;">(</span>g,2,3,1<span style="color: #E27E8D;">)</span>;
+  add_edge<span style="color: #E27E8D;">(</span>g,2,1,1<span style="color: #E27E8D;">)</span>;
+  <span style="color: #E27E8D;">std</span>::<span style="color: #EBBF83;">vector</span><span style="color: #E27E8D;">&lt;</span><span style="color: #EBBF83;">int</span><span style="color: #E27E8D;">&gt;</span> <span style="color: #33CED8;">distance</span> <span style="color: #E27E8D;">(</span>V, <span style="color: #E27E8D;">std</span>::<span style="color: #E27E8D;">numeric_limits</span><span style="color: #8BD49C;">&lt;</span><span style="color: #EBBF83;">int</span><span style="color: #8BD49C;">&gt;</span>::<span style="color: #EBBF83;">max</span><span style="color: #8BD49C;">()</span><span style="color: #E27E8D;">)</span>;
+
+
+  bellman<span style="color: #E27E8D;">(</span>g, distance, 0<span style="color: #E27E8D;">)</span>;
+  <span style="color: #5EC4FF;">for</span> <span style="color: #E27E8D;">(</span><span style="color: #EBBF83;">int</span> <span style="color: #718CA1;">x</span>: distance<span style="color: #E27E8D;">)</span> <span style="color: #E27E8D;">{</span>
+    <span style="color: #E27E8D;">std</span>::cout &lt;&lt; x &lt;&lt; <span style="color: #539AFC;">"\n"</span>;
+  <span style="color: #E27E8D;">}</span>
+
+  <span style="color: #5EC4FF;">return</span> 0;
+<span style="color: #5EC4FF;">}</span>
+</pre>
+</div>
+
+<p>
+Suddenly you hold my hand.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a52a2a; font-style: italic;"># </span><span style="color: #a52a2a; font-style: italic;">Print Hello world!</span>
+<span style="color: #5EC4FF;">print</span><span style="color: #5EC4FF;">(</span><span style="color: #539AFC;">"Hello world!"</span><span style="color: #5EC4FF;">)</span>
+<span style="color: #718CA1;">something</span> = <span style="color: #539AFC;">"aditya"</span>
+<span style="color: #5EC4FF;">print</span><span style="color: #5EC4FF;">(</span>something<span style="color: #5EC4FF;">)</span>
+<span style="color: #5EC4FF;">if</span> something == <span style="color: #539AFC;">"aditya"</span>:
+<span style="background-color: #181E24;"> </span>   <span style="color: #5EC4FF;">print</span><span style="color: #5EC4FF;">(</span>something<span style="color: #5EC4FF;">)</span>
+</pre>
+</div>
+
+<p>
+From \ref{eqa}, vla
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr><p style="font-size: 75%">Created in GNU <a href="https://www.gnu.org/software/emacs/">Emacs</a> 25.2.2 (<a href="https://orgmode.org">Org</a> mode 9.3.6).</p>
+</div>
+</body>
+</html>
