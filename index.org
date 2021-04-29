@@ -4,7 +4,6 @@
 #+HTML: <!-- <div class="post-meta - 1 min read
 #+HTML: -->
 
-
 * About
   I’m a high school student living in Pune, MH, India. My interests
   include computer programming, electronics, mathematics, badminton,
@@ -26,6 +25,6 @@
 * Site
   This site’s source is on a [[https://github.com/nebhrajani-a/nebhrajani-a.github.io][GitHub repo]]. This site does not use
   trackers or any JavaScript other than [[https://www.mathjax.org][MathJax]], a program used to
-  convert LaTeX code to MathML for HTML rendering. MathJax passes most
+  convert \(\mathrm{\LaTeX}\) code to MathML for HTML rendering. MathJax passes most
   JavaScript security extensions, including all of Tor's settings
   other than 'Safest'.
