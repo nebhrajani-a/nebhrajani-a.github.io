@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-05-07 Fri 02:34 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>/nebhrajani/posts/why-emacs/</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Nebhrajani A.V." />
+<html class="sea-theme">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../stylesheets/hack.css" />
+<link rel="stylesheet" href="../../stylesheets/css.css" />
+<link rel="stylesheet" href="../../stylesheets/standard.css" />
+<link rel="stylesheet" href="../../stylesheets/index.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<nav class="sidebar-nav">
+<a class="nav-item" title="" href="https://nebhrajani-a.github.io/">home</a>
+<a class="nav-item" title="" href="https://nebhrajani-a.github.io/posts/">posts</a>
+<a class="nav-item" title="" href="https://nebhrajani-a.github.io/files/">files</a>
+</nav>
+
+<h1 id="title">Why Emacs?</h1>
+<div class="post-meta"> <2021-04-30 Fri> - 9 min read
+</div>
+
+<p>
+For anybody who spends a large part of their day talking to a
+computer, the dynamics of this interaction become incredibly
+important: everything from posture to software tools. This isn't
+something specific to programmers. In many cultures, swordsmen were
+taught that mastery is achieved when the sword feels like an extension
+of the body. Or, if you're looking for something more modern, see
+Harry Potter's search for the 'just right' wand when he first visited
+Diagon Alley.
+</p>
+
+<p>
+The perfect marriage between a tool and its wielder involves only two
+things:
+</p>
+
+<ul class="org-ul">
+<li>The skill of the wielder, and</li>
+<li>The qualities of the tool.</li>
+</ul>
+
+<p>
+In general, the former takes an incredible amount of effort, so most
+people who are learning an art seriously focus far more on it. This
+leaves the latter to be discussed only by either the posers who assume
+that buying the same golf club Tiger Woods uses gives them the same
+level of skill, or the designers of the tool themselves. All is well
+and good with the world.
+</p>
+
+<p>
+For the moment, consider the case of a blacksmith making a perfect
+hammer for himself. In this case, the blacksmith is both the wielder
+and the designer of the tool, meaning that he can design this tool to
+be <i>precisely</i> right for him. Unlike the general designer of a hammer,
+he doesn't have to worry about whether the tool is good for ten
+thousand people, and unlike the general wielder, he can build the tool
+to work around his own inadequacies in skill.
+</p>
+
+<p>
+A programmer using a program to accomplish a task is in <i>precisely</i>
+the same position as this blacksmith. He has the skills to forge his
+own tool, to make something perfectly suited to himself. Why doesn't
+this happen then?
+</p>
+
+<p>
+Well, duplicated effort, low quality, and low return on investment.
+If everybody wrote their own web browser, the end result would be a
+bunch of really bad programs and a huge time loss for all parties
+involved. Everybody compromises a little bit to have a few stable,
+large projects with features everyone wants, and possibly, a few
+plugins for people to change the behaviour slightly, to taste.
+Of course, these plugins don't provide a feature \(X\) as well as
+the program having it natively, but oh well, such is life. Everybody
+needs to compromise a little, and anyway, people have better things
+to do than fight with an ugly plugin API.
+</p>
+
+<p>
+However, I posit that what these large programs get right is that a
+central base with sensible defaults and simple features is useful &#x2014;
+however, their method of providing customisation to the user (a plugin
+interface or something of the sort) isn't an instance of good design
+in the special case where your user (wielder) base is mostly
+programmers.
+</p>
+
+<p>
+In this article, we explore what goes into making a really good text
+editor, and why that editor is Emacs.
+</p>
+
+
+<div id="outline-container-orgcb0b110" class="outline-2">
+<h2 id="orgcb0b110"><span class="section-number-2">1</span> Text Editors in History</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+A program that is able to open a file from disk, change a few
+characters, and write it back to disk, is a text editor. This is a
+deceptively simple description &#x2014; indeed, UNIX's <code>ed</code>, a line
+editor, fulfills all these criteria. Programmers use text editors to
+edit files called programs, that are written in human-readable
+languages. Sometimes, programmers have to write in English as well.
+This is when text editors with extra features become more useful &#x2014;
+things like:
+</p>
+
+<ul class="org-ul">
+<li>Visual mode: Instead of being able to only edit a line (or other
+unit) at a time, the whole file can be viewed in a sort of
+'buffer' and moved around in.</li>
+<li>Better movement: Moving around faster over walls of text.</li>
+<li>Syntax and spell checking: Tells the programmer where errors are
+and makes them easy to correct.</li>
+<li>Syntax highlighting: certain keywords are highlighted in different
+colors to make reading easier.</li>
+<li>Multiple files open at the same time.</li>
+<li>Support for a bunch of different languages, scripts, and locales.</li>
+<li>\(\cdots\)</li>
+</ul>
+
+<p>
+Sometimes, even features like debuggers and version control systems
+are integrated into text editors, creating what is called an
+Integrated Development Environment (IDE).<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
+</p>
+
+<p>
+I'm sure you'll now see the parallel with web browsers. Different
+people want different things from text editors, and instead of
+writing their own editors, people compromise a little and use a text
+editor with sensible defaults. However, the big difference between
+the two cases is the user base &#x2014; rather than the casual computer
+user, the user base for programming-y text editors are programmers.
+There must be a better way to reconcile the stability of a large,
+popular project with the level of customisation and access
+programmers can utilize to make the tool better, rather than an ugly
+plugin system.
+</p>
+</div>
+
+<div id="outline-container-org8a75f34" class="outline-3">
+<h3 id="org8a75f34"><span class="section-number-3">1.1</span> Notable Text Editors</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+The following are some of the text editors we'll discuss in this
+post. If I missed your favourite text editor, forgive me, this page
+has limited space. Text editors that can be run in the terminal are
+written with their command names (like <code>vi</code>).
+</p>
+
+<ol class="org-ol">
+<li><code>ed</code>: UNIX's original line text editor, also a part of the POSIX
+standard. Nobody really uses it as a full time editor anymore.</li>
+<li><code>vi</code>: A screen editor, modal in nature. Default on all
+POSIX-compliant systems, so it's worth learning.</li>
+<li><code>vim</code>: A port of <code>vi</code> with many extensions. Extremely widely
+used. Many *nix systems actually run vim when the user calls
+<code>vi</code>. Have a major war with <code>emacs</code> users.</li>
+<li><code>nano</code>: A simple, Notepad-like editor for the terminal.</li>
+<li><code>emacs</code>: The other big UNIX editor, focused on extensibility.
+GNU Emacs is the most widely used fork. Have a major war with
+<code>vi</code> / <code>vim</code> users.</li>
+<li>Notepad and its clones: Simple GUI-only text editors. Can't do
+much with these.</li>
+<li>Sublime Text: An editor that was very popular a few years ago.
+Python-based plugin API for customisation.</li>
+<li>Atom: An editor developed by GitHub, designed to be 'hackable'.
+Extension and package creation language: JavaScript, since it
+ran on top of a web browser (Electron framework).</li>
+<li>Visual Studio Code: Currently the most popular editor in the
+world. Runs on top of a web browser (Electron), and uses
+JavaScript for extension.</li>
+</ol>
+
+<p>
+Now, instead of discussing these one by one, we'll pick up certain
+common design principles between these editors and reason about
+which ones are desirable.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2efa6fc" class="outline-3">
+<h3 id="org2efa6fc"><span class="section-number-3">1.2</span> Platforms</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Generally, editors are written as a single big program (often in C),
+that has all editor features and functions, and is compiled and
+distributed. <code>vi</code>, <code>nano</code>, <code>vim</code>, and a few others follow this simple
+model.
+</p>
+
+<p>
+An alternative to this model is what many modern text editors (and in
+fact many other applications do), is implement a browser core and
+rendering engine, then write an application on top of it using
+JavaScript or some other web technology. This has the tremendous
+advantage of having a powerful scripting language that can be used to
+change application properties on the fly. It also means that the same
+application can be run as a web application hosted on some website. VS
+Code and Atom use this model.
+</p>
+
+<p>
+The final alternative is to implement a core that’s actually an
+interpreter for a scripting language which is used to program an
+editor. This is similar to the web browser model in that the
+application properties can be changed on the fly, but different in
+that the core doesn’t have to be as heavy and complicated as web
+browsers. The core can be lightweight, run without a GUI, and most
+importantly, doesn’t have to be in JavaScript and limited by what the
+web standard may or may not allow. This is =emacs=’ model.
+</p>
+
+<p>
+An ideal editor uses the core and extension language model, because
+this maximises extensibility without the explicit need for a plugin
+interface or (God forbid) recompilation.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6d3be85" class="outline-3">
+<h3 id="org6d3be85"><span class="section-number-3">1.3</span> Interfaces</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Editors can be TUI-only (<code>nano</code>), GUI-only (Atom, VS Code), or both.
+TUI-only editors tend to not have fancy icons and support for certain
+fonts and symbols, while GUI-only editors are useless on a system that
+only provides a terminal interface.
+</p>
+
+<p>
+A good editor provides both without any loss of feature in either,
+beyond actual limitations enforced by a terminal. <code>emacs</code> does this.
+<code>vim</code> has a GUI, but it’s a different program called <code>gvim</code>. Most
+modern editors only have GUI support.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org80be0f7" class="outline-3">
+<h3 id="org80be0f7"><span class="section-number-3">1.4</span> Keyboard or Mouse-Driven</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+This is an interesting topic. Some editor interfaces are very
+clicky. This means that to get something done, you often have to
+click an icon or drag something from here to there. Naturally,
+since mice are a GUI luxury, most TUI supporting editors have only
+optional use of the mouse when running as a GUI.
+</p>
+
+<p>
+However, this design choice is a little more complex. As any
+seasoned computer user knows, keyboards are the fastest and most
+precise way to interact with a computer. Hollywood understands
+this too: the master hacker is always typing, since that is the
+fastest way to talk to a computer when the world is going to be
+blown up in three minutes. Even if you aren't in a Bond film,
+there is more comfort associated with not having to reach for the
+mouse and squint at tiny icons while editing. Moreover, keyboards
+are more precise: consider mouse-based vs. keyboard-based
+selection. Mice aren't a very useful tool for text editing, but
+are indispensable in applications like photo editing.
+</p>
+
+<p>
+Good editors, however, don't force this choices on users,
+especially towards the mouse side, since that slows experienced
+users down at the cost of newbie-friendliness. There should at
+least be a way to do a mouse action using a keyboard.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6e26431" class="outline-3">
+<h3 id="org6e26431"><span class="section-number-3">1.5</span> Complexity</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+This is one of the <i>really</i> big debates, which draws its roots from
+the modular *NIX vs. monolithic Windows philosophy. In short,
+proponents of simple editors claim that an editor is just another tool
+among many others. An editor need not have regular expression
+abilities: there’s <code>grep</code> for that. An editor need not have a
+graphical debugger: what’s <code>gdb</code> for? This side uses the operating
+system as the development environment, and oppose the unholy mixing of
+these functions into a gigantic text editing program. [UNIX AS IDE]
+</p>
+
+<p>
+The other side of the debate claims that having all these tools within
+one environment makes the development process faster, since there is
+very little context switching involved. Moreover, having a single
+powerful tool allows interesting interfaces between functions that
+would otherwise have been discrete and impossible to link together via
+a text stream.
+</p>
+
+<p>
+Today, it seems the monolithic side has <i>de facto</i> won, since even
+editors like <code>vi</code> / <code>vim</code>, which pride themselves on simplicity:
+</p>
+
+<blockquote>
+<p>
+A student enquired of Master Wq, “When will I know I have mastered Vimscript?”
+</p>
+
+<p>
+Master Wq answered, “When you never use it.”
+</p>
+</blockquote>
+
+<p>
+have extensions for file browsing and auto-completion. It’s just too
+convenient not to have.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5c338fa" class="outline-3">
+<h3 id="org5c338fa"><span class="section-number-3">1.6</span> Modal vs. Non-Modal</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+Mos people today are entirely unfamiliar with modal editing as a
+concept, since nearly no text editing programs have a modal
+interface. A modal interface simply means that the editor has a
+'normal' mode where pressing the key <code>a</code> (for instance) does not
+insert the letter 'a', but instead performs some editor function.
+To actually insert the letter, the editor must be put into 'insert'
+mode, which is when pressing keys is a literal insert into the
+file.
+</p>
+
+<p>
+Modal interfaces may sound complicated, but, in truth, it's exactly
+the same concept as a modifier key. When you hold down <code>Ctrl</code>, the
+keyboard keys all behave differently. In this state, pressing 'f'
+may execute the search function. Modal editing can simply be
+thought of as putting the editor into a mode where a modifier key
+is always pressed, or into a mode where you can just insert text. If
+this sounds needlessly complicated, hang in there, we'll get to
+discussing why it can actually be useful eventually.
+</p>
+
+<p>
+For now, it is sufficient to note that the most popular modal
+editor is <code>vi</code>, whose modal keybindings are so popular that nearly
+every other editor has a way to use them, often as a plugin. The
+quality of these plugins varies, and most are missing features
+vital to the seasoned <code>vi</code> user.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org82cfca7" class="outline-3">
+<h3 id="org82cfca7"><span class="section-number-3">1.7</span> Extensibility</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+And now, to the elephant in the room. How much should a user be
+able to change? How much should a user actually change?
+</p>
+
+<p>
+In my opinion, a user of a text editor should never be bound by the
+imagination of the program's author. This means that a user should
+be able to use the editor to do things the author didn't even know
+were possible, without editing the actual program binary. This is
+especially important for text editors because people come up with
+new features all the time, most of which are useful. This level of
+extensibility requires an extension language.
+</p>
+</div>
+
+<div id="outline-container-orgebcbb6a" class="outline-4">
+<h4 id="orgebcbb6a"><span class="section-number-4">1.7.1</span> Extension Language</h4>
+<div class="outline-text-4" id="text-1-7-1">
+<p>
+The definition of an extension language for a text editor isn't
+well defined. In practice, they range from config files which
+switch certain options on and off to Turing complete dialects of
+Lisp, with most falling in between.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgef7f0d1" class="outline-4">
+<h4 id="orgef7f0d1"><span class="section-number-4">1.7.2</span> Packages</h4>
+</div>
+<div id="outline-container-org6cb5890" class="outline-4">
+<h4 id="org6cb5890"><span class="section-number-4">1.7.3</span> How Much Extension is Too Much?</h4>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+In this post, we focus our attention on text editors rather
+than IDEs, although the distinction between the two is often blurred.
+I make this choice because Emacs itself is a text editor, and the
+IDE-like bits are all custom elisp.
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<hr><p style="font-size: 75%">Created in GNU <a href="https://www.gnu.org/software/emacs/">Emacs</a> 25.2.2 (<a href="https://orgmode.org">Org</a> mode 9.3.6).</p>
+</div>
+</body>
+</html>
