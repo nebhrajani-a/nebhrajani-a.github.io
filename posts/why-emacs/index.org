@@ -1,7 +1,7 @@
 #+include: ../../preamble.org
 
 #+HTML: <h1 id="title">Why Emacs?</h1>
-#+HTML: <div class="post-meta"> <2021-04-30 Fri> - 9 min read
+#+HTML: <div class="post-meta"> <2021-04-30 Fri>  - 17 min read
 #+HTML: </div>
 
 For anybody who spends a large part of their day talking to a
@@ -273,9 +273,347 @@ convenient not to have.
 *** Packages
 *** How Much Extension is Too Much?
 
+ It should be obvious by now that there seem to be two important
+'parts' of a text editing experience: the actual editing of text
+(moving around, deleting text, etc.), and the environment setup: the
+pane management, file management, version control and debugger
+interfaces, etc. It should be obvious that most IDEs get the second
+part fairly correct (usually for a specific language), but they
+absolutely suck at raw text editing. We now examine these issues
+separately, trying to pick the best of the lot in each case.
+
+* Raw Text Editing
+  Broadly speaking, all editors can be divided into two categories on
+  the basis of raw text editing: modal and non-modal. Most people are
+  familiar with non-modal editing: when whatever keys you hit on the
+  keyboard are typed directly. If you want to call an editor function,
+  you hold a modifier key (like =Ctrl=), and the keyboard is
+  transformed into an editor function interface. Powerful editors with
+  a lot of functions, like Emacs, rely heavily on modifier keys. In
+  fact, Emacs uses both =Ctrl= and =Meta= (or =Alt=) to call editor
+  functions. These are often chained together to create incredibly
+  long bindings that'll knot your pinkies up. However, they do give
+  access to a lot of powerful Emacs functions right from the keyboard.
+  Let's call this style of editing 'key chord' based editing (to steal
+  a metaphor from music theory): wherein multiple keys are pressed
+  simultaneously to call editor functions. In fact, in Emacs, going to
+  the next line is done using =C-n=[fn:2], which calls the editor
+  function =next-line=. =next-line= is also bound to the down arrow
+  key.
+
+  The polar opposite of non-modal (key chord) editing is modal or key
+  note-style editing. We observe that while editing text, we either:
+  - Insert text.
+  - Select text.
+  - Call some editor function.
+  That's it. vim's modal system is based on this principle: that
+  only three main modes are really needed: an 'insert' mode in which
+  typing letters inserts them literally, a 'visual selection' mode
+  where a region is highlighted and can then be operated upon, and a
+  'normal' mode from which all editor functions are available, called
+  by typing any key. In our previous discussion, we said modal editing
+  can be thought of as the normal mode being one where a modifier key
+  is always pressed. In vim's normal mode, pressing the key 'j' goes
+  to the next line. No modifiers: you just play notes on the keyboard.
+
+  Now, it's easy to superficially argue that although key chords are
+  sometimes painful to type, they're far simpler than having a modal
+  editor wherein you have to keep track of which mode you're in.
+  However, I posit that modal editing, and specifically vim's modal
+  editing, is actually a far superior paradigm. Let's see why.
+
+** Home Row Keys
+
+   Back when =vi= was written, it didn't have the luxury of assuming
+   that all keyboards had modifier keys, or that they had exactly the
+   same modifier keys as the ones on some other keyboard.
+   Standardisation hadn't taken place yet. This also meant that all
+   the editor's power had to be available using keys that'd definitely
+   be on most keyboards: alphanumeric and punctuation. These keys are
+   also located on the 'home row' of all keyboards, meaning you don't
+   have to move your hands much for commands that could be very
+   different from each other.[fn:3]
+
+
+    #+attr_html: :width 300px
+   #+CAPTION: The home row.
+   [[~/Downloads/11.png]]
+
+   This also means no more Emacs pinky from hand gymnastics to press
+   multiple keys at the same time.
+
+** Composability
+   Vim's keybindings form a grammar within themselves. To understand
+   this, consider a few examples.
+
+    - *Move 10 Lines Down*
+      We know that =j= in normal mode moves the cursor down by a line.
+      =10j= will move the cursor ten lines down.
+    - *Move 4 Characters Back*
+      Press =4h= in normal mode. Note that in normal mode:
+      - =h= is move one character back,
+      - =l= is move one character forward,
+      - =j= is move one line down,
+      - =k= is move one line up.
+      Any vim command can be prefixed with a number $n$ to do it $n$ times.
+    - *Move 3 Words Forward*
+      A 'word' is a space-separated group of letters. To move forward by
+      a word, press =w= in normal mode. To move back by a word, press
+      =b=. To move forward 3 vim words, press =3w=.
+    - *Delete 3 Back-words*
+      =d3b=.
+
+  This illustrates the power of vim's normal mode. It gives us
+  super-powerful text editing capabilities, and we've only covered the
+  very basics. Vim has a *action-count-object* model for composing
+  commands, where:
+  - *action* is what to do to the object. (Ex. =d=)
+  - *count* is the number of objects to do action on. (Ex. =3=)
+  - *object* is the unit to do action on. (Ex. =w=)
+
+** Mnemonics
+  To get into insert mode, press =i=. To get into visual selection
+  mode, press =v=. Go back to normal mode? =Escape=. To paste, press
+  =p=. Delete? Press =d=. Undo? =u=. Copy/yank? =y=.
+
+  Even better, when combined with each other, these mnemonics hold:
+  delete a word is: =daw=, change 5 words is =c5w=, transpose two
+  characters is =xp=, and so on. (=x= is equivalent to =dl=, or
+  deleting a single character. Unlike =d=, =x= doesn't expect an
+  object to act on.)
+
+** Speed
+   Clearly, this makes editing text fast and easy to do. Moreover,
+   many commands are provided for speed: =0= goes to start of line,
+   =$= goes to end of line. =gg= goes to the first character of the
+   file, =G= goes to the last. =10G= goes to line 10. =dd= deletes the
+   current line, =yy= copies it. =fR= goes to the next occurrence of
+   the character 'R'. Capitalisation of many commands causes them to
+   act backwards: =FR= goes to the previous occurrence of =R=. All of
+   these, of course, can be composed. =di)= deletes all text within
+   the current parentheses.
+
+   It should be obvious by now that vim's way of editing text is fast
+   and intuitive, and fully justifies having different modes.
+
+** Other Good Ideas in Vim
+   Many of the following ideas are also implemented in Emacs, but few
+   other editors have such powerful implementations.
+
+*** Registers
+    Almost every operating system has a clipboard, a temporary space
+    where copied text is held until it's pasted. The problem with a
+    single clipboard, that I'm sure you've experienced, is copying
+    some other text overwrites the previous contents of the clipboard.
+    Ugh.
+
+    A register is precisely like a clipboard in that it's a temporary
+    place to hold textual data. However, here's the cool part: vim
+    provides around 10 default registers, and 26 registers reserved
+    for the user. Register =0= is the clipboard. Registers =1 to 9=
+    are effectively a clipboard history stack: eliminating the
+    overwrite problem with 9 layers of redundancy. Registers =a-z= are
+    for the user to write to and read from.
+
+    Using registers is incredibly easy: ="ay= writes to register =a=,
+    and ="ap= pastes its contents. There are some more advanced ways
+    to use registers as well, including appending to them and treating
+    them as macros.
+
+*** Macros
+
+    Let's say we have the following C program:
+
+    #+BEGIN_SRC C
+      #include <stdio.h>
+
+      int main(int argc, char *argv[])
+      {
+        printf("We")
+        printf("Didn't")
+        printf("Start")
+        printf("The")
+        printf("Fire")
+        printf("Billy")
+        printf("Joel")
+        return 0;
+      }
+    #+END_SRC
+
+    Great. We forgot the semicolons, and the =\n= after each string,
+    because we're Python developers. The slow way to do it is to go to
+    every line and manually type in what we need to. If we're the cool
+    new kids, we'll use multiple cursors...oh wait. We can only use
+    multiple cursors to add semicolons to the ends of the lines, but
+    the location of the =\n= is different in every case. Vim macros to
+    the rescue.
+
+    A vim macro simply records all keystrokes from the start of
+    recording to the end and replays them. Let's record a macro =a=. Hit
+    =qa=. Now, =02f"i\n<Esc>A;<Esc>0jq=.[fn:4] This records the keystrokes
+    and saves it as macro =a=. To replay the macro for the remaining 6
+    lines, run =6@a=.
+
+    #+BEGIN_SRC C
+      #include <stdio.h>
+
+      int main(int argc, char *argv[])
+      {
+        printf("We\n");
+        printf("Didn't\n");
+        printf("Start\n");
+        printf("The\n");
+        printf("Fire\n");
+        printf("Billy\n");
+        printf("Joel\n");
+        return 0;
+      }
+    #+END_SRC
+
+    Note that vim even supports recursive macros. That would work by
+    first setting =a= to an empty macro: =qaq=. Then,
+    =qa02f"i\n<Esc>A;<Esc>0j@aq=. A single =@a= runs this till the
+    last line of the file (though this isn't what we wanted).
+    Recursive macros aren't used often, but are fun to write.
+
+*** Macros /are/ Registers
+
+    Macros are stored in registers. Many people don't know that
+    recording a macro is just writing keystrokes to a register. You
+    can in fact =@= any register to interpret its contents as
+    keystrokes. This means you could copy a vim macro from a website
+    to your X clipboard and run it directly in vim (=@0=).
+
+*** Rectangular Selection
+
+    Here's something the new kids on the block use multiple cursors
+    for: rectangular selection. If we have the following file:
+
+    #+BEGIN_EXAMPLE
+      Dr. John Smith
+      Mr. Nebhrajani A
+      Ms. Addams
+      Lt. James Rhodes
+      Mr. Walker
+    #+END_EXAMPLE
+
+    And we want to delete those pesky titles, a quick way to do this
+    in vim is to type =C-v= to enable rectangular selection, then use
+    =hjkl= to select the appropriate rectangle and hit =d=, resulting
+    in:
+
+    #+attr_html: :width 150px
+    #+attr_latex: :width 100pt
+    #+CAPTION: Rectangular selection.
+    [[~/Downloads/rec.png]]
+
+
+
+    #+BEGIN_EXAMPLE
+      John Smith
+      Nebhrajani A
+      Addams
+      James Rhodes
+      Walker
+    #+END_EXAMPLE
+
+*** Marks
+    Marks are simple: they let you set a kind of bookmark at a certain
+    location in a file and jump back to it. Marks are set using =ma=
+    and dereferenced using =`a=. Mark =`= is also automatically set when
+    you jump using =G=, meaning =``= jumps you back to your old context.
+    A neat feature not many modern editors have.
+
+*** Undo Tree
+    If vim didn't already have a whole bunch of killer features,
+    here's yet another: undo trees. Let's say you type the following:
+
+    #+BEGIN_EXAMPLE
+      Something something other
+    #+END_EXAMPLE
+
+    Now we undo.
+
+    #+BEGIN_EXAMPLE
+      Something something
+    #+END_EXAMPLE
+
+    Then we type:
+
+    #+BEGIN_EXAMPLE
+      Something something weird
+    #+END_EXAMPLE
+
+    Undo this again.
+
+    #+BEGIN_EXAMPLE
+      Something something
+    #+END_EXAMPLE
+
+    Make an edit:
+
+    #+BEGIN_EXAMPLE
+      Something something final
+    #+END_EXAMPLE
+
+    It should be obvious to you that there are three branches of undo
+    history: the one where we typed =other=, one with =weird=, and one
+    with =final=. Most editors discard old branches of this tree and
+    maintain a linear undo history, but this is blatant dishonest:
+    such an editor is discarding edit history, possibly causing
+    information loss. Vim's model saves the whole tree, and at nodes
+    allows you to select which branch you want to explore. Neat.[fn:5]
+
+** Vim Caveats
+
+   Despite vim having absolutely brilliant ideas for raw text editing,
+   including comfortable, thoughtful key notes, it suffers from
+   certain flaws. Many of these are due to its running in the
+   terminal: poor support for Unicode characters, no GUI-like modeline
+   niceness, etc. Another big issue is the extension language,
+   Vimscript, which is ugly and hard to use. It makes implementing
+   modern features like autocompletion and file browsers hard to
+   implement. Moreover, the plugin API isn't very pretty either. Vim
+   also really isn't built to do much other than pure text editing.
+   It's not meant to be very flexible, and to its credit, it does what
+   it's supposed to fairly well.
+
+   Of course, vim purists insist that vim is meant to be minimal, a
+   small tool in the UNIX toolchain.[fn:6] However, for people who
+   want more modern IDE-like features in their text editor, vim isn't
+   the best choice.
+
+   Now, the vim community is making efforts to fix this: there's a GTK
+   version of vim, and the =neovim= project fixes a lot of issues with
+   vim including its plugin interface, and is a great option if you've
+   read this far and don't have the energy to read further.
+
+   Despite vim's problems, it's a useful and extremely powerful
+   editor. Moreover, it'll be there on any UNIX system you encounter,
+   so it's worth learning if only for that reason.
+
+* Powerful Environment
+
 * Footnotes
 
 [fn:1] In this post, we focus our attention on text editors rather
 than IDEs, although the distinction between the two is often blurred.
 I make this choice because Emacs itself is a text editor, and the
 IDE-like bits are all custom elisp.
+
+[fn:2] =C-= is =Ctrl-=
+
+[fn:3] Image credit: [[https://commons.wikimedia.org/w/index.php?curid=9666341][By Cy21 - Own work, CC BY-SA 3.0]]
+
+[fn:4] Yeah, that looks ugly, so let's break it down. =0= goes to the
+start of the line. =2f"= finds the second " mark. =i\n= goes into
+insert mode and inserts the newline. =<Esc>= to go back to normal
+mode. =A= to go to the end of the line and enter insert mode. =;=
+inserts the semicolon. <Esc> to normal mode. Then =0j= go to the start of the
+line and go to the next line. Then =q= to end the macro. It's simple
+once you get used to it.
+
+[fn:5] I really wish browser back buttons supported a tree like
+approach too. If you know of such a plugin, let me know.
+
+[fn:6] We'll argue later about minimalism vs. maximalism in text editors.
