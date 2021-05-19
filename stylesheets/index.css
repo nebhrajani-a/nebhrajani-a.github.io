@@ -92,11 +92,11 @@ hr {
 .space-theme code {
     color: #8686cb;
     background: #49495a;
-    padding: 1px;
-    border-radius: 5px;
+    /* padding: 1px; */
+    /* border-radius: 5px; */
 }
 .space-theme code::before, .space-theme code::after {
-    content: "`";
+    /* content: "`"; */
 }
 .space-theme .post-meta {
     color: #5b5b7b;
@@ -362,7 +362,7 @@ hr {
     /* border-radius: 5px; */
 }
 .sea-theme code::before, .sea-theme code::after {
-    content: "`";
+    /* content: "`"; */
 }
 .sea-theme .post-meta {
     color: #586f89;
