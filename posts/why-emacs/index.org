@@ -1,7 +1,7 @@
 #+include: ../../preamble.org
 
 #+HTML: <h1 id="title">Why Emacs?</h1>
-#+HTML: <div class="post-meta"> <2021-04-30 Fri>  - 17 min read
+#+HTML: <div class="post-meta"> <2021-04-30 Fri>              - 17 min read
 #+HTML: </div>
 
 For anybody who spends a large part of their day talking to a
@@ -92,7 +92,7 @@ editor, and why that editor is Emacs.
   writing their own editors, people compromise a little and use a text
   editor with sensible defaults. However, the big difference between
   the two cases is the user base --- rather than the casual computer
-  user, the user base for programming-y text editors are programmers.
+  user, the user base for programming-y text editors is programmers.
   There must be a better way to reconcile the stability of a large,
   popular project with the level of customisation and access
   programmers can utilize to make the tool better, rather than an ugly
@@ -154,7 +154,7 @@ application properties can be changed on the fly, but different in
 that the core doesn’t have to be as heavy and complicated as web
 browsers. The core can be lightweight, run without a GUI, and most
 importantly, doesn’t have to be in JavaScript and limited by what the
-web standard may or may not allow. This is =emacs=’ model.
+web standard may or may not allow. This is =emacs=' model.
 
 An ideal editor uses the core and extension language model, because
 this maximises extensibility without the explicit need for a plugin
@@ -335,9 +335,7 @@ separately, trying to pick the best of the lot in each case.
    different from each other.[fn:3]
 
 
-    #+attr_html: :width 300px
-   #+CAPTION: The home row.
-   [[~/Downloads/11.png]]
+   [[./11.png]]
 
    This also means no more Emacs pinky from hand gymnastics to press
    multiple keys at the same time.
@@ -502,12 +500,7 @@ separately, trying to pick the best of the lot in each case.
     =hjkl= to select the appropriate rectangle and hit =d=, resulting
     in:
 
-    #+attr_html: :width 150px
-    #+attr_latex: :width 100pt
-    #+CAPTION: Rectangular selection.
-    [[~/Downloads/rec.png]]
-
-
+    [[./rec.png]]
 
     #+BEGIN_EXAMPLE
       John Smith
