@@ -1,7 +1,7 @@
 #+include: ../../preamble.org
 
 #+HTML: <h1 id="title">Why Emacs?</h1>
-#+HTML: <div class="post-meta"> <2021-04-30 Fri>              - 17 min read
+#+HTML: <div class="post-meta"> <2021-04-30 Fri> - 17 min read
 #+HTML: </div>
 
 For anybody who spends a large part of their day talking to a
