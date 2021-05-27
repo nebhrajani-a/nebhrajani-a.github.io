@@ -1,7 +1,7 @@
 #+include: ../../preamble.org
 
 #+HTML: <h1 id="title">Why Emacs?</h1>
-#+HTML: <div class="post-meta"> <2021-04-30 Fri> - 17 min read
+#+HTML: <div class="post-meta"> <2021-04-30 Fri>     - 19 min read
 #+HTML: </div>
 
 For anybody who spends a large part of their day talking to a
@@ -552,7 +552,7 @@ separately, trying to pick the best of the lot in each case.
     It should be obvious to you that there are three branches of undo
     history: the one where we typed =other=, one with =weird=, and one
     with =final=. Most editors discard old branches of this tree and
-    maintain a linear undo history, but this is blatant dishonest:
+    maintain a linear undo history, but this is blatantly dishonest:
     such an editor is discarding edit history, possibly causing
     information loss. Vim's model saves the whole tree, and at nodes
     allows you to select which branch you want to explore. Neat.[fn:5]
@@ -565,12 +565,7 @@ separately, trying to pick the best of the lot in each case.
    terminal: poor support for Unicode characters, no GUI-like modeline
    niceness, etc. Another big issue is the extension language,
    Vimscript, which is ugly and hard to use. It makes implementing
-   modern features like autocompletion and file browsers hard to
-   implement. Moreover, the plugin API isn't very pretty either. Vim
-   also really isn't built to do much other than pure text editing.
-   It's not meant to be very flexible, and to its credit, it does what
-   it's supposed to fairly well.
-
+   modern features like autocompletion and file browsers difficult.
    Of course, vim purists insist that vim is meant to be minimal, a
    small tool in the UNIX toolchain.[fn:6] However, for people who
    want more modern IDE-like features in their text editor, vim isn't
@@ -586,6 +581,83 @@ separately, trying to pick the best of the lot in each case.
    so it's worth learning if only for that reason.
 
 * Powerful Environment
+
+  Another good reason, I think, not to use vim is the
+  availability of a much more powerful alternative: Emacs. Emacs
+  itself is best understood as a REPL for a dialect of Lisp.
+  Naturally, this language is built to control the Emacs editor,
+  but it's Turing complete in a non-tarpit way.
+
+  The Emacs editor provides an interface to the functions
+  defined by the Emacs Lisp language. Some functions are
+  directly callable (interactive), while others are internal.
+  Some interactive functions are bound to keyboard events, while
+  other aren't, but can be. Finally, Emacs has a way to display
+  the results of running certain functions.
+
+   Emacs' core is a C interpreter for Elisp (Emacs Lisp). GNU
+   Emacs provides a lot of Elisp preconfigured: the menu bar,
+   scroll bar, starting screen, etc., etc.
+
+   Now, Emacs is modeless. Typing 'a' into Emacs runs the
+   command =self-insert-command=, which does a literal insert of
+   the character 'a'. Other keystrokes call other interactive
+   commands. By default M-x (Meta-X, usually the Meta key is
+   Alt) runs =execute-extended-command=, which lets you call any
+   interactive function by name.
+
+   Since Elisp is Turing complete and a pleasure to work in, you
+   can do literally anything with it. Emacs has within it
+   multiple IRC clients and browsers, music players, version
+   control system and debugger interfaces, etc.
+
+   Because Emacs has so many functions, its keybindings can get
+   fairly complicated. Many of these are chained using prefix
+   commands: =C-x C-c= quits Emacs. Emacs relies so heavily on
+   modifier keys that even moving the cursor forward requires
+   you to type =C-f=.
+
+   Many argue that Emacs is more of an operating system than an
+   editor, a sentiment I strongly /agree/ with. It is an
+   infinitely configurable and extensible operating system,
+   built to be that way. As we noted earlier, a much better text
+   editing paradigm free from Emacs' ugly modifiers is vim,
+   which can be implemented within Emacs. This gives us the best
+   of both worlds: powerful vim-like text editing, along with a
+   powerful environment. Let us now explore what it is about
+   this Elisp environment that makes it so powerful.
+
+** Excellent OOTB Setup
+
+*** Encodings and Scripts
+    Emacs (when run inside a GUI or UTF-8 terminal) supports
+    /both/ the display and input of all sorts of scripts and
+    languages. In fact, it even has a transliteration program,
+    which makes typing in Devanagari an absolute delight.
+    Support for right-to-left scripts also just works.
+
+   [[./hello.png]]
+
+*** Buffers, Windows, Frames
+
+    Emacs has an excellent tiling window management system: so
+    much so that a package called EWXM lets Emacs manage all X
+    windows. In Emacs, all files are held in buffers. A window
+    displays the contents of a
+
+*** TUI and GUI
+
+
+
+** Your Editor, Your Choice
+
+* Notes
+
+  - [Re Footnote 5] Between the time I started writing this post
+    and finished, I discovered Nyxt, a web browser written in
+    Lisp, heavily inspired by both vim and Emacs. It has a
+    tree-based history and lots of other stuff.
+
 
 * Footnotes
 

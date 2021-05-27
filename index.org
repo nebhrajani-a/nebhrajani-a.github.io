@@ -23,15 +23,21 @@
   - [[https://www.linkedin.com/in/nebhrajani][LinkedIn]]
 
   Note that /neither/ Protonmail nor PGP/GPG are a good way to
-  communicate if you must have 100% security, since email metadata
-  is not secure. Use any application that implements the Signal
-  protocol instead.
+  communicate if you must have 100% security, since email metadata is
+  not secure. Use any application that implements the Signal protocol
+  instead. Note that there have been claims that Signal itself is a
+  honeypot.
 
 * Site
   This site’s source is on a [[https://github.com/nebhrajani-a/nebhrajani-a.github.io][GitHub repo]]. This site does not use
-  trackers or any JavaScript other than [[https://www.mathjax.org][MathJax]], a program used to
-  convert \(\mathrm{\LaTeX}\) code to MathML for HTML rendering. MathJax passes most
-  JavaScript security extensions, including Tor's.
+  trackers, so I can't see that you've visited it. Note, however, that
+  the site is hosted by Microsoft's GitHub, so they almost certainly
+  can. There is a mid- to long-term plan to migrate to a self-hosted
+  website.
+
+  No JavaScript is used other than [[https://www.mathjax.org][MathJax]], a program used to
+  convert \(\mathrm{\LaTeX}\) code to MathML for HTML rendering.
+  MathJax passes most JavaScript security extensions, including Tor's.
 
   As of now, no part of this site has a comment section, since I don't
   have the time to moderate it for civility.
