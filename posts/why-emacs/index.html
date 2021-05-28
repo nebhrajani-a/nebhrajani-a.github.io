@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-05-23 Sun 00:33 -->
+<!-- 2021-05-28 Fri 08:16 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>/nebhrajani/posts/why-emacs/</title>
@@ -95,17 +95,17 @@ for the JavaScript code in this tag.
 </nav>
 
 <h1 id="title">Why Emacs?</h1>
-<div class="post-meta"> <2021-04-30 Fri>    - 19 min read
+<div class="post-meta"> <2021-04-30 Fri>      - 19 min read
 </div>
 
 <p>
 For anybody who spends a large part of their day talking to a
 computer, the dynamics of this interaction become incredibly
-important: everything from posture to software tools. This isn't
+important: everything from posture to software tools. This isn&rsquo;t
 something specific to programmers. In many cultures, swordsmen were
 taught that mastery is achieved when the sword feels like an extension
-of the body. Or, if you're looking for something more modern, see
-Harry Potter's search for the 'just right' wand when he first visited
+of the body. Or, if you&rsquo;re looking for something more modern, see
+Harry Potter&rsquo;s search for the &rsquo;just right&rsquo; wand when he first visited
 Diagon Alley.
 </p>
 
@@ -133,7 +133,7 @@ For the moment, consider the case of a blacksmith making a perfect
 hammer for himself. In this case, the blacksmith is both the wielder
 and the designer of the tool, meaning that he can design this tool to
 be <i>precisely</i> right for him. Unlike the general designer of a hammer,
-he doesn't have to worry about whether the tool is good for ten
+he doesn&rsquo;t have to worry about whether the tool is good for ten
 thousand people, and unlike the general wielder, he can build the tool
 to work around his own inadequacies in skill.
 </p>
@@ -141,7 +141,7 @@ to work around his own inadequacies in skill.
 <p>
 A programmer using a program to accomplish a task is in <i>precisely</i>
 the same position as this blacksmith. He has the skills to forge his
-own tool, to make something perfectly suited to himself. Why doesn't
+own tool, to make something perfectly suited to himself. Why doesn&rsquo;t
 this happen then?
 </p>
 
@@ -152,7 +152,7 @@ bunch of really bad programs and a huge time loss for all parties
 involved. Everybody compromises a little bit to have a few stable,
 large projects with features everyone wants, and possibly, a few
 plugins for people to change the behaviour slightly, to taste.
-Of course, these plugins don't provide a feature \(X\) as well as
+Of course, these plugins don&rsquo;t provide a feature \(X\) as well as
 the program having it natively, but oh well, such is life. Everybody
 needs to compromise a little, and anyway, people have better things
 to do than fight with an ugly plugin API.
@@ -162,7 +162,7 @@ to do than fight with an ugly plugin API.
 However, I posit that what these large programs get right is that a
 central base with sensible defaults and simple features is useful &#x2014;
 however, their method of providing customisation to the user (a plugin
-interface or something of the sort) isn't an instance of good design
+interface or something of the sort) isn&rsquo;t an instance of good design
 in the special case where your user (wielder) base is mostly
 programmers.
 </p>
@@ -173,13 +173,13 @@ editor, and why that editor is Emacs.
 </p>
 
 
-<div id="outline-container-org1b2c777" class="outline-2">
-<h2 id="org1b2c777"><span class="section-number-2">1</span> Text Editors in History</h2>
+<div id="outline-container-orgfda1ee4" class="outline-2">
+<h2 id="orgfda1ee4"><span class="section-number-2">1</span> Text Editors in History</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 A program that is able to open a file from disk, change a few
 characters, and write it back to disk, is a text editor. This is a
-deceptively simple description &#x2014; indeed, UNIX's <code>ed</code>, a line
+deceptively simple description &#x2014; indeed, UNIX&rsquo;s <code>ed</code>, a line
 editor, fulfills all these criteria. Programmers use text editors to
 edit files called programs, that are written in human-readable
 languages. Sometimes, programmers have to write in English as well.
@@ -190,7 +190,7 @@ things like:
 <ul class="org-ul">
 <li>Visual mode: Instead of being able to only edit a line (or other
 unit) at a time, the whole file can be viewed in a sort of
-'buffer' and moved around in.</li>
+&rsquo;buffer&rsquo; and moved around in.</li>
 <li>Better movement: Moving around faster over walls of text.</li>
 <li>Syntax and spell checking: Tells the programmer where errors are
 and makes them easy to correct.</li>
@@ -208,7 +208,7 @@ Integrated Development Environment (IDE).<sup><a id="fnr.1" class="footref" href
 </p>
 
 <p>
-I'm sure you'll now see the parallel with web browsers. Different
+I&rsquo;m sure you&rsquo;ll now see the parallel with web browsers. Different
 people want different things from text editors, and instead of
 writing their own editors, people compromise a little and use a text
 editor with sensible defaults. However, the big difference between
@@ -221,21 +221,21 @@ plugin system.
 </p>
 </div>
 
-<div id="outline-container-org313d8a8" class="outline-3">
-<h3 id="org313d8a8"><span class="section-number-3">1.1</span> Notable Text Editors</h3>
+<div id="outline-container-org6579f87" class="outline-3">
+<h3 id="org6579f87"><span class="section-number-3">1.1</span> Notable Text Editors</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
-The following are some of the text editors we'll discuss in this
+The following are some of the text editors we&rsquo;ll discuss in this
 post. If I missed your favourite text editor, forgive me, this page
 has limited space. Text editors that can be run in the terminal are
 written with their command names (like <code>vi</code>).
 </p>
 
 <ol class="org-ol">
-<li><code>ed</code>: UNIX's original line text editor, also a part of the POSIX
+<li><code>ed</code>: UNIX&rsquo;s original line text editor, also a part of the POSIX
 standard. Nobody really uses it as a full time editor anymore.</li>
 <li><code>vi</code>: A screen editor, modal in nature. Default on all
-POSIX-compliant systems, so it's worth learning.</li>
+POSIX-compliant systems, so it&rsquo;s worth learning.</li>
 <li><code>vim</code>: A port of <code>vi</code> with many extensions. Extremely widely
 used. Many *nix systems actually run vim when the user calls
 <code>vi</code>. Have a major war with <code>emacs</code> users.</li>
@@ -243,11 +243,11 @@ used. Many *nix systems actually run vim when the user calls
 <li><code>emacs</code>: The other big UNIX editor, focused on extensibility.
 GNU Emacs is the most widely used fork. Have a major war with
 <code>vi</code> / <code>vim</code> users.</li>
-<li>Notepad and its clones: Simple GUI-only text editors. Can't do
+<li>Notepad and its clones: Simple GUI-only text editors. Can&rsquo;t do
 much with these.</li>
 <li>Sublime Text: An editor that was very popular a few years ago.
 Python-based plugin API for customisation.</li>
-<li>Atom: An editor developed by GitHub, designed to be 'hackable'.
+<li>Atom: An editor developed by GitHub, designed to be &rsquo;hackable&rsquo;.
 Extension and package creation language: JavaScript, since it
 ran on top of a web browser (Electron framework).</li>
 <li>Visual Studio Code: Currently the most popular editor in the
@@ -256,15 +256,15 @@ JavaScript for extension.</li>
 </ol>
 
 <p>
-Now, instead of discussing these one by one, we'll pick up certain
+Now, instead of discussing these one by one, we&rsquo;ll pick up certain
 common design principles between these editors and reason about
 which ones are desirable.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org7b1a759" class="outline-3">
-<h3 id="org7b1a759"><span class="section-number-3">1.2</span> Platforms</h3>
+<div id="outline-container-org241e7ab" class="outline-3">
+<h3 id="org241e7ab"><span class="section-number-3">1.2</span> Platforms</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Generally, editors are written as a single big program (often in C),
@@ -292,7 +292,7 @@ application properties can be changed on the fly, but different in
 that the core doesn’t have to be as heavy and complicated as web
 browsers. The core can be lightweight, run without a GUI, and most
 importantly, doesn’t have to be in JavaScript and limited by what the
-web standard may or may not allow. This is <code>emacs</code>' model.
+web standard may or may not allow. This is <code>emacs</code>&rsquo; model.
 </p>
 
 <p>
@@ -303,8 +303,8 @@ interface or (God forbid) recompilation.
 </div>
 </div>
 
-<div id="outline-container-org2a4aeaf" class="outline-3">
-<h3 id="org2a4aeaf"><span class="section-number-3">1.3</span> Interfaces</h3>
+<div id="outline-container-org6b4bea6" class="outline-3">
+<h3 id="org6b4bea6"><span class="section-number-3">1.3</span> Interfaces</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 Editors can be TUI-only (<code>nano</code>), GUI-only (Atom, VS Code), or both.
@@ -322,8 +322,8 @@ modern editors only have GUI support.
 </div>
 </div>
 
-<div id="outline-container-org8019feb" class="outline-3">
-<h3 id="org8019feb"><span class="section-number-3">1.4</span> Keyboard or Mouse-Driven</h3>
+<div id="outline-container-org744ab96" class="outline-3">
+<h3 id="org744ab96"><span class="section-number-3">1.4</span> Keyboard or Mouse-Driven</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 This is an interesting topic. Some editor interfaces are very
@@ -339,16 +339,16 @@ seasoned computer user knows, keyboards are the fastest and most
 precise way to interact with a computer. Hollywood understands
 this too: the master hacker is always typing, since that is the
 fastest way to talk to a computer when the world is going to be
-blown up in three minutes. Even if you aren't in a Bond film,
+blown up in three minutes. Even if you aren&rsquo;t in a Bond film,
 there is more comfort associated with not having to reach for the
 mouse and squint at tiny icons while editing. Moreover, keyboards
 are more precise: consider mouse-based vs. keyboard-based
-selection. Mice aren't a very useful tool for text editing, but
+selection. Mice aren&rsquo;t a very useful tool for text editing, but
 are indispensable in applications like photo editing.
 </p>
 
 <p>
-Good editors, however, don't force this choices on users,
+Good editors, however, don&rsquo;t force this choices on users,
 especially towards the mouse side, since that slows experienced
 users down at the cost of newbie-friendliness. There should at
 least be a way to do a mouse action using a keyboard.
@@ -356,8 +356,8 @@ least be a way to do a mouse action using a keyboard.
 </div>
 </div>
 
-<div id="outline-container-orgcbf3c95" class="outline-3">
-<h3 id="orgcbf3c95"><span class="section-number-3">1.5</span> Complexity</h3>
+<div id="outline-container-org53f37f9" class="outline-3">
+<h3 id="org53f37f9"><span class="section-number-3">1.5</span> Complexity</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 This is one of the <i>really</i> big debates, which draws its roots from
@@ -401,28 +401,28 @@ convenient not to have.
 </div>
 </div>
 
-<div id="outline-container-org38d8e2a" class="outline-3">
-<h3 id="org38d8e2a"><span class="section-number-3">1.6</span> Modal vs. Non-Modal</h3>
+<div id="outline-container-org40115e8" class="outline-3">
+<h3 id="org40115e8"><span class="section-number-3">1.6</span> Modal vs. Non-Modal</h3>
 <div class="outline-text-3" id="text-1-6">
 <p>
 Mos people today are entirely unfamiliar with modal editing as a
 concept, since nearly no text editing programs have a modal
 interface. A modal interface simply means that the editor has a
-'normal' mode where pressing the key <code>a</code> (for instance) does not
-insert the letter 'a', but instead performs some editor function.
-To actually insert the letter, the editor must be put into 'insert'
+&rsquo;normal&rsquo; mode where pressing the key <code>a</code> (for instance) does not
+insert the letter &rsquo;a&rsquo;, but instead performs some editor function.
+To actually insert the letter, the editor must be put into &rsquo;insert&rsquo;
 mode, which is when pressing keys is a literal insert into the
 file.
 </p>
 
 <p>
-Modal interfaces may sound complicated, but, in truth, it's exactly
+Modal interfaces may sound complicated, but, in truth, it&rsquo;s exactly
 the same concept as a modifier key. When you hold down <code>Ctrl</code>, the
-keyboard keys all behave differently. In this state, pressing 'f'
+keyboard keys all behave differently. In this state, pressing &rsquo;f&rsquo;
 may execute the search function. Modal editing can simply be
 thought of as putting the editor into a mode where a modifier key
 is always pressed, or into a mode where you can just insert text. If
-this sounds needlessly complicated, hang in there, we'll get to
+this sounds needlessly complicated, hang in there, we&rsquo;ll get to
 discussing why it can actually be useful eventually.
 </p>
 
@@ -436,8 +436,8 @@ vital to the seasoned <code>vi</code> user.
 </div>
 </div>
 
-<div id="outline-container-org2a86b17" class="outline-3">
-<h3 id="org2a86b17"><span class="section-number-3">1.7</span> Extensibility</h3>
+<div id="outline-container-org94534e8" class="outline-3">
+<h3 id="org94534e8"><span class="section-number-3">1.7</span> Extensibility</h3>
 <div class="outline-text-3" id="text-1-7">
 <p>
 And now, to the elephant in the room. How much should a user be
@@ -446,8 +446,8 @@ able to change? How much should a user actually change?
 
 <p>
 In my opinion, a user of a text editor should never be bound by the
-imagination of the program's author. This means that a user should
-be able to use the editor to do things the author didn't even know
+imagination of the program&rsquo;s author. This means that a user should
+be able to use the editor to do things the author didn&rsquo;t even know
 were possible, without editing the actual program binary. This is
 especially important for text editors because people come up with
 new features all the time, most of which are useful. This level of
@@ -455,11 +455,11 @@ extensibility requires an extension language.
 </p>
 </div>
 
-<div id="outline-container-org06671d1" class="outline-4">
-<h4 id="org06671d1"><span class="section-number-4">1.7.1</span> Extension Language</h4>
+<div id="outline-container-org5e8130a" class="outline-4">
+<h4 id="org5e8130a"><span class="section-number-4">1.7.1</span> Extension Language</h4>
 <div class="outline-text-4" id="text-1-7-1">
 <p>
-The definition of an extension language for a text editor isn't
+The definition of an extension language for a text editor isn&rsquo;t
 well defined. In practice, they range from configuration files which
 switch certain options on and off to Turing complete dialects of
 Lisp, with most falling in between.
@@ -467,15 +467,15 @@ Lisp, with most falling in between.
 </div>
 </div>
 
-<div id="outline-container-org0845d06" class="outline-4">
-<h4 id="org0845d06"><span class="section-number-4">1.7.2</span> Packages</h4>
+<div id="outline-container-orga219ae6" class="outline-4">
+<h4 id="orga219ae6"><span class="section-number-4">1.7.2</span> Packages</h4>
 </div>
-<div id="outline-container-org69ae4e5" class="outline-4">
-<h4 id="org69ae4e5"><span class="section-number-4">1.7.3</span> How Much Extension is Too Much?</h4>
+<div id="outline-container-org4ca630c" class="outline-4">
+<h4 id="org4ca630c"><span class="section-number-4">1.7.3</span> How Much Extension is Too Much?</h4>
 <div class="outline-text-4" id="text-1-7-3">
 <p>
  It should be obvious by now that there seem to be two important
-'parts' of a text editing experience: the actual editing of text
+&rsquo;parts&rsquo; of a text editing experience: the actual editing of text
 (moving around, deleting text, etc.), and the environment setup: the
 pane management, file management, version control and debugger
 interfaces, etc. It should be obvious that most IDEs get the second
@@ -488,8 +488,8 @@ separately, trying to pick the best of the lot in each case.
 </div>
 </div>
 
-<div id="outline-container-org37a8c1e" class="outline-2">
-<h2 id="org37a8c1e"><span class="section-number-2">2</span> Raw Text Editing</h2>
+<div id="outline-container-orged5d668" class="outline-2">
+<h2 id="orged5d668"><span class="section-number-2">2</span> Raw Text Editing</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Broadly speaking, all editors can be divided into two categories on
@@ -501,9 +501,9 @@ transformed into an editor function interface. Powerful editors with
 a lot of functions, like Emacs, rely heavily on modifier keys. In
 fact, Emacs uses both <code>Ctrl</code> and <code>Meta</code> (or <code>Alt</code>) to call editor
 functions. These are often chained together to create incredibly
-long bindings that'll knot your pinkies up. However, they do give
+long bindings that&rsquo;ll knot your pinkies up. However, they do give
 access to a lot of powerful Emacs functions right from the keyboard.
-Let's call this style of editing 'key chord' based editing (to steal
+Let&rsquo;s call this style of editing &rsquo;key chord&rsquo; based editing (to steal
 a metaphor from music theory): wherein multiple keys are pressed
 simultaneously to call editor functions. In fact, in Emacs, going to
 the next line is done using <code>C-n</code><sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>, which calls the editor
@@ -521,37 +521,37 @@ note-style editing. We observe that while editing text, we either:
 <li>Call some editor function.</li>
 </ul>
 <p>
-That's it. vim's modal system is based on this principle: that
-only three main modes are really needed: an 'insert' mode in which
-typing letters inserts them literally, a 'visual selection' mode
+That&rsquo;s it. vim&rsquo;s modal system is based on this principle: that
+only three main modes are really needed: an &rsquo;insert&rsquo; mode in which
+typing letters inserts them literally, a &rsquo;visual selection&rsquo; mode
 where a region is highlighted and can then be operated upon, and a
-'normal' mode from which all editor functions are available, called
+&rsquo;normal&rsquo; mode from which all editor functions are available, called
 by typing any key. In our previous discussion, we said modal editing
 can be thought of as the normal mode being one where a modifier key
-is always pressed. In vim's normal mode, pressing the key 'j' goes
+is always pressed. In vim&rsquo;s normal mode, pressing the key &rsquo;j&rsquo; goes
 to the next line. No modifiers: you just play notes on the keyboard.
 </p>
 
 <p>
-Now, it's easy to superficially argue that although key chords are
-sometimes painful to type, they're far simpler than having a modal
-editor wherein you have to keep track of which mode you're in.
-However, I posit that modal editing, and specifically vim's modal
-editing, is actually a far superior paradigm. Let's see why.
+Now, it&rsquo;s easy to superficially argue that although key chords are
+sometimes painful to type, they&rsquo;re far simpler than having a modal
+editor wherein you have to keep track of which mode you&rsquo;re in.
+However, I posit that modal editing, and specifically vim&rsquo;s modal
+editing, is actually a far superior paradigm. Let&rsquo;s see why.
 </p>
 </div>
 
-<div id="outline-container-orgad7f18c" class="outline-3">
-<h3 id="orgad7f18c"><span class="section-number-3">2.1</span> Home Row Keys</h3>
+<div id="outline-container-org60ac1b1" class="outline-3">
+<h3 id="org60ac1b1"><span class="section-number-3">2.1</span> Home Row Keys</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
-Back when <code>vi</code> was written, it didn't have the luxury of assuming
+Back when <code>vi</code> was written, it didn&rsquo;t have the luxury of assuming
 that all keyboards had modifier keys, or that they had exactly the
 same modifier keys as the ones on some other keyboard.
-Standardisation hadn't taken place yet. This also meant that all
-the editor's power had to be available using keys that'd definitely
+Standardisation hadn&rsquo;t taken place yet. This also meant that all
+the editor&rsquo;s power had to be available using keys that&rsquo;d definitely
 be on most keyboards: alphanumeric and punctuation. These keys are
-also located on the 'home row' of all keyboards, meaning you don't
+also located on the &rsquo;home row&rsquo; of all keyboards, meaning you don&rsquo;t
 have to move your hands much for commands that could be very
 different from each other.<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>
 </p>
@@ -570,11 +570,11 @@ multiple keys at the same time.
 </div>
 </div>
 
-<div id="outline-container-org80bd017" class="outline-3">
-<h3 id="org80bd017"><span class="section-number-3">2.2</span> Composability</h3>
+<div id="outline-container-org709131d" class="outline-3">
+<h3 id="org709131d"><span class="section-number-3">2.2</span> Composability</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
-Vim's keybindings form a grammar within themselves. To understand
+Vim&rsquo;s keybindings form a grammar within themselves. To understand
 this, consider a few examples.
 </p>
 
@@ -596,7 +596,7 @@ Press <code>4h</code> in normal mode. Note that in normal mode:
 Any vim command can be prefixed with a number \(n\) to do it \(n\) times.
 </p></li>
 <li><b>Move 3 Words Forward</b>
-A 'word' is a space-separated group of letters. To move forward by
+A &rsquo;word&rsquo; is a space-separated group of letters. To move forward by
 a word, press <code>w</code> in normal mode. To move back by a word, press
 <code>b</code>. To move forward 3 vim words, press <code>3w</code>.</li>
 <li><b>Delete 3 Back-words</b>
@@ -604,8 +604,8 @@ a word, press <code>w</code> in normal mode. To move back by a word, press
 </ul>
 
 <p>
-This illustrates the power of vim's normal mode. It gives us
-super-powerful text editing capabilities, and we've only covered the
+This illustrates the power of vim&rsquo;s normal mode. It gives us
+super-powerful text editing capabilities, and we&rsquo;ve only covered the
 very basics. Vim has a <b>action-count-object</b> model for composing
 commands, where:
 </p>
@@ -617,8 +617,8 @@ commands, where:
 </div>
 </div>
 
-<div id="outline-container-org4efe589" class="outline-3">
-<h3 id="org4efe589"><span class="section-number-3">2.3</span> Mnemonics</h3>
+<div id="outline-container-org13b8013" class="outline-3">
+<h3 id="org13b8013"><span class="section-number-3">2.3</span> Mnemonics</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 To get into insert mode, press <code>i</code>. To get into visual selection
@@ -630,14 +630,14 @@ mode, press <code>v</code>. Go back to normal mode? <code>Escape</code>. To past
 Even better, when combined with each other, these mnemonics hold:
 delete a word is: <code>daw</code>, change 5 words is <code>c5w</code>, transpose two
 characters is <code>xp</code>, and so on. (<code>x</code> is equivalent to <code>dl</code>, or
-deleting a single character. Unlike <code>d</code>, <code>x</code> doesn't expect an
+deleting a single character. Unlike <code>d</code>, <code>x</code> doesn&rsquo;t expect an
 object to act on.)
 </p>
 </div>
 </div>
 
-<div id="outline-container-org665a3ed" class="outline-3">
-<h3 id="org665a3ed"><span class="section-number-3">2.4</span> Speed</h3>
+<div id="outline-container-org2d8f105" class="outline-3">
+<h3 id="org2d8f105"><span class="section-number-3">2.4</span> Speed</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 Clearly, this makes editing text fast and easy to do. Moreover,
@@ -645,21 +645,21 @@ many commands are provided for speed: <code>0</code> goes to start of line,
 <code>$</code> goes to end of line. <code>gg</code> goes to the first character of the
 file, <code>G</code> goes to the last. <code>10G</code> goes to line 10. <code>dd</code> deletes the
 current line, <code>yy</code> copies it. <code>fR</code> goes to the next occurrence of
-the character 'R'. Capitalisation of many commands causes them to
+the character &rsquo;R&rsquo;. Capitalisation of many commands causes them to
 act backwards: <code>FR</code> goes to the previous occurrence of <code>R</code>. All of
 these, of course, can be composed. <code>di)</code> deletes all text within
 the current parentheses.
 </p>
 
 <p>
-It should be obvious by now that vim's way of editing text is fast
+It should be obvious by now that vim&rsquo;s way of editing text is fast
 and intuitive, and fully justifies having different modes.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgd6ee8d2" class="outline-3">
-<h3 id="orgd6ee8d2"><span class="section-number-3">2.5</span> Other Good Ideas in Vim</h3>
+<div id="outline-container-orgd308c33" class="outline-3">
+<h3 id="orgd308c33"><span class="section-number-3">2.5</span> Other Good Ideas in Vim</h3>
 <div class="outline-text-3" id="text-2-5">
 <p>
 Many of the following ideas are also implemented in Emacs, but few
@@ -667,20 +667,20 @@ other editors have such powerful implementations.
 </p>
 </div>
 
-<div id="outline-container-orgd2e4005" class="outline-4">
-<h4 id="orgd2e4005"><span class="section-number-4">2.5.1</span> Registers</h4>
+<div id="outline-container-org819ddf9" class="outline-4">
+<h4 id="org819ddf9"><span class="section-number-4">2.5.1</span> Registers</h4>
 <div class="outline-text-4" id="text-2-5-1">
 <p>
 Almost every operating system has a clipboard, a temporary space
-where copied text is held until it's pasted. The problem with a
-single clipboard, that I'm sure you've experienced, is copying
+where copied text is held until it&rsquo;s pasted. The problem with a
+single clipboard, that I&rsquo;m sure you&rsquo;ve experienced, is copying
 some other text overwrites the previous contents of the clipboard.
 Ugh.
 </p>
 
 <p>
-A register is precisely like a clipboard in that it's a temporary
-place to hold textual data. However, here's the cool part: vim
+A register is precisely like a clipboard in that it&rsquo;s a temporary
+place to hold textual data. However, here&rsquo;s the cool part: vim
 provides around 10 default registers, and 26 registers reserved
 for the user. Register <code>0</code> is the clipboard. Registers <code>1 to 9</code>
 are effectively a clipboard history stack: eliminating the
@@ -697,11 +697,11 @@ them as macros.
 </div>
 </div>
 
-<div id="outline-container-orge86619b" class="outline-4">
-<h4 id="orge86619b"><span class="section-number-4">2.5.2</span> Macros</h4>
+<div id="outline-container-org9c5bc01" class="outline-4">
+<h4 id="org9c5bc01"><span class="section-number-4">2.5.2</span> Macros</h4>
 <div class="outline-text-4" id="text-2-5-2">
 <p>
-Let's say we have the following C program:
+Let&rsquo;s say we have the following C program:
 </p>
 
 <div class="org-src-container">
@@ -723,9 +723,9 @@ Let's say we have the following C program:
 
 <p>
 Great. We forgot the semicolons, and the <code>\n</code> after each string,
-because we're Python developers. The slow way to do it is to go to
-every line and manually type in what we need to. If we're the cool
-new kids, we'll use multiple cursors&#x2026;oh wait. We can only use
+because we&rsquo;re Python developers. The slow way to do it is to go to
+every line and manually type in what we need to. If we&rsquo;re the cool
+new kids, we&rsquo;ll use multiple cursors&#x2026;oh wait. We can only use
 multiple cursors to add semicolons to the ends of the lines, but
 the location of the <code>\n</code> is different in every case. Vim macros to
 the rescue.
@@ -733,7 +733,7 @@ the rescue.
 
 <p>
 A vim macro simply records all keystrokes from the start of
-recording to the end and replays them. Let's record a macro <code>a</code>. Hit
+recording to the end and replays them. Let&rsquo;s record a macro <code>a</code>. Hit
 <code>qa</code>. Now, <code>02f"i\n&lt;Esc&gt;A;&lt;Esc&gt;0jq</code>.<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup> This records the keystrokes
 and saves it as macro <code>a</code>. To replay the macro for the remaining 6
 lines, run <code>6@a</code>.
@@ -760,17 +760,17 @@ lines, run <code>6@a</code>.
 Note that vim even supports recursive macros. That would work by
 first setting <code>a</code> to an empty macro: <code>qaq</code>. Then,
 <code>qa02f"i\n&lt;Esc&gt;A;&lt;Esc&gt;0j@aq</code>. A single <code>@a</code> runs this till the
-last line of the file (though this isn't what we wanted).
-Recursive macros aren't used often, but are fun to write.
+last line of the file (though this isn&rsquo;t what we wanted).
+Recursive macros aren&rsquo;t used often, but are fun to write.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org874e8f1" class="outline-4">
-<h4 id="org874e8f1"><span class="section-number-4">2.5.3</span> Macros <i>are</i> Registers</h4>
+<div id="outline-container-orge765a99" class="outline-4">
+<h4 id="orge765a99"><span class="section-number-4">2.5.3</span> Macros <i>are</i> Registers</h4>
 <div class="outline-text-4" id="text-2-5-3">
 <p>
-Macros are stored in registers. Many people don't know that
+Macros are stored in registers. Many people don&rsquo;t know that
 recording a macro is just writing keystrokes to a register. You
 can in fact <code>@</code> any register to interpret its contents as
 keystrokes. This means you could copy a vim macro from a website
@@ -779,11 +779,11 @@ to your X clipboard and run it directly in vim (<code>@0</code>).
 </div>
 </div>
 
-<div id="outline-container-orgf43c457" class="outline-4">
-<h4 id="orgf43c457"><span class="section-number-4">2.5.4</span> Rectangular Selection</h4>
+<div id="outline-container-orgdd5623b" class="outline-4">
+<h4 id="orgdd5623b"><span class="section-number-4">2.5.4</span> Rectangular Selection</h4>
 <div class="outline-text-4" id="text-2-5-4">
 <p>
-Here's something the new kids on the block use multiple cursors
+Here&rsquo;s something the new kids on the block use multiple cursors
 for: rectangular selection. If we have the following file:
 </p>
 
@@ -818,8 +818,8 @@ Walker
 </div>
 </div>
 
-<div id="outline-container-orgb2a2114" class="outline-4">
-<h4 id="orgb2a2114"><span class="section-number-4">2.5.5</span> Marks</h4>
+<div id="outline-container-org3a74adb" class="outline-4">
+<h4 id="org3a74adb"><span class="section-number-4">2.5.5</span> Marks</h4>
 <div class="outline-text-4" id="text-2-5-5">
 <p>
 Marks are simple: they let you set a kind of bookmark at a certain
@@ -831,12 +831,12 @@ A neat feature not many modern editors have.
 </div>
 </div>
 
-<div id="outline-container-orgb762efe" class="outline-4">
-<h4 id="orgb762efe"><span class="section-number-4">2.5.6</span> Undo Tree</h4>
+<div id="outline-container-org2428ff4" class="outline-4">
+<h4 id="org2428ff4"><span class="section-number-4">2.5.6</span> Undo Tree</h4>
 <div class="outline-text-4" id="text-2-5-6">
 <p>
-If vim didn't already have a whole bunch of killer features,
-here's yet another: undo trees. Let's say you type the following:
+If vim didn&rsquo;t already have a whole bunch of killer features,
+here&rsquo;s yet another: undo trees. Let&rsquo;s say you type the following:
 </p>
 
 <pre class="example">
@@ -881,15 +881,15 @@ history: the one where we typed <code>other</code>, one with <code>weird</code>,
 with <code>final</code>. Most editors discard old branches of this tree and
 maintain a linear undo history, but this is blatantly dishonest:
 such an editor is discarding edit history, possibly causing
-information loss. Vim's model saves the whole tree, and at nodes
+information loss. Vim&rsquo;s model saves the whole tree, and at nodes
 allows you to select which branch you want to explore. Neat.<sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup>
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orge919bc8" class="outline-3">
-<h3 id="orge919bc8"><span class="section-number-3">2.6</span> Vim Caveats</h3>
+<div id="outline-container-org78ff008" class="outline-3">
+<h3 id="org78ff008"><span class="section-number-3">2.6</span> Vim Caveats</h3>
 <div class="outline-text-3" id="text-2-6">
 <p>
 Despite vim having absolutely brilliant ideas for raw text editing,
@@ -901,35 +901,35 @@ Vimscript, which is ugly and hard to use. It makes implementing
 modern features like autocompletion and file browsers difficult.
 Of course, vim purists insist that vim is meant to be minimal, a
 small tool in the UNIX toolchain.<sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup> However, for people who
-want more modern IDE-like features in their text editor, vim isn't
+want more modern IDE-like features in their text editor, vim isn&rsquo;t
 the best choice.
 </p>
 
 <p>
-Now, the vim community is making efforts to fix this: there's a GTK
+Now, the vim community is making efforts to fix this: there&rsquo;s a GTK
 version of vim, and the <code>neovim</code> project fixes a lot of issues with
-vim including its plugin interface, and is a great option if you've
-read this far and don't have the energy to read further.
+vim including its plugin interface, and is a great option if you&rsquo;ve
+read this far and don&rsquo;t have the energy to read further.
 </p>
 
 <p>
-Despite vim's problems, it's a useful and extremely powerful
-editor. Moreover, it'll be there on any UNIX system you encounter,
-so it's worth learning if only for that reason.
+Despite vim&rsquo;s problems, it&rsquo;s a useful and extremely powerful
+editor. Moreover, it&rsquo;ll be there on any UNIX system you encounter,
+so it&rsquo;s worth learning if only for that reason.
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org3967a01" class="outline-2">
-<h2 id="org3967a01"><span class="section-number-2">3</span> Powerful Environment</h2>
+<div id="outline-container-org87fe8e1" class="outline-2">
+<h2 id="org87fe8e1"><span class="section-number-2">3</span> Powerful Environment</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Another good reason, I think, not to use vim is the
 availability of a much more powerful alternative: Emacs. Emacs
 itself is best understood as a REPL for a dialect of Lisp.
 Naturally, this language is built to control the Emacs editor,
-but it's Turing complete in a non-tarpit way.
+but it&rsquo;s Turing complete in a non-tarpit way.
 </p>
 
 <p>
@@ -937,20 +937,20 @@ The Emacs editor provides an interface to the functions
 defined by the Emacs Lisp language. Some functions are
 directly callable (interactive), while others are internal.
 Some interactive functions are bound to keyboard events, while
-other aren't, but can be. Finally, Emacs has a way to display
+other aren&rsquo;t, but can be. Finally, Emacs has a way to display
 the results of running certain functions.
 </p>
 
 <p>
-Emacs' core is a C interpreter for Elisp (Emacs Lisp). GNU
+Emacs&rsquo; core is a C interpreter for Elisp (Emacs Lisp). GNU
 Emacs provides a lot of Elisp preconfigured: the menu bar,
 scroll bar, starting screen, etc., etc.
 </p>
 
 <p>
-Now, Emacs is modeless. Typing 'a' into Emacs runs the
+Now, Emacs is modeless. Typing &rsquo;a&rsquo; into Emacs runs the
 command <code>self-insert-command</code>, which does a literal insert of
-the character 'a'. Other keystrokes call other interactive
+the character &rsquo;a&rsquo;. Other keystrokes call other interactive
 commands. By default M-x (Meta-X, usually the Meta key is
 Alt) runs <code>execute-extended-command</code>, which lets you call any
 interactive function by name.
@@ -976,7 +976,7 @@ Many argue that Emacs is more of an operating system than an
 editor, a sentiment I strongly <i>agree</i> with. It is an
 infinitely configurable and extensible operating system,
 built to be that way. As we noted earlier, a much better text
-editing paradigm free from Emacs' ugly modifiers is vim,
+editing paradigm free from Emacs&rsquo; ugly modifiers is vim,
 which can be implemented within Emacs. This gives us the best
 of both worlds: powerful vim-like text editing, along with a
 powerful environment. Let us now explore what it is about
@@ -984,12 +984,12 @@ this Elisp environment that makes it so powerful.
 </p>
 </div>
 
-<div id="outline-container-org77566ac" class="outline-3">
-<h3 id="org77566ac"><span class="section-number-3">3.1</span> Excellent OOTB Setup</h3>
+<div id="outline-container-orgd1ee85e" class="outline-3">
+<h3 id="orgd1ee85e"><span class="section-number-3">3.1</span> Excellent OOTB Setup</h3>
 <div class="outline-text-3" id="text-3-1">
 </div>
-<div id="outline-container-org08bd4c5" class="outline-4">
-<h4 id="org08bd4c5"><span class="section-number-4">3.1.1</span> Encodings and Scripts</h4>
+<div id="outline-container-org1be82e1" class="outline-4">
+<h4 id="org1be82e1"><span class="section-number-4">3.1.1</span> Encodings and Scripts</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <p>
 Emacs (when run inside a GUI or UTF-8 terminal) supports
@@ -1007,24 +1007,32 @@ Support for right-to-left scripts also just works.
 </div>
 </div>
 
-<div id="outline-container-org30e0c89" class="outline-4">
-<h4 id="org30e0c89"><span class="section-number-4">3.1.2</span> Buffers, Windows, Frames</h4>
-</div>
-
-<div id="outline-container-org99dd46c" class="outline-4">
-<h4 id="org99dd46c"><span class="section-number-4">3.1.3</span> TUI and GUI</h4>
-</div>
-</div>
-
-
-
-<div id="outline-container-org8b7c5bd" class="outline-3">
-<h3 id="org8b7c5bd"><span class="section-number-3">3.2</span> Your Editor, Your Choice</h3>
+<div id="outline-container-org70f4cc8" class="outline-4">
+<h4 id="org70f4cc8"><span class="section-number-4">3.1.2</span> Buffers, Windows, Frames</h4>
+<div class="outline-text-4" id="text-3-1-2">
+<p>
+Emacs has an excellent tiling window management system: so
+much so that a package called EWXM lets Emacs manage all X
+windows. In Emacs, all files are held in buffers. A window
+displays the contents of a
+</p>
 </div>
 </div>
 
-<div id="outline-container-org15b948f" class="outline-2">
-<h2 id="org15b948f"><span class="section-number-2">4</span> Notes</h2>
+<div id="outline-container-org15583fd" class="outline-4">
+<h4 id="org15583fd"><span class="section-number-4">3.1.3</span> TUI and GUI</h4>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgbe72c76" class="outline-3">
+<h3 id="orgbe72c76"><span class="section-number-3">3.2</span> Your Editor, Your Choice</h3>
+</div>
+</div>
+
+<div id="outline-container-org40cd5f6" class="outline-2">
+<h2 id="org40cd5f6"><span class="section-number-2">4</span> Notes</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>[Re Footnote 5] Between the time I started writing this post
@@ -1054,12 +1062,12 @@ Image credit: <a href="https://commons.wikimedia.org/w/index.php?curid=9666341">
 </p></div></div>
 
 <div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"><p class="footpara">
-Yeah, that looks ugly, so let's break it down. <code>0</code> goes to the
-start of the line. <code>2f"</code> finds the second " mark. <code>i\n</code> goes into
+Yeah, that looks ugly, so let&rsquo;s break it down. <code>0</code> goes to the
+start of the line. <code>2f"</code> finds the second &ldquo; mark. <code>i\n</code> goes into
 insert mode and inserts the newline. <code>&lt;Esc&gt;</code> to go back to normal
 mode. <code>A</code> to go to the end of the line and enter insert mode. <code>;</code>
 inserts the semicolon. &lt;Esc&gt; to normal mode. Then <code>0j</code> go to the start of the
-line and go to the next line. Then <code>q</code> to end the macro. It's simple
+line and go to the next line. Then <code>q</code> to end the macro. It&rsquo;s simple
 once you get used to it.
 </p></div></div>
 
@@ -1069,14 +1077,14 @@ approach too. If you know of such a plugin, let me know.
 </p></div></div>
 
 <div class="footdef"><sup><a id="fn.6" class="footnum" href="#fnr.6">6</a></sup> <div class="footpara"><p class="footpara">
-We'll argue later about minimalism vs. maximalism in text editors.
+We&rsquo;ll argue later about minimalism vs. maximalism in text editors.
 </p></div></div>
 
 
 </div>
 </div></div>
 <div id="postamble" class="status">
-<hr><p style="font-size: 75%">Created in GNU <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3.6).</p>
+<hr><p style="font-size: 75%">Created in GNU <a href="https://www.gnu.org/software/emacs/">Emacs</a> 25.2.2 (<a href="https://orgmode.org">Org</a> mode 9.3.6).</p>
 </div>
 </body>
 </html>

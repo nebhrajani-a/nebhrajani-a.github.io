@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-04-20 Tue 13:33 -->
+<!-- 2021-05-28 Fri 08:15 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>/nebhrajani/posts/new-age-software/</title>
@@ -98,14 +98,14 @@ for the JavaScript code in this tag.
 <div class="post-meta"> <2020-10-22 Thu> - 4 min read
 </div>
 
-<div id="outline-container-org5bc7e82" class="outline-2">
-<h2 id="org5bc7e82"><span class="section-number-2">1</span> UNIX Tools</h2>
+<div id="outline-container-org99635be" class="outline-2">
+<h2 id="org99635be"><span class="section-number-2">1</span> UNIX Tools</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Donald Knuth, demonstrating literate programming, once
 wrote a ten-page program to count the \(k\) most
 frequently used words in an input file, and print out a sorted list of the
-words with their frequencies. Knuth's paper was reviewed
+words with their frequencies. Knuth&rsquo;s paper was reviewed
 by McIlroy, who added at the end of his review a six
 command pipeline (using UNIX tools), that also solves the
 problem.
@@ -124,26 +124,26 @@ sed $<span style="color: #5EC4FF;">{</span><span style="color: #718CA1;">1</span
 For those unfamiliar with the UNIX command line, this
 pipeline takes the input text stream,
 transliterates the complement (-c) of the alphabet set to newlines,
-and squeezes (-s) multiple newlines. It then 'pipes' this
+and squeezes (-s) multiple newlines. It then &rsquo;pipes&rsquo; this
 stream into the next command, which transliterates all
 capital letters to lowercase ones. These are then sorted
 to bring identical words together, and duplicates removed
 using <code>uniq</code>, with a count added (-c). Again
-sorted in reverse numeric order, since the first 'column'
+sorted in reverse numeric order, since the first &rsquo;column&rsquo;
 of the stream is the frequency. The top \(k\) lines are
 then printed using the stream editor (taken as the first
-argument, ${1}). This could've been done
-using <code>head</code> as well, but perhaps it wasn't
+argument, ${1}). This could&rsquo;ve been done
+using <code>head</code> as well, but perhaps it wasn&rsquo;t
 around at the time.
 </p>
 
 
 <p>
 This example perfectly illustrates the power of the UNIX
-command line and philosophy. Although Knuth's solution was
+command line and philosophy. Although Knuth&rsquo;s solution was
 more efficient (\(O(n\log{n})\) vs \(O(\log{n})\) IIRC),
-the beauty lies in the way UNIX works: it's a set of tiny
-programs that don't do much alone, but together are able
+the beauty lies in the way UNIX works: it&rsquo;s a set of tiny
+programs that don&rsquo;t do much alone, but together are able
 to perform complex tasks one would have to write a
 monolithic program to solve. This is the right way to
 write software: since it does not leave the end user
@@ -157,14 +157,14 @@ in combination? Yes: modular is better.
 </div>
 </div>
 
-<div id="outline-container-org1049585" class="outline-2">
-<h2 id="org1049585"><span class="section-number-2">2</span> Monolithic Software</h2>
+<div id="outline-container-org6ebeff6" class="outline-2">
+<h2 id="org6ebeff6"><span class="section-number-2">2</span> Monolithic Software</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 The software people use today is nothing like the UNIX
 shell
 (usually <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">bash</a>.
-It's usually a gigantic program that does the functions of
+It&rsquo;s usually a gigantic program that does the functions of
 many smaller programs. A popular example (from a brilliant
 essay
 called <a href="http://cristal.inria.fr/~weis/info/commandline.html">In The Beginning Was The Command Line</a>, is that of
@@ -174,18 +174,18 @@ modern programs accumulate features, combining the
 features of more and more smaller programs and integrating
 them. This probably started with the Kitchen Sink, Emacs,
 but was quickly adopted by many others. Let me be clear.
-This approach isn't necessarily wrong or less good: but it
-does mean one thing: you'll reach a point where
-two <i>huge</i> programs just can't be combined with each
-other. Maybe it's because they were built by different
-people, or to solve different problems: but they can't
+This approach isn&rsquo;t necessarily wrong or less good: but it
+does mean one thing: you&rsquo;ll reach a point where
+two <i>huge</i> programs just can&rsquo;t be combined with each
+other. Maybe it&rsquo;s because they were built by different
+people, or to solve different problems: but they can&rsquo;t
 communicate with each other using pipes and text streams
 anymore, for instance, Word and \(\mathrm{\LaTeX}\). This
 is where the problems begin:
 </p>
 <ol class="org-ol">
-<li>Big programs can't work together neatly. They use
-different file formats, they're doing different tasks,
+<li>Big programs can&rsquo;t work together neatly. They use
+different file formats, they&rsquo;re doing different tasks,
 and a huge amount of code has to be written to make
 these programs talk to each other.</li>
 <li>De-facto standards are set, giving one piece of
@@ -195,50 +195,50 @@ easy to use tools are seldom the best possible tools
 for the job. Consider Microsoft Word. Easy to use,
 requires no reading of the manual, but cannot handle
 serious writing well at all. Besides, such software
-generates monopolies: the 90's Microsoft monopoly
-wasn't very long ago.</li>
+generates monopolies: the 90&rsquo;s Microsoft monopoly
+wasn&rsquo;t very long ago.</li>
 </ol>
 
 
 <p>
 What does this eventually mean for software as a whole?
-It's a net loss for humanity. Instead of using tools of
+It&rsquo;s a net loss for humanity. Instead of using tools of
 mathematical precision, we tend to use the only tool we
 know how. The law of the instrument plays out, eventually
-resulting in nobody but the intellectual 'elite' using the
+resulting in nobody but the intellectual &rsquo;elite&rsquo; using the
 right tools for the job.
 </p>
 
 
 <p>
-I'm not sure how software gets away with this. Everywhere
+I&rsquo;m not sure how software gets away with this. Everywhere
 else (think back to car mechanics), eventually, people
 learn to use the right tool and adopt it quickly. However,
 it seems that this does not hold true for software. Is it
 really that hard to read a manual and to spend a few days
 learning to use, say, vim? It does pay off in the long
-run. Maybe it's human laziness: it's much easier to click
+run. Maybe it&rsquo;s human laziness: it&rsquo;s much easier to click
 around and guess at how to use software than reading its
 manual.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org4bd671e" class="outline-2">
-<h2 id="org4bd671e"><span class="section-number-2">3</span> Conclusion</h2>
+<div id="outline-container-org67ae418" class="outline-2">
+<h2 id="org67ae418"><span class="section-number-2">3</span> Conclusion</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Steve Jobs often touted how people completely unfamiliar
 with computers could quickly use iOS without much help due
 to its simple design. He was right: using iPhones is a lot
 easier than using Linux, and requires far less training.
-Maybe that's a good thing: but it over-panders to a class
+Maybe that&rsquo;s a good thing: but it over-panders to a class
 of users having no prior experience with computers:
 primarily children and grandparents. However, there is an
 increasingly large number of people today using crappy
 tools, despite having a fair amount of computer literacy:
 the secretaries, the administrators, the government, the
-police. That's a potential market to tap into.
+police. That&rsquo;s a potential market to tap into.
 </p>
 </div>
 </div>
