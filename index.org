@@ -4,7 +4,6 @@
 #+HTML: <!-- <div class="post-meta - 2 min read
 #+HTML: -->
 
-* Featured
   # only one entry, with date. single bit of featured content.
 
   <2021-06-17 Thu>:
