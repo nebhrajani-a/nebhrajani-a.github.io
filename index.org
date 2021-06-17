@@ -8,7 +8,7 @@
   # only one entry, with date. single bit of featured content.
 
   <2021-06-17 Thu>:
-  - [[https://nebhrajani-a.github.io/sicp/video_notes/][SICP 1986 Video Notes]]: I've been studying SICP recently (hence the
+  - [[https://github.com/nebhrajani-a/sicp][SICP 1986 Video Notes]]: I've been studying SICP recently (hence the
     brief haitus from writing) from the 1986 Hewlett-Packard
     Television videos. The notes are now available as [[https://nebhrajani-a.github.io/sicp/video_notes/][HTML]] (WIP), and
     [[https://raw.githubusercontent.com/nebhrajani-a/sicp/master/video_notes/video_notes.pdf][PDF]] (recommended). Have fun going through them, and consider
