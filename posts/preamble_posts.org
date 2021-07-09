@@ -9,14 +9,12 @@
 #+HTML_HEAD: <link rel="stylesheet" href="../stylesheets/index.css" />
 
 
-
 #+HTML: <header role="banner" id="top">
 #+HTML: <div id="header-text">
-#+HTML: <h1><strong id="top-title">nebhrajani</strong></h1>
+#+HTML: <h1><strong id="top-title"><a style="color:#ffffff; border-bottom: 0px;" href="https://nebhrajani-a.github.io/">nebhrajani<a></strong></h1>
 #+HTML: </div>
 #+HTML: </header>
 #+HTML: <nav class="sidebar-nav">
-#+HTML:  <a class="nav-item" title="" href="https://nebhrajani-a.github.io/">HOME</a>
 #+HTML:  <a class="nav-item" title="" href="https://nebhrajani-a.github.io/posts/">POSTS</a>
 #+HTML:  <a class="nav-item" title="" href="https://nebhrajani-a.github.io/microblog/">MICROBLOG</a>
 #+HTML:  <a class="nav-item" title="" href="https://nebhrajani-a.github.io/files/">FILES</a>
