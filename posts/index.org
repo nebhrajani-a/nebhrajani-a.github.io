@@ -1,7 +1,6 @@
 #+include: ./preamble_posts.org
 
 #+OPTIONS: num:nil
-#+HTML: <h1 id="title">Posts</h1>
 #+HTML: <!-- <div class="post-meta - 1 min read
 #+HTML: -->
 
