@@ -4,15 +4,15 @@
 #+HTML: <!-- <div class="post-meta - 1 min read
 #+HTML: -->
 
-  - <2021-07-09 Fri>: Creating a microblog, since Twitter sucks and
+  - <2021-07-09 Fri 15:41>: Creating a microblog, since Twitter sucks and
     microblogging is fun.
 
 
-  - <2021-07-08 Thu>: What good is a phone call, if you're unable to
+  - <2021-07-08 Thu 14:21>: What good is a phone call, if you're unable to
     speak?
 
 
-  - <2021-06-17 Thu>: [[https://github.com/nebhrajani-a/sicp][SICP 1986 Video Notes]]: I've been studying SICP
+  - <2021-06-17 Thu 17:36>: [[https://github.com/nebhrajani-a/sicp][SICP 1986 Video Notes]]: I've been studying SICP
     recently (hence the brief haitus from writing) from the 1986
     Hewlett-Packard Television videos. The notes are now available as
     [[https://nebhrajani-a.github.io/sicp/video_notes/][HTML]] (WIP), and [[https://raw.githubusercontent.com/nebhrajani-a/sicp/master/video_notes/video_notes.pdf][PDF]] (recommended). Have fun going through them,
