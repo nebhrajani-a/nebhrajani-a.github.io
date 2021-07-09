@@ -1,7 +1,7 @@
 img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 80%;
     height: auto;
 }
@@ -303,10 +303,12 @@ hr {
     /* background: #1d262f; */
     background: #000000;
     color: #8F8F8F;
+    font-size: 14px;
 }
 .sea-theme pre code {
     color: #5d8cc0;
     background: initial;
+    font-size: 14px;
 }
 .sea-theme pre code::before, .sea-theme pre code::after {
     content: initial;
@@ -327,9 +329,10 @@ hr {
     color: #88b4e7;
 }
 .sea-theme a {
-    color: #586f89;
-    border-bottom: 1px solid #586f89;
+    color: #57A3E8;
+    border-bottom: 1px solid #57A3E8;
 }
+
 .sea-theme a,
 .sea-theme a:hover {
     text-decoration: none;
@@ -357,12 +360,14 @@ hr {
 }
 .sea-theme code {
     color: #808080;
+
+    font-size: 16px;
     /* background: #444c55; */
     /* padding: 1px; */
     /* border-radius: 5px; */
 }
 .sea-theme code::before, .sea-theme code::after {
-    /* content: "`"; */
+    content: "";
 }
 .sea-theme .post-meta {
     color: #586f89;
@@ -463,7 +468,9 @@ hr {
 }
 
 body {
-    font-family: "Courier New";
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
     text-rendering: geometricPrecision;
     max-width: 60vw;
     margin: 0 auto;
@@ -540,36 +547,47 @@ sup {
 
 
 @media (prefers-color-scheme: light) {
-.sea-theme h1,
-.sea-theme h2,
-.sea-theme h3,
-.sea-theme h4,
-.sea-theme h5,
-.sea-theme h6 {
-    color: #000000;
-    font-weight: "bold";
-}
-.sea-theme p,
-.sea-theme strong,
-.sea-theme em,
-.sea-theme ul,
-.sea-theme ol {
-    /* color: #88b4e7; */
-    color: #000000;
+    .sea-theme h1,
+    .sea-theme h2,
+    .sea-theme h3,
+    .sea-theme h4,
+    .sea-theme h5,
+    .sea-theme h6 {
+        color: #000000;
+        font-weight: "bold";
+    }
+    .sea-theme p,
+    .sea-theme strong,
+    .sea-theme em,
+    .sea-theme ul,
+    .sea-theme ol {
+        /* color: #88b4e7; */
+        color: #000000;
+    }
+
+    .sea-theme body {
+        /* background: #1d262f; */
+        background: #FFFFFF;
+    }
+
+    .sea-theme ol {
+        /* color: #88b4e7; */
+        color: #000000;
+    }
+    .sea-theme a:hover {
+        background-color: #CDCDCD;
+    }
+
 }
 
-.sea-theme body {
-    /* background: #1d262f; */
-    background: #FFFFFF;
+header{
+    text-align: center;
 }
 
-.sea-theme ol {
-    /* color: #88b4e7; */
-    color: #000000;
-}
-.sea-theme a:hover {
-    background-color: #CDCDCD;
+nav{
+    text-align: center;
+    word-spacing: 35px;
+    font-size: 110%;
 }
 
-}
-/*# sourceMappingURL=index.css.map */
+    /*# sourceMappingURL=index.css.map */

@@ -127,7 +127,8 @@ Point it to the root, load the kernel, point it to the
 INITRD.IMG, and boot.
 
 #+BEGIN_SRC sh
-grub> set root =(hd0,gpt2) #this was where / was located. Might vary depending on install, search around using TAB to find it
+grub> set root =(hd0,gpt2)
+      #this was where / was located. Might vary depending on install, search around using TAB to find it
 grub> linux /vmlinux root=/dev/sda2
 grub> initrd /initrd.img
 grub> boot

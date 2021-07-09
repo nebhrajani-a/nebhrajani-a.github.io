@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-05-28 Fri 08:25 -->
+<!-- 2021-07-09 Fri 15:22 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>~nebhrajani/posts/macbook-linux/</title>
@@ -88,19 +88,25 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
+<header role="banner" id="top">
+<div id="header-text">
+<h1><strong id="top-title">nebhrajani</strong></h1>
+</div>
+</header>
 <nav class="sidebar-nav">
-<a class="nav-item" title="" href="https://nebhrajani-a.github.io/">home</a>
-<a class="nav-item" title="" href="https://nebhrajani-a.github.io/posts/">posts</a>
-<a class="nav-item" title="" href="https://nebhrajani-a.github.io/files/">files</a>
+<a class="nav-item" title="" href="https://nebhrajani-a.github.io/">HOME</a>
+<a class="nav-item" title="" href="https://nebhrajani-a.github.io/posts/">POSTS</a>
+<a class="nav-item" title="" href="https://nebhrajani-a.github.io/microblog/">MICROBLOG</a>
+<a class="nav-item" title="" href="https://nebhrajani-a.github.io/files/">FILES</a>
 </nav>
 
 <h1 id="title">Christmas Project: Installing Linux On A 2006 MacBook (2,1)</h1>
 <div class="post-meta"> <2021-01-01 Fri> - 6 min read
 </div>
 
-<div id="outline-container-orgc755418" class="outline-2">
-<h2 id="orgc755418"><span class="section-number-2">1</span> Motivation</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-orge0c3480" class="outline-2">
+<h2 id="orge0c3480">Motivation</h2>
+<div class="outline-text-2" id="text-orge0c3480">
 <p>
 It&rsquo;s generally a good idea to leave Apple products alone. The hardware
 and software are tightly integrated enough that third-party software
@@ -137,9 +143,9 @@ somebody with some old hardware.
 </div>
 </div>
 
-<div id="outline-container-orgd2f1349" class="outline-2">
-<h2 id="orgd2f1349"><span class="section-number-2">2</span> Scope</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-org0133ea8" class="outline-2">
+<h2 id="org0133ea8">Scope</h2>
+<div class="outline-text-2" id="text-org0133ea8">
 <p>
 In the beginning, I thought the MacBook I had was a 4,1,
 meaning that the Linux install is the standard steps, plus
@@ -166,27 +172,27 @@ drive is broken. Turns out, there&rsquo;s a way to do this too.
 </div>
 </div>
 
-<div id="outline-container-orgdea85b6" class="outline-2">
-<h2 id="orgdea85b6"><span class="section-number-2">3</span> Procedure</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-org9f48600" class="outline-2">
+<h2 id="org9f48600">Procedure</h2>
+<div class="outline-text-2" id="text-org9f48600">
 <p>
 These are simplified steps that don&rsquo;t include a lot of
 head-banging and kernel panic issues I faced. Be warned,
 you might face this too.
 </p>
 </div>
-<div id="outline-container-orgd9b3070" class="outline-3">
-<h3 id="orgd9b3070"><span class="section-number-3">3.1</span> Modding the ISO</h3>
-<div class="outline-text-3" id="text-3-1">
+<div id="outline-container-org01026d8" class="outline-3">
+<h3 id="org01026d8">Modding the ISO</h3>
+<div class="outline-text-3" id="text-org01026d8">
 <p>
 Compile the C program (<a href="https://bugs.launchpad.net/ubuntu-cdimage/+bug/1298894/comments/16">comment #16 at the bug report</a>), and pass it the ISO. It&rsquo;ll
 modify it. Keep the modified file safe.
 </p>
 </div>
 </div>
-<div id="outline-container-org3211846" class="outline-3">
-<h3 id="org3211846"><span class="section-number-3">3.2</span> Making a Bootable USB</h3>
-<div class="outline-text-3" id="text-3-2">
+<div id="outline-container-orgcb718f6" class="outline-3">
+<h3 id="orgcb718f6">Making a Bootable USB</h3>
+<div class="outline-text-3" id="text-orgcb718f6">
 <p>
 The first thing to understand about classical EFI is that
 it sucks. The modern UEFI is a sensible standard that
@@ -224,9 +230,9 @@ not mark it as bootable, or you&rsquo;ll be in trouble.
 </div>
 </div>
 
-<div id="outline-container-org7f21a2a" class="outline-3">
-<h3 id="org7f21a2a"><span class="section-number-3">3.3</span> Plug In the USB, Boot, and Watch Install Fail</h3>
-<div class="outline-text-3" id="text-3-3">
+<div id="outline-container-orgd0b278c" class="outline-3">
+<h3 id="orgd0b278c">Plug In the USB, Boot, and Watch Install Fail</h3>
+<div class="outline-text-3" id="text-orgd0b278c">
 <p>
 Now, holding the Option key while booting the Mac should
 show an option for &rsquo;EFI boot&rsquo;. Select it, and boot into
@@ -261,7 +267,8 @@ INITRD.IMG, and boot.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sh">grub&gt; set root =<span style="color: #5EC4FF;">(</span>hd0,gpt2<span style="color: #5EC4FF;">)</span> <span style="color: #a52a2a; font-style: italic;">#</span><span style="color: #a52a2a; font-style: italic;">this was where / was located. Might vary depending on install, search around using TAB to find it</span>
+<pre class="src src-sh">grub&gt; set root =<span style="color: #5EC4FF;">(</span>hd0,gpt2<span style="color: #5EC4FF;">)</span>
+      <span style="color: #a52a2a; font-style: italic;">#</span><span style="color: #a52a2a; font-style: italic;">this was where / was located. Might vary depending on install, search around using TAB to find it</span>
 grub&gt; linux /vmlinux <span style="color: #718CA1;">root</span>=/dev/sda2
 grub&gt; initrd /initrd.img
 grub&gt; boot
@@ -282,9 +289,9 @@ the current boot and /etc/default/grub.
 </div>
 </div>
 
-<div id="outline-container-org6188346" class="outline-3">
-<h3 id="org6188346"><span class="section-number-3">3.4</span> Welcome to Linux.</h3>
-<div class="outline-text-3" id="text-3-4">
+<div id="outline-container-org25cbdc2" class="outline-3">
+<h3 id="org25cbdc2">Welcome to Linux.</h3>
+<div class="outline-text-3" id="text-org25cbdc2">
 <p>
 That completes the install. It&rsquo;s a bit tricky getting
 everything to work the first time, so don&rsquo;t give up. You can
@@ -295,9 +302,9 @@ OOTB), and generally play around.
 </div>
 </div>
 
-<div id="outline-container-orgf6579f1" class="outline-2">
-<h2 id="orgf6579f1"><span class="section-number-2">4</span> Conclusion</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-org7ffcb41" class="outline-2">
+<h2 id="org7ffcb41">Conclusion</h2>
+<div class="outline-text-2" id="text-org7ffcb41">
 <p>
 The old MacBook&rsquo;s hardware still works well. XFCE is exceptionally
 light, so I tried Compiz with its cube animations, and it works
