@@ -1,6 +1,7 @@
+#+title: ~nebhrajani
 #+include: ./preamble_index.org
 
-#+OPTIONS: num:nil
+#+OPTIONS: num:nil title:nil
 #+HTML: <!-- <div class="post-meta - 2 min read
 #+HTML: -->
 
