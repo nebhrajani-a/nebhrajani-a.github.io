@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-05-28 Fri 08:25 -->
+<!-- 2021-07-10 Sat 08:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>~nebhrajani/posts/why-emacs/</title>
@@ -88,14 +88,19 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
+<header role="banner" id="top">
+<div id="header-text">
+<h1><strong id="top-title"><a href="https://nebhrajani-a.github.io/">nebhrajani<a></strong></h1>
+</div>
+</header>
 <nav class="sidebar-nav">
-<a class="nav-item" title="" href="https://nebhrajani-a.github.io/">home</a>
-<a class="nav-item" title="" href="https://nebhrajani-a.github.io/posts/">posts</a>
-<a class="nav-item" title="" href="https://nebhrajani-a.github.io/files/">files</a>
+<a class="nav-item" title="" href="https://nebhrajani-a.github.io/posts/">POSTS</a>
+<a class="nav-item" title="" href="https://nebhrajani-a.github.io/microblog/">MICROBLOG</a>
+<a class="nav-item" title="" href="https://nebhrajani-a.github.io/files/">FILES</a>
 </nav>
 
 <h1 id="title">Why Emacs?</h1>
-<div class="post-meta"> <2021-04-30 Fri>       - 19 min read
+<div class="post-meta"> <2021-04-30 Fri>        - 19 min read
 </div>
 
 <p>
@@ -173,9 +178,9 @@ editor, and why that editor is Emacs.
 </p>
 
 
-<div id="outline-container-org87eed1e" class="outline-2">
-<h2 id="org87eed1e"><span class="section-number-2">1</span> Text Editors in History</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-orga439b54" class="outline-2">
+<h2 id="orga439b54">Text Editors in History</h2>
+<div class="outline-text-2" id="text-orga439b54">
 <p>
 A program that is able to open a file from disk, change a few
 characters, and write it back to disk, is a text editor. This is a
@@ -221,9 +226,9 @@ plugin system.
 </p>
 </div>
 
-<div id="outline-container-org6322428" class="outline-3">
-<h3 id="org6322428"><span class="section-number-3">1.1</span> Notable Text Editors</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-org24c4efe" class="outline-3">
+<h3 id="org24c4efe">Notable Text Editors</h3>
+<div class="outline-text-3" id="text-org24c4efe">
 <p>
 The following are some of the text editors we&rsquo;ll discuss in this
 post. If I missed your favourite text editor, forgive me, this page
@@ -263,9 +268,9 @@ which ones are desirable.
 </div>
 </div>
 
-<div id="outline-container-orgd354104" class="outline-3">
-<h3 id="orgd354104"><span class="section-number-3">1.2</span> Platforms</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-orgcb70343" class="outline-3">
+<h3 id="orgcb70343">Platforms</h3>
+<div class="outline-text-3" id="text-orgcb70343">
 <p>
 Generally, editors are written as a single big program (often in C),
 that has all editor features and functions, and is compiled and
@@ -303,9 +308,9 @@ interface or (God forbid) recompilation.
 </div>
 </div>
 
-<div id="outline-container-org5acdd37" class="outline-3">
-<h3 id="org5acdd37"><span class="section-number-3">1.3</span> Interfaces</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-org4d12cf8" class="outline-3">
+<h3 id="org4d12cf8">Interfaces</h3>
+<div class="outline-text-3" id="text-org4d12cf8">
 <p>
 Editors can be TUI-only (<code>nano</code>), GUI-only (Atom, VS Code), or both.
 TUI-only editors tend to not have fancy icons and support for certain
@@ -322,9 +327,9 @@ modern editors only have GUI support.
 </div>
 </div>
 
-<div id="outline-container-orge344e20" class="outline-3">
-<h3 id="orge344e20"><span class="section-number-3">1.4</span> Keyboard or Mouse-Driven</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-org921b25d" class="outline-3">
+<h3 id="org921b25d">Keyboard or Mouse-Driven</h3>
+<div class="outline-text-3" id="text-org921b25d">
 <p>
 This is an interesting topic. Some editor interfaces are very
 clicky. This means that to get something done, you often have to
@@ -356,9 +361,9 @@ least be a way to do a mouse action using a keyboard.
 </div>
 </div>
 
-<div id="outline-container-org00c557a" class="outline-3">
-<h3 id="org00c557a"><span class="section-number-3">1.5</span> Complexity</h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-orgf684633" class="outline-3">
+<h3 id="orgf684633">Complexity</h3>
+<div class="outline-text-3" id="text-orgf684633">
 <p>
 This is one of the <i>really</i> big debates, which draws its roots from
 the modular *NIX vs. monolithic Windows philosophy. In short,
@@ -401,9 +406,9 @@ convenient not to have.
 </div>
 </div>
 
-<div id="outline-container-orga163389" class="outline-3">
-<h3 id="orga163389"><span class="section-number-3">1.6</span> Modal vs. Non-Modal</h3>
-<div class="outline-text-3" id="text-1-6">
+<div id="outline-container-org09cf7bf" class="outline-3">
+<h3 id="org09cf7bf">Modal vs. Non-Modal</h3>
+<div class="outline-text-3" id="text-org09cf7bf">
 <p>
 Mos people today are entirely unfamiliar with modal editing as a
 concept, since nearly no text editing programs have a modal
@@ -436,9 +441,9 @@ vital to the seasoned <code>vi</code> user.
 </div>
 </div>
 
-<div id="outline-container-org1548d2f" class="outline-3">
-<h3 id="org1548d2f"><span class="section-number-3">1.7</span> Extensibility</h3>
-<div class="outline-text-3" id="text-1-7">
+<div id="outline-container-org1c85d14" class="outline-3">
+<h3 id="org1c85d14">Extensibility</h3>
+<div class="outline-text-3" id="text-org1c85d14">
 <p>
 And now, to the elephant in the room. How much should a user be
 able to change? How much should a user actually change?
@@ -455,9 +460,9 @@ extensibility requires an extension language.
 </p>
 </div>
 
-<div id="outline-container-orgc04be98" class="outline-4">
-<h4 id="orgc04be98"><span class="section-number-4">1.7.1</span> Extension Language</h4>
-<div class="outline-text-4" id="text-1-7-1">
+<div id="outline-container-orgd2625a3" class="outline-4">
+<h4 id="orgd2625a3">Extension Language</h4>
+<div class="outline-text-4" id="text-orgd2625a3">
 <p>
 The definition of an extension language for a text editor isn&rsquo;t
 well defined. In practice, they range from configuration files which
@@ -467,12 +472,12 @@ Lisp, with most falling in between.
 </div>
 </div>
 
-<div id="outline-container-orgd03ecbe" class="outline-4">
-<h4 id="orgd03ecbe"><span class="section-number-4">1.7.2</span> Packages</h4>
+<div id="outline-container-org364e915" class="outline-4">
+<h4 id="org364e915">Packages</h4>
 </div>
-<div id="outline-container-org649f58b" class="outline-4">
-<h4 id="org649f58b"><span class="section-number-4">1.7.3</span> How Much Extension is Too Much?</h4>
-<div class="outline-text-4" id="text-1-7-3">
+<div id="outline-container-orga1dea66" class="outline-4">
+<h4 id="orga1dea66">How Much Extension is Too Much?</h4>
+<div class="outline-text-4" id="text-orga1dea66">
 <p>
  It should be obvious by now that there seem to be two important
 &rsquo;parts&rsquo; of a text editing experience: the actual editing of text
@@ -488,9 +493,9 @@ separately, trying to pick the best of the lot in each case.
 </div>
 </div>
 
-<div id="outline-container-orgdb96dcf" class="outline-2">
-<h2 id="orgdb96dcf"><span class="section-number-2">2</span> Raw Text Editing</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-org4b60090" class="outline-2">
+<h2 id="org4b60090">Raw Text Editing</h2>
+<div class="outline-text-2" id="text-org4b60090">
 <p>
 Broadly speaking, all editors can be divided into two categories on
 the basis of raw text editing: modal and non-modal. Most people are
@@ -541,9 +546,9 @@ editing, is actually a far superior paradigm. Let&rsquo;s see why.
 </p>
 </div>
 
-<div id="outline-container-org0431cb7" class="outline-3">
-<h3 id="org0431cb7"><span class="section-number-3">2.1</span> Home Row Keys</h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-org78094e2" class="outline-3">
+<h3 id="org78094e2">Home Row Keys</h3>
+<div class="outline-text-3" id="text-org78094e2">
 <p>
 Back when <code>vi</code> was written, it didn&rsquo;t have the luxury of assuming
 that all keyboards had modifier keys, or that they had exactly the
@@ -570,9 +575,9 @@ multiple keys at the same time.
 </div>
 </div>
 
-<div id="outline-container-org1068218" class="outline-3">
-<h3 id="org1068218"><span class="section-number-3">2.2</span> Composability</h3>
-<div class="outline-text-3" id="text-2-2">
+<div id="outline-container-orgba4198c" class="outline-3">
+<h3 id="orgba4198c">Composability</h3>
+<div class="outline-text-3" id="text-orgba4198c">
 <p>
 Vim&rsquo;s keybindings form a grammar within themselves. To understand
 this, consider a few examples.
@@ -617,9 +622,9 @@ commands, where:
 </div>
 </div>
 
-<div id="outline-container-org6f749fd" class="outline-3">
-<h3 id="org6f749fd"><span class="section-number-3">2.3</span> Mnemonics</h3>
-<div class="outline-text-3" id="text-2-3">
+<div id="outline-container-orgdfb3597" class="outline-3">
+<h3 id="orgdfb3597">Mnemonics</h3>
+<div class="outline-text-3" id="text-orgdfb3597">
 <p>
 To get into insert mode, press <code>i</code>. To get into visual selection
 mode, press <code>v</code>. Go back to normal mode? <code>Escape</code>. To paste, press
@@ -636,9 +641,9 @@ object to act on.)
 </div>
 </div>
 
-<div id="outline-container-orgd81bc1a" class="outline-3">
-<h3 id="orgd81bc1a"><span class="section-number-3">2.4</span> Speed</h3>
-<div class="outline-text-3" id="text-2-4">
+<div id="outline-container-orga813086" class="outline-3">
+<h3 id="orga813086">Speed</h3>
+<div class="outline-text-3" id="text-orga813086">
 <p>
 Clearly, this makes editing text fast and easy to do. Moreover,
 many commands are provided for speed: <code>0</code> goes to start of line,
@@ -658,18 +663,18 @@ and intuitive, and fully justifies having different modes.
 </div>
 </div>
 
-<div id="outline-container-org1ebcb91" class="outline-3">
-<h3 id="org1ebcb91"><span class="section-number-3">2.5</span> Other Good Ideas in Vim</h3>
-<div class="outline-text-3" id="text-2-5">
+<div id="outline-container-orge523594" class="outline-3">
+<h3 id="orge523594">Other Good Ideas in Vim</h3>
+<div class="outline-text-3" id="text-orge523594">
 <p>
 Many of the following ideas are also implemented in Emacs, but few
 other editors have such powerful implementations.
 </p>
 </div>
 
-<div id="outline-container-org1b096a2" class="outline-4">
-<h4 id="org1b096a2"><span class="section-number-4">2.5.1</span> Registers</h4>
-<div class="outline-text-4" id="text-2-5-1">
+<div id="outline-container-org15a42f1" class="outline-4">
+<h4 id="org15a42f1">Registers</h4>
+<div class="outline-text-4" id="text-org15a42f1">
 <p>
 Almost every operating system has a clipboard, a temporary space
 where copied text is held until it&rsquo;s pasted. The problem with a
@@ -697,9 +702,9 @@ them as macros.
 </div>
 </div>
 
-<div id="outline-container-org1edc10a" class="outline-4">
-<h4 id="org1edc10a"><span class="section-number-4">2.5.2</span> Macros</h4>
-<div class="outline-text-4" id="text-2-5-2">
+<div id="outline-container-org25437d4" class="outline-4">
+<h4 id="org25437d4">Macros</h4>
+<div class="outline-text-4" id="text-org25437d4">
 <p>
 Let&rsquo;s say we have the following C program:
 </p>
@@ -766,9 +771,9 @@ Recursive macros aren&rsquo;t used often, but are fun to write.
 </div>
 </div>
 
-<div id="outline-container-org0399c0b" class="outline-4">
-<h4 id="org0399c0b"><span class="section-number-4">2.5.3</span> Macros <i>are</i> Registers</h4>
-<div class="outline-text-4" id="text-2-5-3">
+<div id="outline-container-orgcbab758" class="outline-4">
+<h4 id="orgcbab758">Macros <i>are</i> Registers</h4>
+<div class="outline-text-4" id="text-orgcbab758">
 <p>
 Macros are stored in registers. Many people don&rsquo;t know that
 recording a macro is just writing keystrokes to a register. You
@@ -779,9 +784,9 @@ to your X clipboard and run it directly in vim (<code>@0</code>).
 </div>
 </div>
 
-<div id="outline-container-orgb8f2910" class="outline-4">
-<h4 id="orgb8f2910"><span class="section-number-4">2.5.4</span> Rectangular Selection</h4>
-<div class="outline-text-4" id="text-2-5-4">
+<div id="outline-container-org8f4487f" class="outline-4">
+<h4 id="org8f4487f">Rectangular Selection</h4>
+<div class="outline-text-4" id="text-org8f4487f">
 <p>
 Here&rsquo;s something the new kids on the block use multiple cursors
 for: rectangular selection. If we have the following file:
@@ -818,9 +823,9 @@ Walker
 </div>
 </div>
 
-<div id="outline-container-orga33cb93" class="outline-4">
-<h4 id="orga33cb93"><span class="section-number-4">2.5.5</span> Marks</h4>
-<div class="outline-text-4" id="text-2-5-5">
+<div id="outline-container-orgc6d9e61" class="outline-4">
+<h4 id="orgc6d9e61">Marks</h4>
+<div class="outline-text-4" id="text-orgc6d9e61">
 <p>
 Marks are simple: they let you set a kind of bookmark at a certain
 location in a file and jump back to it. Marks are set using <code>ma</code>
@@ -831,9 +836,9 @@ A neat feature not many modern editors have.
 </div>
 </div>
 
-<div id="outline-container-org877a255" class="outline-4">
-<h4 id="org877a255"><span class="section-number-4">2.5.6</span> Undo Tree</h4>
-<div class="outline-text-4" id="text-2-5-6">
+<div id="outline-container-orga8fbeff" class="outline-4">
+<h4 id="orga8fbeff">Undo Tree</h4>
+<div class="outline-text-4" id="text-orga8fbeff">
 <p>
 If vim didn&rsquo;t already have a whole bunch of killer features,
 here&rsquo;s yet another: undo trees. Let&rsquo;s say you type the following:
@@ -888,9 +893,9 @@ allows you to select which branch you want to explore. Neat.<sup><a id="fnr.5" c
 </div>
 </div>
 
-<div id="outline-container-org20a936a" class="outline-3">
-<h3 id="org20a936a"><span class="section-number-3">2.6</span> Vim Caveats</h3>
-<div class="outline-text-3" id="text-2-6">
+<div id="outline-container-org267b4a6" class="outline-3">
+<h3 id="org267b4a6">Vim Caveats</h3>
+<div class="outline-text-3" id="text-org267b4a6">
 <p>
 Despite vim having absolutely brilliant ideas for raw text editing,
 including comfortable, thoughtful key notes, it suffers from
@@ -921,9 +926,9 @@ so it&rsquo;s worth learning if only for that reason.
 </div>
 </div>
 
-<div id="outline-container-org99c0c6e" class="outline-2">
-<h2 id="org99c0c6e"><span class="section-number-2">3</span> Powerful Environment</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-orgf1065ed" class="outline-2">
+<h2 id="orgf1065ed">Powerful Environment</h2>
+<div class="outline-text-2" id="text-orgf1065ed">
 <p>
 Another good reason, I think, not to use vim is the
 availability of a much more powerful alternative: Emacs. Emacs
@@ -984,13 +989,13 @@ this Elisp environment that makes it so powerful.
 </p>
 </div>
 
-<div id="outline-container-org48a98c5" class="outline-3">
-<h3 id="org48a98c5"><span class="section-number-3">3.1</span> Excellent OOTB Setup</h3>
-<div class="outline-text-3" id="text-3-1">
+<div id="outline-container-org5e966d2" class="outline-3">
+<h3 id="org5e966d2">Excellent OOTB Setup</h3>
+<div class="outline-text-3" id="text-org5e966d2">
 </div>
-<div id="outline-container-org114f05d" class="outline-4">
-<h4 id="org114f05d"><span class="section-number-4">3.1.1</span> Encodings and Scripts</h4>
-<div class="outline-text-4" id="text-3-1-1">
+<div id="outline-container-org713c56b" class="outline-4">
+<h4 id="org713c56b">Encodings and Scripts</h4>
+<div class="outline-text-4" id="text-org713c56b">
 <p>
 Emacs (when run inside a GUI or UTF-8 terminal) supports
 <i>both</i> the display and input of all sorts of scripts and
@@ -1007,9 +1012,9 @@ Support for right-to-left scripts also just works.
 </div>
 </div>
 
-<div id="outline-container-org5b7fc31" class="outline-4">
-<h4 id="org5b7fc31"><span class="section-number-4">3.1.2</span> Buffers, Windows, Frames</h4>
-<div class="outline-text-4" id="text-3-1-2">
+<div id="outline-container-orgef017f1" class="outline-4">
+<h4 id="orgef017f1">Buffers, Windows, Frames</h4>
+<div class="outline-text-4" id="text-orgef017f1">
 <p>
 Emacs has an excellent tiling window management system: so
 much so that a package called EWXM lets Emacs manage all X
@@ -1019,21 +1024,21 @@ displays the contents of a
 </div>
 </div>
 
-<div id="outline-container-org79628a4" class="outline-4">
-<h4 id="org79628a4"><span class="section-number-4">3.1.3</span> TUI and GUI</h4>
+<div id="outline-container-orgf78388d" class="outline-4">
+<h4 id="orgf78388d">TUI and GUI</h4>
 </div>
 </div>
 
 
 
-<div id="outline-container-orgbb8914e" class="outline-3">
-<h3 id="orgbb8914e"><span class="section-number-3">3.2</span> Your Editor, Your Choice</h3>
+<div id="outline-container-orgbe2d8a9" class="outline-3">
+<h3 id="orgbe2d8a9">Your Editor, Your Choice</h3>
 </div>
 </div>
 
-<div id="outline-container-org37c2b6e" class="outline-2">
-<h2 id="org37c2b6e"><span class="section-number-2">4</span> Notes</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-org0602d32" class="outline-2">
+<h2 id="org0602d32">Notes</h2>
+<div class="outline-text-2" id="text-org0602d32">
 <ul class="org-ul">
 <li>[Re Footnote 5] Between the time I started writing this post
 and finished, I discovered Nyxt, a web browser written in

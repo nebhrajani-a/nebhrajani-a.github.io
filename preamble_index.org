@@ -10,7 +10,7 @@
 
 #+HTML: <header role="banner" id="top">
 #+HTML: <div id="header-text">
-#+HTML: <h1><strong id="top-title"><a style="color:#ffffff; border-bottom: 0px;" href="https://nebhrajani-a.github.io/">nebhrajani<a></strong></h1>
+#+HTML: <h1><strong id="top-title"><a href="https://nebhrajani-a.github.io/">nebhrajani<a></strong></h1>
 #+HTML: </div>
 #+HTML: </header>
 #+HTML: <nav class="sidebar-nav">
