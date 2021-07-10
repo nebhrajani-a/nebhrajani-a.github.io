@@ -5,13 +5,13 @@
 #+HTML: <!-- <div class="post-meta - 2 min read
 #+HTML: -->
 
-  # only one entry, with date. single bit of featured content.
 
 * About
   - =lastname: Nebhrajani=
   - =firstname: Aditya=
 
-  I’m a high school senior living in Pune, MH, India. My interests
+  I’m an incoming electrical engineering freshman at the [[https://en.wikipedia.org/wiki/University_of_Illinois_Urbana-Champaign][University of
+  Illinois Urbana-Champaign]] living in Pune, MH, India. My interests
   include computer programming, electronics, motorcycles, mathematics,
   badminton, guitar, and pedagogy.
 
@@ -21,7 +21,7 @@
 
 
 * Contact
-  - =lastname @ protonmail.com=
+  - =lastname@protonmail.com=
   - [[./gpg.txt][GPG]]
   - [[https://github.com/nebhrajani-a][GitHub]]
   - [[https://www.linkedin.com/in/nebhrajani][LinkedIn]]
