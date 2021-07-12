@@ -6,7 +6,7 @@
 #+HTML: <p></p>
 
 * <2021-07>
-  | <2021-07-12 Mon 02:18> | ये दिल तन्हा क्यों रहे; क्यों हम टुकड़ों में जियें?                               |
+  | <2021-07-12 Mon 14:11> | 1984 is one of the best books I've read in a long time.             |
   | <2021-07-09 Fri 15:41> | Creating a microblog, since Twitter sucks and microblogging is fun. |
   | <2021-07-08 Thu 14:21> | What good is a phone call, if you're unable to speak?               |
 
